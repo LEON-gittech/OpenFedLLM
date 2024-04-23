@@ -54,6 +54,7 @@ def process_sft_dataset(dataset_name, dataset, dataset_sample):
     print(f">> ===== After processing, Dataset {dataset_name} has {len(dataset)} examples. =====")
     return dataset
 
+# 将输出构造为（instruction，response）的形式
 def alpaca_format(example):
     if example['input'] == "":
         example["instruction"] = example["instruction"]
