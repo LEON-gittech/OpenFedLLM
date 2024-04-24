@@ -70,7 +70,7 @@ training_loss = [[] for i in range(fed_args.num_clients)]
 
 for round in tqdm(range(fed_args.num_rounds)):
 
-    clients_this_round = get_clients_this_round(fed_args, round)
+    clients_this_round = get_clients_this_round(fed_args, round) #随机采样得到
 
     print(f">> ==================== Round {round+1} : {clients_this_round} ====================")
     
@@ -80,14 +80,14 @@ for round in tqdm(range(fed_args.num_rounds)):
             training_loss[client].append(-1)            # -1 is an indicator of not training
             continue
 
-        set_peft_model_state_dict(model, global_dict)   # sync the global model to the local model
+        set_peft_model_state_dict(model, global_dict)   # sync the global model to the local model，更新本地模型的 lora 参数
 
-        sub_dataset = get_dataset_this_round(local_datasets[client], round, fed_args, script_args)      # get the required sub-dataset for this round
+        sub_dataset = get_dataset_this_round(local_datasets[client], round, fed_args, script_args)      # get the required sub-dataset for this round， 随机采样，num2sample = script_args.batch_size * script_args.gradient_accumulation_steps * script_args.max_steps
         new_lr = cosine_learning_rate(round, fed_args.num_rounds, script_args.learning_rate, 1e-6)      # manually schedule the learning rate
         training_args = get_training_args(script_args, new_lr)
 
         # ===== Train local model on the client side =====
-        trainer = get_fed_local_sft_trainer(
+        trainer = get_fed_local_sft_trainer( #根据不同的算法使用不同的 Trainer
             model=model,
             tokenizer=tokenizer,
             training_args=training_args,
