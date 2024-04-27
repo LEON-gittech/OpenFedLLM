@@ -46,7 +46,7 @@ def get_fed_local_sft_trainer(script_args, fed_args, model, tokenizer, training_
         raise ValueError(f'Unsupported `fed_alg`: {fed_args.fed_alg}')
     return trainer
 
-class SFTTrainerFedProx(SFTTrainer):
+class SFTTrainerFedProx(SFTTrainer): #加了一个L2 正则，其他几个方法本地都是直接 SGD
     def __init__(self, global_state, prox_mu, **kwargs):
         super(SFTTrainerFedProx, self).__init__(**kwargs)
         self.global_state = global_state
@@ -102,6 +102,7 @@ class SCAFFOLD_Callback(TrainerCallback):
         super(SCAFFOLD_Callback, self).__init__()
         self.correction = correction
         self.model = model
+
     def on_step_end(self, args, state, control, **kwargs):
         model_para = copy.deepcopy(get_peft_model_state_dict(self.model))
         for name in model_para.keys():

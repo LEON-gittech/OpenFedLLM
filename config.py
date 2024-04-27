@@ -62,8 +62,8 @@ class ScriptArguments:
     local_data_dir: Optional[str] = field(default=None, metadata={"help": "the local data directory if you want to use downloaded data"})
 
 parser = HfArgumentParser((ScriptArguments, FedArguments))
-# script_args, fed_args = parser.parse_args_into_dataclasses()
-script_args, fed_args = parser.parse_yaml_file("/opt/tiger/OpenFedLLM/config/train.yaml")
+script_args, fed_args = parser.parse_args_into_dataclasses()
+# script_args, fed_args = parser.parse_yaml_file("/opt/tiger/OpenFedLLM/config/train.yaml") #For debug
 
 # ===== Define the LoraConfig =====
 if script_args.use_peft:
@@ -129,9 +129,6 @@ def get_model_config(script_args):
 def save_config(script_args, fed_args):
     now_time = (datetime.now()).strftime("%Y%m%d%H%M%S")
     dataset_name_split = os.path.basename(script_args.dataset_name)
-
-    if not os.path.exists(script_args.output_dir):
-        os.mkdir(script_args.output_dir)
 
     output_dir = f"{script_args.output_dir}/{dataset_name_split}_{script_args.dataset_sample}_{fed_args.fed_alg}_c{fed_args.num_clients}s{fed_args.sample_clients}_i{script_args.max_steps}_b{script_args.batch_size}a{script_args.gradient_accumulation_steps}_l{script_args.seq_length}_r{script_args.peft_lora_r}a{script_args.peft_lora_alpha}_{now_time}"
     while True:

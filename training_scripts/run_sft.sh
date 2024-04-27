@@ -12,13 +12,13 @@ lr=5e-5
 # local_data_dir=""       # you may uncomment this line if your data is stored locally and include it in the python command
 dataset_name="vicgalle/alpaca-gpt4"
 dataset_sample=20000
-model_name_or_path="meta-llama/Llama-2-7b-hf"
+model_name_or_path="mistralai/Mistral-7B-Instruct-v0.2"
 output_dir=./output
 
 gpu=2
 fed_alg="fedavg"
 
-CUDA_VISIBLE_DEVICES=$gpu python main_sft.py \
+CUDA_VISIBLE_DEVICES=$gpu python3 main_sft.py \
  --learning_rate $lr \
  --model_name_or_path $model_name_or_path \
  --dataset_name $dataset_name \

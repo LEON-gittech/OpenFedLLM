@@ -1,4 +1,4 @@
-gpu=2
+gpu=1
 max_steps=10
 num_rounds=200
 batch_size=16
@@ -16,7 +16,7 @@ model_name_or_path="ehartford/Wizard-Vicuna-7B-Uncensored"
 output_dir=./output
 
 fed_alg="fedavg"
-CUDA_VISIBLE_DEVICES=$gpu python main_dpo.py \
+CUDA_VISIBLE_DEVICES=$gpu python3 main_dpo.py \
  --model_name_or_path $model_name_or_path \
  --dataset_name $dataset_name \
  --dataset_sample $dataset_sample \
@@ -32,4 +32,4 @@ CUDA_VISIBLE_DEVICES=$gpu python main_dpo.py \
  --use_peft \
  --load_in_8bit \
  --output_dir $output_dir \
- --template "vicuna_v1.1" \
+ --template "vicuna_v1.1"
