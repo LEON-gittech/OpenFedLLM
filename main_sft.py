@@ -123,3 +123,6 @@ for round in tqdm(range(fed_args.num_rounds)):
         trainer.save_model(os.path.join(script_args.output_dir, f"checkpoint-{round+1}"))
     
     np.save(os.path.join(script_args.output_dir, "training_loss.npy"), np.array(training_loss))
+
+trainer.save_state()
+trainer.save_model(output_dir=script_args.output_dir)
