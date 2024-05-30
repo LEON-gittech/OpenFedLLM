@@ -15,11 +15,11 @@ def get_dataset(dataset_name, local_data_dir=None):
     elif dataset_name == "HuggingFaceH4/ultrafeedback_binarized":
         dataset_name = local_data_dir + dataset_name if local_data_dir is not None else dataset_name
         dataset = load_dataset(dataset_name, split="train_sft")
-    elif 
+    elif ".json" or ".jsonl" or ".parquet" in dataset_name:
+        dataset = load_dataset(dataset_name.split(".")[1], data_files = dataset_name, split="train")
     else:
         dataset_name = local_data_dir + dataset_name if local_data_dir is not None else dataset_name
-        print(dataset_name)
-        dataset = load_dataset(dataset_name.split(".")[1], data_files = dataset_name, split="train")
+        dataset = load_dataset(dataset_name, split="train")
 
     return dataset
 
