@@ -17,7 +17,8 @@ def get_dataset(dataset_name, local_data_dir=None):
         dataset = load_dataset(dataset_name, split="train_sft")
     else:
         dataset_name = local_data_dir + dataset_name if local_data_dir is not None else dataset_name
-        dataset = load_dataset(dataset_name, split="train")
+        print(dataset_name)
+        dataset = load_dataset(dataset_name.split(".")[1], dataset_name, split="train")
 
     return dataset
 
