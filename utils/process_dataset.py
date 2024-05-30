@@ -15,10 +15,11 @@ def get_dataset(dataset_name, local_data_dir=None):
     elif dataset_name == "HuggingFaceH4/ultrafeedback_binarized":
         dataset_name = local_data_dir + dataset_name if local_data_dir is not None else dataset_name
         dataset = load_dataset(dataset_name, split="train_sft")
+    elif 
     else:
         dataset_name = local_data_dir + dataset_name if local_data_dir is not None else dataset_name
         print(dataset_name)
-        dataset = load_dataset(dataset_name.split(".")[1], dataset_name, split="train")
+        dataset = load_dataset(dataset_name.split(".")[1], data_files = dataset_name, split="train")
 
     return dataset
 
@@ -45,6 +46,9 @@ def process_sft_dataset(dataset_name, dataset, dataset_sample):
     elif dataset_name in ['medalpaca/medical_meadow_medical_flashcards']:       # TODO: 'lavita/ChatDoctor-HealthCareMagic-100k'. not sure whether to discard the instruction.
         dataset = dataset.remove_columns(['instruction'])
         dataset = dataset.rename_column("input", "instruction")
+        dataset = dataset.rename_column("output", "response")
+    elif "math" in dataset_name:
+        dataset = dataset.remove_columns(['source'])
         dataset = dataset.rename_column("output", "response")
     else:
         raise NotImplementedError(f"Dataset {dataset_name} is not supported.")
