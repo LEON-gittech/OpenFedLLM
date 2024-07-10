@@ -10,12 +10,12 @@ lora_alpha=16   # twice of lora_r
 lr=5e-5
 
 # local_data_dir=""       # you may uncomment this line if your data is stored locally and include it in the python command
-dataset_name="public_data"
+dataset_name="neg"
 dataset_sample=20000
 model_name_or_path="/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/" # /mnt/bn/data-tns-live-llm/leon/datasets/Meta-Llama-3-8B/
 output_dir="/mnt/bn/data-tns-live-llm/leon/datasets/fed" 
 
-gpu=2
+gpu=4
 fed_alg="fedavg"
 
 CUDA_VISIBLE_DEVICES=$gpu python3 main_sft.py \
