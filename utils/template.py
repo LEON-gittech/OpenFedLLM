@@ -21,9 +21,23 @@ def get_formatting_prompts_func(template_name, eos_token):
     overall_temp, response_temp = TEMPLATE_DICT[template_name]
     def formatting_prompts_func(example): #这个闭包有点东西的
         output_texts = []    
+        # print("instruction", len(example["instruction"]))
+        # print("response", len(example["response"]))
         for i in range(len(example['instruction'])):    
             text = overall_temp.format(example['instruction'][i], example['response'][i], eos_token)    
             output_texts.append(text)    
+        # print(len(output_texts))
         return output_texts    
-    
     return formatting_prompts_func, response_temp
+
+# def get_formatting_prompts_func(template_name, eos_token):
+#     return '\n### Response:'
+
+# def formatting_prompts_func(example): #这个闭包有点东西的
+#     output_texts = []    
+#     print("instruction", len(example["instruction"]))
+#     print("response", len(example["response"]))
+#     for i in range(len(example['instruction'])):    
+#         text = alpaca_template.format(example['instruction'][i], example['response'][i], "<|end_of_text|>")    
+#         output_texts.append(text)    
+#     return output_texts    

@@ -1,19 +1,19 @@
 max_steps=10
-num_rounds=200
+num_rounds=100
 batch_size=16
 gradient_accumulation_steps=1
 seq_length=512
-num_clients=20
+num_clients=10
 sample_clients=2
-lora_r=32
-lora_alpha=64   # twice of lora_r
+lora_r=16
+lora_alpha=16   # twice of lora_r
 lr=5e-5
 
 # local_data_dir=""       # you may uncomment this line if your data is stored locally and include it in the python command
-dataset_name="vicgalle/alpaca-gpt4"
+dataset_name="public_data"
 dataset_sample=20000
-model_name_or_path="mistralai/Mistral-7B-Instruct-v0.2"
-output_dir=./output
+model_name_or_path="/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/" # /mnt/bn/data-tns-live-llm/leon/datasets/Meta-Llama-3-8B/
+output_dir="/mnt/bn/data-tns-live-llm/leon/datasets/fed" 
 
 gpu=2
 fed_alg="fedavg"
@@ -34,6 +34,9 @@ CUDA_VISIBLE_DEVICES=$gpu python3 main_sft.py \
  --peft_lora_r $lora_r \
  --peft_lora_alpha $lora_alpha \
  --use_peft \
- --load_in_8bit \
+ --load_in_4bit \
  --output_dir $output_dir \
  --template "alpaca" \
+ --unsloth 1 \
+ --bf16 1 \
+ --seq_length 2048

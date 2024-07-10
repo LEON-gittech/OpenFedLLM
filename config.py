@@ -1,4 +1,5 @@
 from dataclasses import dataclass, field, asdict
+from genericpath import exists
 from typing import Optional
 from transformers import HfArgumentParser, TrainingArguments, BitsAndBytesConfig
 from peft import LoraConfig
@@ -14,7 +15,7 @@ from datetime import datetime, timedelta
 class FedArguments:
     fed_alg: Optional[str] = field(default="fedavg", metadata={"help": "the algorithm to use"})
     num_rounds: Optional[int] = field(default=500, metadata={"help": "the number of rounds"})
-    num_clients: Optional[int] = field(default=2, metadata={"help": "the number of clients"})
+    num_clients: Optional[int] = field(default=10, metadata={"help": "the number of clients"})
     sample_clients: Optional[int] = field(default=2, metadata={"help": "the number of clients to sample"})
     split_strategy: Optional[str] = field(default="iid", metadata={"help": "the split strategy"})
     prox_mu: Optional[float] = field(default=0.01, metadata={"help": "the mu parameter of FedProx"})
@@ -60,6 +61,8 @@ class ScriptArguments:
     dpo_beta: Optional[float] = field(default=0.1, metadata={"help": "the beta parameter of DPO"})
     dataset_sample: Optional[int] = field(default=20000, metadata={"help": "the number of samples to use from the dataset"})
     local_data_dir: Optional[str] = field(default=None, metadata={"help": "the local data directory if you want to use downloaded data"})
+    unsloth: Optional[int] = field(default=1)
+    bf16: Optional[int] = field(default=1)
 
 parser = HfArgumentParser((ScriptArguments, FedArguments))
 script_args, fed_args = parser.parse_args_into_dataclasses()
@@ -97,6 +100,7 @@ def get_training_args(script_args, new_lr):
         hub_model_id=script_args.hub_model_id,
         gradient_checkpointing=script_args.gradient_checkpointing,
         lr_scheduler_type="constant",
+        bf16=script_args.bf16
     )
     return training_args
 
@@ -130,14 +134,16 @@ def save_config(script_args, fed_args):
     now_time = (datetime.now()).strftime("%Y%m%d%H%M%S")
     dataset_name_split = os.path.basename(script_args.dataset_name)
 
-    output_dir = f"{script_args.output_dir}/{dataset_name_split}_{script_args.dataset_sample}_{fed_args.fed_alg}_c{fed_args.num_clients}s{fed_args.sample_clients}_i{script_args.max_steps}_b{script_args.batch_size}a{script_args.gradient_accumulation_steps}_l{script_args.seq_length}_r{script_args.peft_lora_r}a{script_args.peft_lora_alpha}_{now_time}"
-    while True:
-        if not os.path.exists(output_dir):
-            os.mkdir(output_dir)
-            break
-        else:
-            now_time = (datetime.now() + timedelta(seconds=1)).strftime("%Y%m%d%H%M%S")
-            output_dir = f"{script_args.output_dir}/{dataset_name_split}_{fed_args.fed_alg}_c{fed_args.num_clients}s{fed_args.sample_clients}_i{script_args.max_steps}_b{script_args.batch_size}a{script_args.gradient_accumulation_steps}_l{script_args.seq_length}_{now_time}"
+    output_dir = f"{script_args.output_dir}/{dataset_name_split}_{script_args.dataset_sample}_{fed_args.fed_alg}_c{fed_args.num_clients}s{fed_args.sample_clients}_i{script_args.max_steps}_b{script_args.batch_size}a{script_args.gradient_accumulation_steps}_l{script_args.seq_length}_r{script_args.peft_lora_r}a{script_args.peft_lora_alpha}"
+    os.makedirs(output_dir, exist_ok=True)
+    # while True:
+    #     if not os.path.exists(output_dir):
+    #         os.mkdir(output_dir)
+    #         break
+    #     else:
+    #         print("hello")
+    #         now_time = (datetime.now() + timedelta(seconds=1)).strftime("%Y%m%d%H%M%S")
+    #         output_dir = f"{script_args.output_dir}/{dataset_name_split}_{fed_args.fed_alg}_c{fed_args.num_clients}s{fed_args.sample_clients}_i{script_args.max_steps}_b{script_args.batch_size}a{script_args.gradient_accumulation_steps}_l{script_args.seq_length}_{now_time}"
 
     script_args.output_dir = output_dir  
     with open(os.path.join(script_args.output_dir, "args.json"), "w") as f:

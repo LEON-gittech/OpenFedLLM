@@ -1,10 +1,10 @@
 import torch
 import copy
 from trl import SFTTrainer
-from transformers import TrainerCallback
+from transformers import TrainerCallback, Trainer
 from peft import get_peft_model_state_dict, set_peft_model_state_dict
 
-def get_fed_local_sft_trainer(script_args, fed_args, model, tokenizer, training_args, local_dataset, formatting_prompts_func, data_collator, global_dict, local_auxiliary, global_auxiliary):
+def get_fed_local_sft_trainer(script_args, fed_args, model, tokenizer, training_args, local_dataset, data_module, formatting_prompts_func, data_collator, global_dict, local_auxiliary, global_auxiliary):
     
     if fed_args.fed_alg == 'fedprox':
         trainer = SFTTrainerFedProx(
@@ -33,15 +33,22 @@ def get_fed_local_sft_trainer(script_args, fed_args, model, tokenizer, training_
         )
         trainer.add_callback(SCAFFOLD_Callback(trainer.correction, model))
     elif (fed_args.fed_alg in ['fedavg']) or (fed_args.fed_alg).startswith('local'):
-        trainer = SFTTrainer(
+        assert len(local_dataset["instruction"]) == len(local_dataset["response"])
+        trainer = Trainer(
             model=model,
             tokenizer=tokenizer,
             args=training_args,
-            max_seq_length=script_args.seq_length,
-            train_dataset=local_dataset,
-            formatting_func=formatting_prompts_func,
-            data_collator=data_collator,
+            **data_module
         )
+        # trainer = SFTTrainer(
+        #     model=model,
+        #     tokenizer=tokenizer,
+        #     args=training_args,
+        #     max_seq_length=script_args.seq_length,
+        #     train_dataset=local_dataset,
+        #     formatting_func=formatting_prompts_func,
+        #     data_collator=data_collator,
+        # )
     else:
         raise ValueError(f'Unsupported `fed_alg`: {fed_args.fed_alg}')
     return trainer
