@@ -1,8 +1,8 @@
 max_steps=10
-num_rounds=100
+num_rounds=50
 batch_size=16
 gradient_accumulation_steps=1
-seq_length=512
+seq_length=2048
 num_clients=10
 sample_clients=2
 lora_r=16
@@ -15,7 +15,7 @@ dataset_sample=20000
 model_name_or_path="/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/" # /mnt/bn/data-tns-live-llm/leon/datasets/Meta-Llama-3-8B/
 output_dir="/mnt/bn/data-tns-live-llm/leon/datasets/fed" 
 
-gpu=4
+gpu=1
 fed_alg="fedavg"
 
 CUDA_VISIBLE_DEVICES=$gpu python3 main_sft.py \
@@ -39,4 +39,4 @@ CUDA_VISIBLE_DEVICES=$gpu python3 main_sft.py \
  --template "alpaca" \
  --unsloth 1 \
  --bf16 1 \
- --seq_length 2048
+ --seq_length $seq_length
