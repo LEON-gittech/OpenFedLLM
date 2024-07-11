@@ -5,7 +5,6 @@ from .conversation import get_conv_template
 from functools import partial
 
 def get_dataset(dataset_name, local_data_dir=None):
-
     if dataset_name in ["gsm8k"]:
         dataset_name = local_data_dir + dataset_name if local_data_dir is not None else dataset_name
         dataset = load_dataset(dataset_name, split="train", name="main")
