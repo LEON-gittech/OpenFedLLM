@@ -10,7 +10,6 @@ from datasets import load_from_disk
 from utils.utils import get_unsloth_model
 
 from utils import *
-# from utils.template import formatting_prompts_func
 from federated_learning import *
 from config import get_config, save_config, get_model_config, get_training_args
 from utils.dataset_utils import *
@@ -68,7 +67,7 @@ global_auxiliary, auxiliary_model_list, auxiliary_delta_dict = get_auxiliary_dic
 
 # ===== Define the tokenizer =====
 if not script_args.unsloth:
-    tokenizer = AutoTokenizer.from_pretrained(script_args.model_name_or_path, use_fast=False, padding_side="right")
+    tokenizer = AutoTokenizer.from_pretrained(script_args.model_name_or_path, use_fast=False, padding_side="right", model_max_length=script_args.seq_length)
 if tokenizer.pad_token is None:
     tokenizer.pad_token = tokenizer.eos_token   # following vicuna
 # print(tokenizer.eos_token)

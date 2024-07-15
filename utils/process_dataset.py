@@ -5,6 +5,7 @@ from .conversation import get_conv_template
 from functools import partial
 
 def get_dataset(dataset_name, local_data_dir=None):
+    supported_extensions = (".json", ".jsonl", ".parquet")
     if dataset_name in ["gsm8k"]:
         dataset_name = local_data_dir + dataset_name if local_data_dir is not None else dataset_name
         dataset = load_dataset(dataset_name, split="train", name="main")
@@ -14,7 +15,7 @@ def get_dataset(dataset_name, local_data_dir=None):
     elif dataset_name == "HuggingFaceH4/ultrafeedback_binarized":
         dataset_name = local_data_dir + dataset_name if local_data_dir is not None else dataset_name
         dataset = load_dataset(dataset_name, split="train_sft")
-    elif ".json" or ".jsonl" or ".parquet" in dataset_name:
+    elif dataset_name.endswith(supported_extensions):
         dataset = load_dataset(dataset_name.split(".")[1], data_files = dataset_name, split="train")
     else:
         dataset_name = local_data_dir + dataset_name if local_data_dir is not None else dataset_name
