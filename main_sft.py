@@ -38,6 +38,7 @@ sample_num_list = [len(local_datasets[i]) for i in range(fed_args.num_clients)]
 device_map, quantization_config, torch_dtype = get_model_config(script_args)
 
 if script_args.unsloth:
+    print("using unsloth model")
     model, tokenizer = get_unsloth_model(script_args)
 else:
     model = AutoModelForCausalLM.from_pretrained(

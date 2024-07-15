@@ -1,8 +1,8 @@
 max_steps=10
 num_rounds=50
-batch_size=16
-gradient_accumulation_steps=1
-seq_length=2048
+batch_size=32
+gradient_accumulation_steps=8
+seq_length=512
 num_clients=10
 sample_clients=2
 lora_r=16
@@ -10,9 +10,9 @@ lora_alpha=16   # twice of lora_r
 lr=5e-5
 
 # local_data_dir=""       # you may uncomment this line if your data is stored locally and include it in the python command
-dataset_name="neg"
+dataset_name="pos"
 dataset_sample=20000
-model_name_or_path="/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/" # /mnt/bn/data-tns-live-llm/leon/datasets/Meta-Llama-3-8B/
+model_name_or_path="/mnt/bn/data-tns-live-llm/leon/datasets/Meta-Llama-3-8B/" # /mnt/bn/data-tns-live-llm/leon/datasets/Meta-Llama-3-8B/ /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/
 output_dir="/mnt/bn/data-tns-live-llm/leon/datasets/fed" 
 
 gpu=1
@@ -37,6 +37,6 @@ CUDA_VISIBLE_DEVICES=$gpu python3 main_sft.py \
  --load_in_4bit \
  --output_dir $output_dir \
  --template "alpaca" \
- --unsloth 1 \
+ --unsloth 0 \
  --bf16 1 \
  --seq_length $seq_length
