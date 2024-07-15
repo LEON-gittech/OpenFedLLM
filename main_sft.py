@@ -21,15 +21,17 @@ training_args = get_training_args(script_args, script_args.learning_rate)
 save_config(script_args, fed_args)
 print(script_args, fed_args)
 
-# ===== Load the dataset =====
-# dataset = get_dataset(script_args.dataset_name, script_args.local_data_dir)
-# dataset = process_sft_dataset(script_args.dataset_name, dataset, script_args.dataset_sample) #对数据集做一些预处理
+if script_args.online_dataset:
+    # ===== Load the dataset =====
+    dataset = get_dataset(script_args.dataset_name, script_args.local_data_dir)
+    dataset = process_sft_dataset(script_args.dataset_name, dataset, script_args.dataset_sample) #对数据集做一些预处理
 
-# # ===== Split the dataset into clients =====
-# local_datasets = split_dataset(fed_args, script_args, dataset) #分给不同的客户端，目前只实现了 iid 分布
-local_datasets=[]
-for i in range(fed_args.num_clients):
-    local_datasets.append(load_from_disk(f"/mnt/bn/data-tns-live-llm/leon/datasets/fed_data/{script_args.dataset_name}_{i}.parquet"))
+    # ===== Split the dataset into clients =====
+    local_datasets = split_dataset(fed_args, script_args, dataset) #分给不同的客户端，目前只实现了 iid 分布
+else:
+    local_datasets=[]
+    for i in range(fed_args.num_clients):
+        local_datasets.append(load_from_disk(f"/mnt/bn/data-tns-live-llm/leon/datasets/fed_data/{script_args.dataset_name}_{i}.parquet"))
 sample_num_list = [len(local_datasets[i]) for i in range(fed_args.num_clients)]
 
 # ===== Get model config =====

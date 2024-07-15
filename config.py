@@ -63,6 +63,7 @@ class ScriptArguments:
     local_data_dir: Optional[str] = field(default=None, metadata={"help": "the local data directory if you want to use downloaded data"})
     unsloth: Optional[int] = field(default=1)
     bf16: Optional[int] = field(default=1)
+    online_dataset: Optional[int] = field(default=0)
 
 parser = HfArgumentParser((ScriptArguments, FedArguments))
 script_args, fed_args = parser.parse_args_into_dataclasses()

@@ -3,3 +3,136 @@
 Unsloth 2024.7 patched 32 layers with 32 QKV layers, 32 O layers and 32 MLP layers.
 /home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
   warnings.warn(
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 2,560 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 32 | Gradient Accumulation steps = 8
+\        /    Total batch size = 256 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='pos_nodup', log_with='none', learning_rate=5e-05, batch_size=32, seq_length=2048, gradient_accumulation_steps=8, load_in_8bit=False, load_in_4bit=True, use_peft=True, trust_remote_code=False, output_dir='/mnt/bn/data-tns-live-llm/leon/datasets/fed/pos_nodup_20000_fedavg_c10s2_i10_b32a8_l2048_r16a16', peft_lora_r=16, peft_lora_alpha=16, logging_steps=100, use_auth_token=False, num_train_epochs=3, max_steps=10, save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=2023, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=1) FedArguments(fed_alg='fedavg', num_rounds=50, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+==((====))==  Unsloth: Fast Llama patching release 2024.7
+   \\   /|    GPU: NVIDIA H100 80GB HBM3. Max memory: 79.109 GB. Platform = Linux.
+O^O/ \_/ \    Pytorch: 2.1.0+cu121. CUDA = 9.0. CUDA Toolkit = 12.1.
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.22.post7. FA2 = True]
+ "-____-"     Free Apache license: http://github.com/unslothai/unsloth
+>> ==================== Round 1 : [6, 9] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:24<03:38, 24.28s/it] 20%|██        | 2/10 [00:40<02:37, 19.67s/it] 30%|███       | 3/10 [01:09<02:46, 23.78s/it] 40%|████      | 4/10 [01:31<02:17, 23.00s/it] 50%|█████     | 5/10 [01:53<01:54, 22.87s/it] 60%|██████    | 6/10 [02:17<01:32, 23.04s/it] 70%|███████   | 7/10 [02:36<01:05, 21.80s/it] 80%|████████  | 8/10 [03:00<00:45, 22.54s/it] 90%|█████████ | 9/10 [03:23<00:22, 22.79s/it]100%|██████████| 10/10 [03:45<00:00, 22.35s/it]/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+                                               100%|██████████| 10/10 [03:48<00:00, 22.35s/it]100%|██████████| 10/10 [03:48<00:00, 22.81s/it]
+/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 2,560 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 32 | Gradient Accumulation steps = 8
+\        /    Total batch size = 256 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 228.1339, 'train_samples_per_second': 11.221, 'train_steps_per_second': 0.044, 'train_loss': 0.8638557434082031, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:13<02:00, 13.35s/it] 20%|██        | 2/10 [00:25<01:43, 12.90s/it] 30%|███       | 3/10 [00:40<01:35, 13.67s/it] 40%|████      | 4/10 [00:58<01:32, 15.42s/it] 50%|█████     | 5/10 [01:14<01:17, 15.42s/it] 60%|██████    | 6/10 [01:30<01:03, 15.89s/it] 70%|███████   | 7/10 [01:46<00:47, 15.78s/it] 80%|████████  | 8/10 [02:03<00:32, 16.21s/it] 90%|█████████ | 9/10 [02:24<00:17, 17.62s/it]100%|██████████| 10/10 [02:39<00:00, 16.86s/it]/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+                                               100%|██████████| 10/10 [02:42<00:00, 16.86s/it]100%|██████████| 10/10 [02:42<00:00, 16.22s/it]
+/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 2,560 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 32 | Gradient Accumulation steps = 8
+\        /    Total batch size = 256 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 162.2462, 'train_samples_per_second': 15.778, 'train_steps_per_second': 0.062, 'train_loss': 0.8431144714355469, 'epoch': 1.0}
+>> ==================== Round 2 : [1, 2] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:20<03:05, 20.57s/it] 20%|██        | 2/10 [00:42<02:49, 21.17s/it] 30%|███       | 3/10 [01:00<02:17, 19.70s/it] 40%|████      | 4/10 [01:23<02:07, 21.29s/it] 50%|█████     | 5/10 [01:45<01:47, 21.55s/it] 60%|██████    | 6/10 [02:12<01:33, 23.34s/it] 70%|███████   | 7/10 [02:34<01:08, 22.95s/it] 80%|████████  | 8/10 [02:59<00:46, 23.36s/it] 90%|█████████ | 9/10 [03:20<00:22, 22.66s/it]100%|██████████| 10/10 [03:37<00:00, 21.12s/it]/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+                                               100%|██████████| 10/10 [03:39<00:00, 21.12s/it]100%|██████████| 10/10 [03:39<00:00, 21.93s/it]
+/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 2,560 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 32 | Gradient Accumulation steps = 8
+\        /    Total batch size = 256 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 219.3459, 'train_samples_per_second': 11.671, 'train_steps_per_second': 0.046, 'train_loss': 0.7154426097869873, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:23<03:32, 23.57s/it] 20%|██        | 2/10 [00:41<02:43, 20.50s/it] 30%|███       | 3/10 [01:06<02:37, 22.57s/it] 40%|████      | 4/10 [01:29<02:14, 22.42s/it] 50%|█████     | 5/10 [01:46<01:43, 20.76s/it] 60%|██████    | 6/10 [02:12<01:29, 22.26s/it] 70%|███████   | 7/10 [02:30<01:03, 21.00s/it] 80%|████████  | 8/10 [03:01<00:48, 24.03s/it] 90%|█████████ | 9/10 [03:22<00:23, 23.27s/it]100%|██████████| 10/10 [03:41<00:00, 22.05s/it]/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+                                               100%|██████████| 10/10 [03:45<00:00, 22.05s/it]100%|██████████| 10/10 [03:45<00:00, 22.58s/it]
+/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 2,560 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 32 | Gradient Accumulation steps = 8
+\        /    Total batch size = 256 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 225.7525, 'train_samples_per_second': 11.34, 'train_steps_per_second': 0.044, 'train_loss': 0.7113688468933106, 'epoch': 1.0}
+>> ==================== Round 3 : [0, 1] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:26<03:59, 26.58s/it] 20%|██        | 2/10 [00:49<03:15, 24.46s/it] 30%|███       | 3/10 [01:07<02:30, 21.54s/it] 40%|████      | 4/10 [01:28<02:07, 21.32s/it] 50%|█████     | 5/10 [01:50<01:46, 21.39s/it] 60%|██████    | 6/10 [02:09<01:22, 20.66s/it] 70%|███████   | 7/10 [02:28<01:00, 20.13s/it] 80%|████████  | 8/10 [02:53<00:43, 21.82s/it] 90%|█████████ | 9/10 [03:19<00:23, 23.12s/it]100%|██████████| 10/10 [03:39<00:00, 22.20s/it]/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+                                               100%|██████████| 10/10 [03:41<00:00, 22.20s/it]100%|██████████| 10/10 [03:41<00:00, 22.13s/it]
+/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 2,560 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 32 | Gradient Accumulation steps = 8
+\        /    Total batch size = 256 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 221.3009, 'train_samples_per_second': 11.568, 'train_steps_per_second': 0.045, 'train_loss': 0.6588102340698242, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:22<03:23, 22.56s/it] 20%|██        | 2/10 [00:43<02:52, 21.58s/it] 30%|███       | 3/10 [01:06<02:35, 22.27s/it] 40%|████      | 4/10 [01:24<02:03, 20.63s/it] 50%|█████     | 5/10 [01:47<01:47, 21.50s/it] 60%|██████    | 6/10 [02:04<01:20, 20.04s/it] 70%|███████   | 7/10 [02:23<00:59, 19.68s/it] 80%|████████  | 8/10 [02:46<00:41, 20.57s/it] 90%|█████████ | 9/10 [03:07<00:20, 20.69s/it]100%|██████████| 10/10 [03:29<00:00, 21.27s/it]/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+                                               100%|██████████| 10/10 [03:32<00:00, 21.27s/it]100%|██████████| 10/10 [03:32<00:00, 21.23s/it]
+/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 2,560 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 32 | Gradient Accumulation steps = 8
+\        /    Total batch size = 256 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 212.2867, 'train_samples_per_second': 12.059, 'train_steps_per_second': 0.047, 'train_loss': 0.6589267730712891, 'epoch': 1.0}
+>> ==================== Round 4 : [3, 8] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:27<04:06, 27.42s/it] 20%|██        | 2/10 [00:50<03:20, 25.00s/it] 30%|███       | 3/10 [01:14<02:51, 24.48s/it] 40%|████      | 4/10 [01:30<02:07, 21.22s/it] 50%|█████     | 5/10 [01:48<01:40, 20.04s/it] 60%|██████    | 6/10 [02:08<01:19, 19.85s/it] 70%|███████   | 7/10 [02:30<01:02, 20.72s/it] 80%|████████  | 8/10 [02:54<00:43, 21.71s/it] 90%|█████████ | 9/10 [03:12<00:20, 20.54s/it]100%|██████████| 10/10 [03:35<00:00, 21.34s/it]/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+                                               100%|██████████| 10/10 [03:37<00:00, 21.34s/it]100%|██████████| 10/10 [03:37<00:00, 21.76s/it]
+/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 2,560 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 32 | Gradient Accumulation steps = 8
+\        /    Total batch size = 256 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 217.5799, 'train_samples_per_second': 11.766, 'train_steps_per_second': 0.046, 'train_loss': 0.6412454128265381, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:19<02:53, 19.29s/it] 20%|██        | 2/10 [00:38<02:33, 19.24s/it] 30%|███       | 3/10 [00:58<02:18, 19.77s/it] 40%|████      | 4/10 [01:25<02:14, 22.45s/it] 50%|█████     | 5/10 [01:42<01:42, 20.51s/it] 60%|██████    | 6/10 [02:05<01:25, 21.45s/it] 70%|███████   | 7/10 [02:26<01:03, 21.27s/it] 80%|████████  | 8/10 [02:47<00:42, 21.12s/it] 90%|█████████ | 9/10 [03:07<00:20, 20.73s/it]100%|██████████| 10/10 [03:29<00:00, 21.27s/it]/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+                                               100%|██████████| 10/10 [03:32<00:00, 21.27s/it]100%|██████████| 10/10 [03:32<00:00, 21.21s/it]
+/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 2,560 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 32 | Gradient Accumulation steps = 8
+\        /    Total batch size = 256 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 212.1, 'train_samples_per_second': 12.07, 'train_steps_per_second': 0.047, 'train_loss': 0.6522937297821045, 'epoch': 1.0}
+>> ==================== Round 5 : [3, 4] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:24<03:38, 24.24s/it]

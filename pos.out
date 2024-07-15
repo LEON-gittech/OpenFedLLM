@@ -1,0 +1,22 @@
+/home/tiger/.local/lib/python3.9/site-packages/bytedmetrics/__init__.py:10: UserWarning: bytedmetrics is renamed to bytedance.metrics, please using `bytedance.metrics` instead of `bytedmetrics`
+  warnings.warn("bytedmetrics is renamed to bytedance.metrics, please using `bytedance.metrics` instead of `bytedmetrics`")
+Unsloth 2024.7 patched 32 layers with 32 QKV layers, 32 O layers and 32 MLP layers.
+/home/tiger/.local/lib/python3.9/site-packages/peft/utils/save_and_load.py:195: UserWarning: Could not find a config file in /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ - will assume that the vocabulary was not modified.
+  warnings.warn(
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 2,560 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 32 | Gradient Accumulation steps = 8
+\        /    Total batch size = 256 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='pos', log_with='none', learning_rate=5e-05, batch_size=32, seq_length=2048, gradient_accumulation_steps=8, load_in_8bit=False, load_in_4bit=True, use_peft=True, trust_remote_code=False, output_dir='/mnt/bn/data-tns-live-llm/leon/datasets/fed/pos_20000_fedavg_c10s2_i10_b32a8_l2048_r16a16', peft_lora_r=16, peft_lora_alpha=16, logging_steps=100, use_auth_token=False, num_train_epochs=3, max_steps=10, save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=2023, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=1) FedArguments(fed_alg='fedavg', num_rounds=50, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+==((====))==  Unsloth: Fast Llama patching release 2024.7
+   \\   /|    GPU: NVIDIA H100 80GB HBM3. Max memory: 79.109 GB. Platform = Linux.
+O^O/ \_/ \    Pytorch: 2.1.0+cu121. CUDA = 9.0. CUDA Toolkit = 12.1.
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.22.post7. FA2 = True]
+ "-____-"     Free Apache license: http://github.com/unslothai/unsloth
+>> ==================== Round 1 : [6, 9] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:24<03:44, 24.96s/it] 20%|██        | 2/10 [00:44<02:56, 22.00s/it] 30%|███       | 3/10 [01:05<02:29, 21.29s/it] 40%|████      | 4/10 [01:24<02:02, 20.49s/it] 50%|█████     | 5/10 [01:46<01:45, 21.03s/it]
