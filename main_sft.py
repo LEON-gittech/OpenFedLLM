@@ -82,6 +82,9 @@ formatting_prompts_func, response_template = get_formatting_prompts_func(script_
 response_template_ids = tokenizer.encode(response_template, add_special_tokens=False)[2:]   # Now we have it like in the dataset texts: `[2277, 29937, 4007, 22137, 29901]` for Llama2
 data_collator = DataCollatorForCompletionOnlyLM(response_template_ids, tokenizer=tokenizer)
 
+if script_args.full_data:
+    client_data_modules = [make_supervised_data_module(tokenizer=tokenizer, dataset=client_dataset) for client_dataset in local_datasets]
+    print("client_data_modules ready!")
 # ===== Start federated training =====
 training_loss = [[] for i in range(fed_args.num_clients)]
 print(fed_args.num_rounds)
@@ -100,10 +103,12 @@ for round in (range(fed_args.num_rounds)):
         set_peft_model_state_dict(model, global_dict)   # sync the global model to the local model，更新本地模型的 lora 参数
 
         # sub_dataset = get_dataset_this_round(local_datasets[client], round, fed_args, script_args)      # get the required sub-dataset for this round， 随机采样，num2sample = script_args.batch_size * script_args.gradient_accumulation_steps * script_args.max_steps
-        sub_dataset = get_dataset_this_round_fewshot(local_datasets[client], round, fed_args, script_args) # few shot
-        # print("instruction", len(sub_dataset["instruction"]))
-        # print("response", len(sub_dataset["response"]))
-        data_module = make_supervised_data_module(tokenizer=tokenizer, dataset=sub_dataset)
+        if not script_args.full_data:
+            sub_dataset = get_dataset_this_round_fewshot(local_datasets[client], round, fed_args, script_args) # few shot
+            data_module = make_supervised_data_module(tokenizer=tokenizer, dataset=sub_dataset)
+        else:
+            sub_dataset = local_datasets[client]
+            data_module = client_data_modules[client]
         new_lr = cosine_learning_rate(round, fed_args.num_rounds, script_args.learning_rate, 1e-6)      # manually schedule the learning rate
         training_args = get_training_args(script_args, new_lr)
 
