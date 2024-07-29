@@ -8,7 +8,7 @@ from datasets import load_from_disk, load_dataset
 import torch
 from dataclasses import dataclass, field
 import sys
-sys.path.append("/opt/tiger/OpenFedLLM/utils")
+sys.path.append("/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/utils")
 from cherry_utils import *
 
 IGNORE_INDEX = -100

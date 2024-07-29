@@ -1,4 +1,5 @@
 import random
+from datasets import Dataset
 
 def split_dataset(fed_args, script_args, dataset):
     dataset = dataset.shuffle(seed=script_args.seed)        # Shuffle the dataset
@@ -16,4 +17,8 @@ def get_dataset_this_round(dataset, round, fed_args, script_args):
     random.seed(round)
     random_idx = random.sample(range(0, len(dataset)), num2sample)
     dataset_this_round = dataset.select(random_idx)
+    return dataset_this_round
+
+def get_dataset_this_round_fewshot(dataset: Dataset, round, fed_args, script_args):
+    dataset_this_round = dataset.shard(fed_args.num_rounds, round)
     return dataset_this_round
