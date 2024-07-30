@@ -104,7 +104,7 @@ for round in (range(fed_args.num_rounds)):
 
         # sub_dataset = get_dataset_this_round(local_datasets[client], round, fed_args, script_args)      # get the required sub-dataset for this round， 随机采样，num2sample = script_args.batch_size * script_args.gradient_accumulation_steps * script_args.max_steps
         if not script_args.full_data:
-            sub_dataset = get_dataset_this_round_fewshot(local_datasets[client], round, fed_args, script_args) # few shot
+            sub_dataset = get_dataset_this_round(local_datasets[client], round, fed_args, script_args) # few shot
             data_module = make_supervised_data_module(tokenizer=tokenizer, dataset=sub_dataset)
         else:
             sub_dataset = local_datasets[client]
