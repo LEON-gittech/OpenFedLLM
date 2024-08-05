@@ -1,0 +1,646 @@
+/home/tiger/.local/lib/python3.9/site-packages/bytedmetrics/__init__.py:10: UserWarning: bytedmetrics is renamed to bytedance.metrics, please using `bytedance.metrics` instead of `bytedmetrics`
+  warnings.warn("bytedmetrics is renamed to bytedance.metrics, please using `bytedance.metrics` instead of `bytedmetrics`")
+[2024-08-04 13:10:39,495] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Unsloth 2024.8 patched 32 layers with 32 QKV layers, 32 O layers and 32 MLP layers.
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.3
+[93m [WARNING] [0m using untested triton version (2.3.0), only 1.0.0 is known to be compatible
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='iid2niid_code_public_filter', log_with='none', learning_rate=5e-05, batch_size=16, seq_length=2048, gradient_accumulation_steps=2, load_in_8bit=False, load_in_4bit=True, use_peft=True, trust_remote_code=False, output_dir='/mnt/bn/data-tns-live-llm/leon/datasets/fed/iid2niid_code_public_filter_20000_fedavg_c10s2_i10_b16a2_l2048_r32a64_f0', peft_lora_r=32, peft_lora_alpha=64, logging_steps=100, use_auth_token=False, num_train_epochs=5, max_steps=10, save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=2023, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=1, online_dataset=0, full_data=0) FedArguments(fed_alg='fedavg', num_rounds=30, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+using unsloth model
+==((====))==  Unsloth 2024.8: Fast Llama patching. Transformers = 4.44.0.dev0.
+   \\   /|    GPU: NVIDIA H100 80GB HBM3. Max memory: 79.109 GB. Platform = Linux.
+O^O/ \_/ \    Pytorch: 2.3.0+cu121. CUDA = 9.0. CUDA Toolkit = 12.1.
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.26.post1. FA2 = False]
+ "-____-"     Free Apache license: http://github.com/unslothai/unsloth
+30
+>> ==================== Round 1 : [6, 9] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:32,  3.61s/it] 20%|██        | 2/10 [00:05<00:18,  2.32s/it] 30%|███       | 3/10 [00:06<00:13,  1.93s/it] 40%|████      | 4/10 [00:07<00:10,  1.68s/it] 50%|█████     | 5/10 [00:09<00:07,  1.54s/it] 60%|██████    | 6/10 [00:12<00:08,  2.03s/it] 70%|███████   | 7/10 [00:14<00:06,  2.17s/it] 80%|████████  | 8/10 [00:16<00:04,  2.04s/it] 90%|█████████ | 9/10 [00:17<00:01,  1.83s/it]100%|██████████| 10/10 [00:19<00:00,  1.70s/it]                                               100%|██████████| 10/10 [00:20<00:00,  1.70s/it]100%|██████████| 10/10 [00:20<00:00,  2.01s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 20.1393, 'train_samples_per_second': 15.889, 'train_steps_per_second': 0.497, 'train_loss': 0.8106601715087891, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.18s/it] 20%|██        | 2/10 [00:02<00:11,  1.40s/it] 30%|███       | 3/10 [00:04<00:10,  1.53s/it] 40%|████      | 4/10 [00:05<00:08,  1.48s/it] 50%|█████     | 5/10 [00:07<00:06,  1.38s/it] 60%|██████    | 6/10 [00:08<00:05,  1.33s/it] 70%|███████   | 7/10 [00:10<00:04,  1.66s/it] 80%|████████  | 8/10 [00:11<00:03,  1.57s/it] 90%|█████████ | 9/10 [00:14<00:01,  1.73s/it]100%|██████████| 10/10 [00:16<00:00,  1.91s/it]                                               100%|██████████| 10/10 [00:17<00:00,  1.91s/it]100%|██████████| 10/10 [00:17<00:00,  1.75s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 17.4858, 'train_samples_per_second': 18.301, 'train_steps_per_second': 0.572, 'train_loss': 0.8007026672363281, 'epoch': 1.0}
+>> ==================== Round 2 : [1, 2] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:11,  1.33s/it] 20%|██        | 2/10 [00:02<00:11,  1.44s/it] 30%|███       | 3/10 [00:04<00:09,  1.38s/it] 40%|████      | 4/10 [00:05<00:07,  1.19s/it] 50%|█████     | 5/10 [00:05<00:05,  1.08s/it] 60%|██████    | 6/10 [00:07<00:04,  1.23s/it] 70%|███████   | 7/10 [00:08<00:03,  1.15s/it] 80%|████████  | 8/10 [00:09<00:02,  1.07s/it] 90%|█████████ | 9/10 [00:10<00:00,  1.03it/s]100%|██████████| 10/10 [00:11<00:00,  1.01it/s]                                               100%|██████████| 10/10 [00:12<00:00,  1.01it/s]100%|██████████| 10/10 [00:12<00:00,  1.25s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 12.4843, 'train_samples_per_second': 25.632, 'train_steps_per_second': 0.801, 'train_loss': 0.682206392288208, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:11,  1.26s/it] 20%|██        | 2/10 [00:06<00:27,  3.41s/it] 30%|███       | 3/10 [00:07<00:15,  2.24s/it] 40%|████      | 4/10 [00:08<00:10,  1.79s/it] 50%|█████     | 5/10 [00:09<00:07,  1.50s/it] 60%|██████    | 6/10 [00:10<00:05,  1.38s/it] 70%|███████   | 7/10 [00:11<00:04,  1.48s/it] 80%|████████  | 8/10 [00:12<00:02,  1.35s/it] 90%|█████████ | 9/10 [00:13<00:01,  1.20s/it]100%|██████████| 10/10 [00:15<00:00,  1.18s/it]                                               100%|██████████| 10/10 [00:16<00:00,  1.18s/it]100%|██████████| 10/10 [00:16<00:00,  1.70s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 16.9749, 'train_samples_per_second': 18.851, 'train_steps_per_second': 0.589, 'train_loss': 0.685447883605957, 'epoch': 1.0}
+>> ==================== Round 3 : [0, 1] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.19s/it] 20%|██        | 2/10 [00:02<00:08,  1.09s/it] 30%|███       | 3/10 [00:03<00:07,  1.02s/it] 40%|████      | 4/10 [00:04<00:05,  1.03it/s] 50%|█████     | 5/10 [00:04<00:04,  1.05it/s] 60%|██████    | 6/10 [00:05<00:03,  1.05it/s] 70%|███████   | 7/10 [00:06<00:02,  1.03it/s] 80%|████████  | 8/10 [00:07<00:01,  1.06it/s] 90%|█████████ | 9/10 [00:09<00:01,  1.06s/it]100%|██████████| 10/10 [00:10<00:00,  1.05s/it]                                               100%|██████████| 10/10 [00:11<00:00,  1.05s/it]100%|██████████| 10/10 [00:11<00:00,  1.19s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 11.9374, 'train_samples_per_second': 26.807, 'train_steps_per_second': 0.838, 'train_loss': 0.5971868991851806, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.19s/it] 20%|██        | 2/10 [00:02<00:08,  1.05s/it] 30%|███       | 3/10 [00:03<00:07,  1.06s/it] 40%|████      | 4/10 [00:04<00:05,  1.02it/s] 50%|█████     | 5/10 [00:05<00:04,  1.01it/s] 60%|██████    | 6/10 [00:06<00:04,  1.14s/it] 70%|███████   | 7/10 [00:07<00:03,  1.13s/it] 80%|████████  | 8/10 [00:08<00:02,  1.07s/it] 90%|█████████ | 9/10 [00:09<00:01,  1.06s/it]100%|██████████| 10/10 [00:11<00:00,  1.23s/it]                                               100%|██████████| 10/10 [00:16<00:00,  1.23s/it]100%|██████████| 10/10 [00:16<00:00,  1.64s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 16.4051, 'train_samples_per_second': 19.506, 'train_steps_per_second': 0.61, 'train_loss': 0.6067023277282715, 'epoch': 1.0}
+>> ==================== Round 4 : [3, 8] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.20s/it] 20%|██        | 2/10 [00:02<00:08,  1.07s/it] 30%|███       | 3/10 [00:03<00:07,  1.00s/it] 40%|████      | 4/10 [00:04<00:07,  1.19s/it] 50%|█████     | 5/10 [00:05<00:05,  1.16s/it] 60%|██████    | 6/10 [00:06<00:04,  1.07s/it] 70%|███████   | 7/10 [00:07<00:03,  1.09s/it] 80%|████████  | 8/10 [00:08<00:02,  1.12s/it] 90%|█████████ | 9/10 [00:10<00:01,  1.15s/it]100%|██████████| 10/10 [00:11<00:00,  1.23s/it]                                               100%|██████████| 10/10 [00:13<00:00,  1.23s/it]100%|██████████| 10/10 [00:13<00:00,  1.36s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 13.579, 'train_samples_per_second': 23.566, 'train_steps_per_second': 0.736, 'train_loss': 0.6366969108581543, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.21s/it] 20%|██        | 2/10 [00:02<00:11,  1.40s/it] 30%|███       | 3/10 [00:03<00:09,  1.29s/it] 40%|████      | 4/10 [00:05<00:07,  1.24s/it] 50%|█████     | 5/10 [00:06<00:06,  1.29s/it] 60%|██████    | 6/10 [00:08<00:06,  1.63s/it] 70%|███████   | 7/10 [00:10<00:05,  1.78s/it] 80%|████████  | 8/10 [00:11<00:03,  1.56s/it] 90%|█████████ | 9/10 [00:13<00:01,  1.51s/it]100%|██████████| 10/10 [00:15<00:00,  1.79s/it]                                               100%|██████████| 10/10 [00:17<00:00,  1.79s/it]100%|██████████| 10/10 [00:17<00:00,  1.78s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 17.8124, 'train_samples_per_second': 17.965, 'train_steps_per_second': 0.561, 'train_loss': 0.7315691947937012, 'epoch': 1.0}
+>> ==================== Round 5 : [3, 4] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:08,  1.07it/s] 20%|██        | 2/10 [00:02<00:09,  1.14s/it] 30%|███       | 3/10 [00:03<00:09,  1.31s/it] 40%|████      | 4/10 [00:04<00:07,  1.18s/it] 50%|█████     | 5/10 [00:05<00:05,  1.12s/it] 60%|██████    | 6/10 [00:06<00:04,  1.06s/it] 70%|███████   | 7/10 [00:07<00:03,  1.04s/it] 80%|████████  | 8/10 [00:09<00:02,  1.24s/it] 90%|█████████ | 9/10 [00:10<00:01,  1.18s/it]100%|██████████| 10/10 [00:11<00:00,  1.08s/it]                                               100%|██████████| 10/10 [00:12<00:00,  1.08s/it]100%|██████████| 10/10 [00:12<00:00,  1.29s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 12.8662, 'train_samples_per_second': 24.871, 'train_steps_per_second': 0.777, 'train_loss': 0.6258508205413819, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:14,  1.67s/it] 20%|██        | 2/10 [00:03<00:14,  1.76s/it] 30%|███       | 3/10 [00:05<00:12,  1.73s/it] 40%|████      | 4/10 [00:07<00:10,  1.78s/it] 50%|█████     | 5/10 [00:08<00:08,  1.63s/it] 60%|██████    | 6/10 [00:09<00:06,  1.57s/it] 70%|███████   | 7/10 [00:11<00:05,  1.73s/it] 80%|████████  | 8/10 [00:13<00:03,  1.59s/it] 90%|█████████ | 9/10 [00:15<00:01,  1.74s/it]100%|██████████| 10/10 [00:16<00:00,  1.64s/it]                                               100%|██████████| 10/10 [00:19<00:00,  1.64s/it]100%|██████████| 10/10 [00:19<00:00,  1.94s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 19.4448, 'train_samples_per_second': 16.457, 'train_steps_per_second': 0.514, 'train_loss': 0.8340360641479492, 'epoch': 1.0}
+>> ==================== Round 6 : [4, 9] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:15,  1.76s/it] 20%|██        | 2/10 [00:04<00:16,  2.07s/it] 30%|███       | 3/10 [00:06<00:16,  2.29s/it] 40%|████      | 4/10 [00:08<00:12,  2.10s/it] 50%|█████     | 5/10 [00:10<00:10,  2.02s/it] 60%|██████    | 6/10 [00:12<00:08,  2.08s/it] 70%|███████   | 7/10 [00:15<00:07,  2.35s/it] 80%|████████  | 8/10 [00:18<00:04,  2.45s/it] 90%|█████████ | 9/10 [00:19<00:02,  2.28s/it]100%|██████████| 10/10 [00:21<00:00,  2.13s/it]                                               100%|██████████| 10/10 [00:23<00:00,  2.13s/it]100%|██████████| 10/10 [00:23<00:00,  2.34s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 23.4328, 'train_samples_per_second': 13.656, 'train_steps_per_second': 0.427, 'train_loss': 0.7181596279144287, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.17s/it] 20%|██        | 2/10 [00:02<00:08,  1.08s/it] 30%|███       | 3/10 [00:03<00:09,  1.40s/it] 40%|████      | 4/10 [00:05<00:07,  1.27s/it] 50%|█████     | 5/10 [00:06<00:06,  1.24s/it] 60%|██████    | 6/10 [00:07<00:04,  1.09s/it] 70%|███████   | 7/10 [00:08<00:03,  1.22s/it] 80%|████████  | 8/10 [00:09<00:02,  1.30s/it] 90%|█████████ | 9/10 [00:11<00:01,  1.22s/it]100%|██████████| 10/10 [00:12<00:00,  1.38s/it]                                               100%|██████████| 10/10 [00:15<00:00,  1.38s/it]100%|██████████| 10/10 [00:15<00:00,  1.52s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 15.2306, 'train_samples_per_second': 21.01, 'train_steps_per_second': 0.657, 'train_loss': 0.6191369533538819, 'epoch': 1.0}
+>> ==================== Round 7 : [1, 9] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:17,  2.00s/it] 20%|██        | 2/10 [00:03<00:11,  1.46s/it] 30%|███       | 3/10 [00:04<00:10,  1.44s/it] 40%|████      | 4/10 [00:05<00:08,  1.45s/it] 50%|█████     | 5/10 [00:07<00:07,  1.46s/it] 60%|██████    | 6/10 [00:12<00:11,  2.81s/it] 70%|███████   | 7/10 [00:19<00:12,  4.12s/it] 80%|████████  | 8/10 [00:25<00:09,  4.81s/it] 90%|█████████ | 9/10 [00:32<00:05,  5.31s/it]100%|██████████| 10/10 [00:38<00:00,  5.41s/it]                                               100%|██████████| 10/10 [00:39<00:00,  5.41s/it]100%|██████████| 10/10 [00:39<00:00,  3.94s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 39.4495, 'train_samples_per_second': 8.112, 'train_steps_per_second': 0.253, 'train_loss': 0.5863649368286132, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:13,  1.51s/it] 20%|██        | 2/10 [00:03<00:12,  1.62s/it] 30%|███       | 3/10 [00:05<00:12,  1.75s/it] 40%|████      | 4/10 [00:06<00:08,  1.50s/it] 50%|█████     | 5/10 [00:09<00:10,  2.04s/it] 60%|██████    | 6/10 [00:14<00:12,  3.22s/it] 70%|███████   | 7/10 [00:18<00:10,  3.53s/it] 80%|████████  | 8/10 [00:22<00:07,  3.68s/it] 90%|█████████ | 9/10 [00:26<00:03,  3.71s/it]100%|██████████| 10/10 [00:30<00:00,  3.78s/it]                                               100%|██████████| 10/10 [00:43<00:00,  3.78s/it]100%|██████████| 10/10 [00:43<00:00,  4.33s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 43.3523, 'train_samples_per_second': 7.381, 'train_steps_per_second': 0.231, 'train_loss': 0.5988491535186767, 'epoch': 1.0}
+>> ==================== Round 8 : [2, 5] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:11,  1.33s/it] 20%|██        | 2/10 [00:02<00:08,  1.12s/it] 30%|███       | 3/10 [00:06<00:18,  2.71s/it] 40%|████      | 4/10 [00:13<00:25,  4.27s/it] 50%|█████     | 5/10 [00:19<00:24,  4.83s/it] 60%|██████    | 6/10 [00:25<00:21,  5.30s/it] 70%|███████   | 7/10 [00:31<00:16,  5.62s/it] 80%|████████  | 8/10 [00:34<00:09,  4.73s/it] 90%|█████████ | 9/10 [00:35<00:03,  3.61s/it]100%|██████████| 10/10 [00:36<00:00,  2.83s/it]                                               100%|██████████| 10/10 [00:38<00:00,  2.83s/it]100%|██████████| 10/10 [00:38<00:00,  3.84s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 38.3832, 'train_samples_per_second': 8.337, 'train_steps_per_second': 0.261, 'train_loss': 0.6198291778564453, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:23,  2.57s/it] 20%|██        | 2/10 [00:04<00:15,  1.98s/it] 30%|███       | 3/10 [00:08<00:21,  3.02s/it] 40%|████      | 4/10 [00:13<00:22,  3.76s/it] 50%|█████     | 5/10 [00:18<00:21,  4.30s/it] 60%|██████    | 6/10 [00:22<00:17,  4.35s/it] 70%|███████   | 7/10 [00:27<00:12,  4.32s/it] 80%|████████  | 8/10 [00:32<00:09,  4.73s/it] 90%|█████████ | 9/10 [00:37<00:04,  4.79s/it]100%|██████████| 10/10 [00:39<00:00,  3.91s/it]                                               100%|██████████| 10/10 [00:41<00:00,  3.91s/it]100%|██████████| 10/10 [00:41<00:00,  4.13s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 41.2611, 'train_samples_per_second': 7.755, 'train_steps_per_second': 0.242, 'train_loss': 0.6163761138916015, 'epoch': 1.0}
+>> ==================== Round 9 : [3, 5] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:27,  3.07s/it] 20%|██        | 2/10 [00:04<00:16,  2.07s/it] 30%|███       | 3/10 [00:05<00:11,  1.59s/it] 40%|████      | 4/10 [00:09<00:15,  2.67s/it] 50%|█████     | 5/10 [00:14<00:17,  3.51s/it] 60%|██████    | 6/10 [00:20<00:16,  4.10s/it] 70%|███████   | 7/10 [00:25<00:13,  4.58s/it] 80%|████████  | 8/10 [00:30<00:09,  4.65s/it] 90%|█████████ | 9/10 [00:36<00:05,  5.07s/it]100%|██████████| 10/10 [00:42<00:00,  5.49s/it]                                               100%|██████████| 10/10 [00:51<00:00,  5.49s/it]100%|██████████| 10/10 [00:51<00:00,  5.17s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 51.7159, 'train_samples_per_second': 6.188, 'train_steps_per_second': 0.193, 'train_loss': 0.5553579330444336, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:24,  2.67s/it] 20%|██        | 2/10 [00:05<00:22,  2.76s/it] 30%|███       | 3/10 [00:07<00:15,  2.23s/it] 40%|████      | 4/10 [00:10<00:16,  2.78s/it] 50%|█████     | 5/10 [00:15<00:18,  3.61s/it] 60%|██████    | 6/10 [00:21<00:17,  4.41s/it] 70%|███████   | 7/10 [00:28<00:15,  5.16s/it] 80%|████████  | 8/10 [00:35<00:11,  5.63s/it] 90%|█████████ | 9/10 [00:41<00:05,  5.93s/it]100%|██████████| 10/10 [00:48<00:00,  6.27s/it]                                               100%|██████████| 10/10 [00:59<00:00,  6.27s/it]100%|██████████| 10/10 [00:59<00:00,  5.96s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 59.6169, 'train_samples_per_second': 5.368, 'train_steps_per_second': 0.168, 'train_loss': 0.6498292446136474, 'epoch': 1.0}
+>> ==================== Round 10 : [5, 7] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:40,  4.55s/it] 20%|██        | 2/10 [00:06<00:22,  2.86s/it] 30%|███       | 3/10 [00:10<00:23,  3.38s/it] 40%|████      | 4/10 [00:11<00:15,  2.50s/it] 50%|█████     | 5/10 [00:16<00:17,  3.42s/it] 60%|██████    | 6/10 [00:20<00:15,  3.75s/it] 70%|███████   | 7/10 [00:25<00:11,  4.00s/it] 80%|████████  | 8/10 [00:29<00:07,  3.97s/it] 90%|█████████ | 9/10 [00:34<00:04,  4.23s/it]100%|██████████| 10/10 [00:39<00:00,  4.62s/it]                                               100%|██████████| 10/10 [00:48<00:00,  4.62s/it]100%|██████████| 10/10 [00:48<00:00,  4.83s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 48.3095, 'train_samples_per_second': 6.624, 'train_steps_per_second': 0.207, 'train_loss': 0.63084716796875, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:18,  2.11s/it] 20%|██        | 2/10 [00:03<00:15,  1.98s/it] 30%|███       | 3/10 [00:05<00:12,  1.77s/it] 40%|████      | 4/10 [00:07<00:09,  1.66s/it] 50%|█████     | 5/10 [00:08<00:08,  1.65s/it] 60%|██████    | 6/10 [00:13<00:10,  2.61s/it] 70%|███████   | 7/10 [00:20<00:12,  4.11s/it] 80%|████████  | 8/10 [00:27<00:10,  5.10s/it] 90%|█████████ | 9/10 [00:33<00:05,  5.41s/it]100%|██████████| 10/10 [00:38<00:00,  5.38s/it]                                               100%|██████████| 10/10 [00:51<00:00,  5.38s/it]100%|██████████| 10/10 [00:51<00:00,  5.15s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 51.5469, 'train_samples_per_second': 6.208, 'train_steps_per_second': 0.194, 'train_loss': 0.6357040405273438, 'epoch': 1.0}
+>> ==================== Round 11 : [0, 9] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:07,  1.13it/s] 20%|██        | 2/10 [00:01<00:07,  1.04it/s] 30%|███       | 3/10 [00:02<00:06,  1.03it/s] 40%|████      | 4/10 [00:03<00:05,  1.14it/s] 50%|█████     | 5/10 [00:04<00:04,  1.09it/s] 60%|██████    | 6/10 [00:05<00:03,  1.00it/s] 70%|███████   | 7/10 [00:07<00:03,  1.12s/it] 80%|████████  | 8/10 [00:08<00:02,  1.06s/it] 90%|█████████ | 9/10 [00:08<00:00,  1.01it/s]100%|██████████| 10/10 [00:09<00:00,  1.04it/s]                                               100%|██████████| 10/10 [00:15<00:00,  1.04it/s]100%|██████████| 10/10 [00:15<00:00,  1.58s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 15.8462, 'train_samples_per_second': 20.194, 'train_steps_per_second': 0.631, 'train_loss': 0.6137847423553466, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.17s/it] 20%|██        | 2/10 [00:02<00:11,  1.41s/it] 30%|███       | 3/10 [00:03<00:09,  1.29s/it] 40%|████      | 4/10 [00:05<00:07,  1.23s/it] 50%|█████     | 5/10 [00:06<00:06,  1.21s/it] 60%|██████    | 6/10 [00:07<00:04,  1.17s/it] 70%|███████   | 7/10 [00:09<00:04,  1.35s/it] 80%|████████  | 8/10 [00:10<00:02,  1.31s/it] 90%|█████████ | 9/10 [00:11<00:01,  1.31s/it]100%|██████████| 10/10 [00:12<00:00,  1.24s/it]                                               100%|██████████| 10/10 [00:14<00:00,  1.24s/it]100%|██████████| 10/10 [00:14<00:00,  1.44s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 14.3716, 'train_samples_per_second': 22.266, 'train_steps_per_second': 0.696, 'train_loss': 0.5985870361328125, 'epoch': 1.0}
+>> ==================== Round 12 : [7, 8] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.17s/it] 20%|██        | 2/10 [00:02<00:09,  1.25s/it] 30%|███       | 3/10 [00:03<00:09,  1.34s/it] 40%|████      | 4/10 [00:05<00:08,  1.34s/it] 50%|█████     | 5/10 [00:06<00:07,  1.47s/it] 60%|██████    | 6/10 [00:08<00:06,  1.66s/it] 70%|███████   | 7/10 [00:11<00:05,  1.77s/it] 80%|████████  | 8/10 [00:13<00:03,  1.99s/it] 90%|█████████ | 9/10 [00:14<00:01,  1.74s/it]100%|██████████| 10/10 [00:16<00:00,  1.90s/it]                                               100%|██████████| 10/10 [00:18<00:00,  1.90s/it]100%|██████████| 10/10 [00:18<00:00,  1.85s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 18.5441, 'train_samples_per_second': 17.256, 'train_steps_per_second': 0.539, 'train_loss': 0.6526097774505615, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:12,  1.35s/it] 20%|██        | 2/10 [00:03<00:12,  1.61s/it] 30%|███       | 3/10 [00:05<00:14,  2.07s/it] 40%|████      | 4/10 [00:07<00:11,  1.89s/it] 50%|█████     | 5/10 [00:08<00:08,  1.75s/it] 60%|██████    | 6/10 [00:10<00:06,  1.69s/it] 70%|███████   | 7/10 [00:12<00:05,  1.74s/it] 80%|████████  | 8/10 [00:14<00:03,  1.95s/it] 90%|█████████ | 9/10 [00:16<00:01,  1.95s/it]100%|██████████| 10/10 [00:18<00:00,  1.98s/it]                                               100%|██████████| 10/10 [00:20<00:00,  1.98s/it]100%|██████████| 10/10 [00:20<00:00,  2.02s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 20.1677, 'train_samples_per_second': 15.867, 'train_steps_per_second': 0.496, 'train_loss': 0.6223928928375244, 'epoch': 1.0}
+>> ==================== Round 13 : [4, 7] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:17,  1.95s/it] 20%|██        | 2/10 [00:04<00:16,  2.09s/it] 30%|███       | 3/10 [00:06<00:16,  2.36s/it] 40%|████      | 4/10 [00:08<00:11,  1.98s/it] 50%|█████     | 5/10 [00:09<00:08,  1.79s/it] 60%|██████    | 6/10 [00:11<00:07,  1.75s/it] 70%|███████   | 7/10 [00:14<00:06,  2.09s/it] 80%|████████  | 8/10 [00:16<00:04,  2.18s/it] 90%|█████████ | 9/10 [00:17<00:01,  1.85s/it]100%|██████████| 10/10 [00:21<00:00,  2.37s/it]                                               100%|██████████| 10/10 [00:22<00:00,  2.37s/it]100%|██████████| 10/10 [00:22<00:00,  2.26s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 22.5866, 'train_samples_per_second': 14.168, 'train_steps_per_second': 0.443, 'train_loss': 0.631524133682251, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:21,  2.39s/it] 20%|██        | 2/10 [00:04<00:18,  2.36s/it] 30%|███       | 3/10 [00:06<00:15,  2.22s/it] 40%|████      | 4/10 [00:08<00:11,  1.88s/it] 50%|█████     | 5/10 [00:09<00:07,  1.59s/it] 60%|██████    | 6/10 [00:13<00:09,  2.37s/it] 70%|███████   | 7/10 [00:15<00:06,  2.23s/it] 80%|████████  | 8/10 [00:17<00:04,  2.28s/it] 90%|█████████ | 9/10 [00:18<00:01,  1.96s/it]100%|██████████| 10/10 [00:21<00:00,  2.24s/it]                                               100%|██████████| 10/10 [00:23<00:00,  2.24s/it]100%|██████████| 10/10 [00:23<00:00,  2.33s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 23.2629, 'train_samples_per_second': 13.756, 'train_steps_per_second': 0.43, 'train_loss': 0.6269361019134522, 'epoch': 1.0}
+>> ==================== Round 14 : [4, 9] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:14,  1.58s/it] 20%|██        | 2/10 [00:03<00:14,  1.83s/it] 30%|███       | 3/10 [00:05<00:12,  1.74s/it] 40%|████      | 4/10 [00:06<00:09,  1.56s/it] 50%|█████     | 5/10 [00:08<00:08,  1.66s/it] 60%|██████    | 6/10 [00:11<00:08,  2.15s/it] 70%|███████   | 7/10 [00:13<00:06,  2.18s/it] 80%|████████  | 8/10 [00:15<00:04,  2.04s/it] 90%|█████████ | 9/10 [00:18<00:02,  2.22s/it]100%|██████████| 10/10 [00:19<00:00,  2.14s/it]                                               100%|██████████| 10/10 [00:21<00:00,  2.14s/it]100%|██████████| 10/10 [00:21<00:00,  2.17s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 21.6698, 'train_samples_per_second': 14.767, 'train_steps_per_second': 0.461, 'train_loss': 0.6803750991821289, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:16,  1.85s/it] 20%|██        | 2/10 [00:04<00:20,  2.55s/it] 30%|███       | 3/10 [00:05<00:12,  1.86s/it] 40%|████      | 4/10 [00:07<00:10,  1.78s/it] 50%|█████     | 5/10 [00:08<00:07,  1.57s/it] 60%|██████    | 6/10 [00:10<00:06,  1.56s/it] 70%|███████   | 7/10 [00:12<00:04,  1.63s/it] 80%|████████  | 8/10 [00:13<00:03,  1.56s/it] 90%|█████████ | 9/10 [00:15<00:01,  1.79s/it]100%|██████████| 10/10 [00:16<00:00,  1.52s/it]                                               100%|██████████| 10/10 [00:18<00:00,  1.52s/it]100%|██████████| 10/10 [00:18<00:00,  1.82s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 18.1799, 'train_samples_per_second': 17.602, 'train_steps_per_second': 0.55, 'train_loss': 0.562397050857544, 'epoch': 1.0}
+>> ==================== Round 15 : [1, 8] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:19,  2.16s/it] 20%|██        | 2/10 [00:03<00:13,  1.74s/it] 30%|███       | 3/10 [00:04<00:09,  1.35s/it] 40%|████      | 4/10 [00:05<00:07,  1.26s/it] 50%|█████     | 5/10 [00:06<00:06,  1.29s/it] 60%|██████    | 6/10 [00:07<00:04,  1.19s/it] 70%|███████   | 7/10 [00:08<00:03,  1.09s/it] 80%|████████  | 8/10 [00:09<00:02,  1.07s/it] 90%|█████████ | 9/10 [00:11<00:01,  1.24s/it]100%|██████████| 10/10 [00:12<00:00,  1.22s/it]                                               100%|██████████| 10/10 [00:14<00:00,  1.22s/it]100%|██████████| 10/10 [00:14<00:00,  1.41s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 14.1172, 'train_samples_per_second': 22.667, 'train_steps_per_second': 0.708, 'train_loss': 0.60464506149292, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:19,  2.18s/it] 20%|██        | 2/10 [00:04<00:16,  2.09s/it] 30%|███       | 3/10 [00:06<00:16,  2.32s/it] 40%|████      | 4/10 [00:07<00:11,  1.85s/it] 50%|█████     | 5/10 [00:09<00:09,  1.84s/it] 60%|██████    | 6/10 [00:11<00:06,  1.71s/it] 70%|███████   | 7/10 [00:12<00:04,  1.50s/it] 80%|████████  | 8/10 [00:13<00:02,  1.37s/it] 90%|█████████ | 9/10 [00:14<00:01,  1.33s/it]100%|██████████| 10/10 [00:15<00:00,  1.32s/it]                                               100%|██████████| 10/10 [00:17<00:00,  1.32s/it]100%|██████████| 10/10 [00:17<00:00,  1.76s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 17.5888, 'train_samples_per_second': 18.193, 'train_steps_per_second': 0.569, 'train_loss': 0.6502594470977783, 'epoch': 1.0}
+>> ==================== Round 16 : [0, 3] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:08,  1.02it/s] 20%|██        | 2/10 [00:02<00:08,  1.06s/it] 30%|███       | 3/10 [00:02<00:06,  1.06it/s] 40%|████      | 4/10 [00:03<00:05,  1.11it/s] 50%|█████     | 5/10 [00:04<00:04,  1.02it/s] 60%|██████    | 6/10 [00:05<00:04,  1.03s/it] 70%|███████   | 7/10 [00:07<00:03,  1.33s/it] 80%|████████  | 8/10 [00:09<00:02,  1.34s/it] 90%|█████████ | 9/10 [00:10<00:01,  1.35s/it]100%|██████████| 10/10 [00:12<00:00,  1.44s/it]                                               100%|██████████| 10/10 [00:13<00:00,  1.44s/it]100%|██████████| 10/10 [00:13<00:00,  1.38s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 13.7831, 'train_samples_per_second': 23.217, 'train_steps_per_second': 0.726, 'train_loss': 0.5005702495574951, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:26,  2.93s/it] 20%|██        | 2/10 [00:03<00:13,  1.75s/it] 30%|███       | 3/10 [00:04<00:09,  1.40s/it] 40%|████      | 4/10 [00:05<00:07,  1.27s/it] 50%|█████     | 5/10 [00:07<00:06,  1.28s/it] 60%|██████    | 6/10 [00:08<00:04,  1.17s/it] 70%|███████   | 7/10 [00:09<00:03,  1.16s/it] 80%|████████  | 8/10 [00:10<00:02,  1.13s/it] 90%|█████████ | 9/10 [00:11<00:01,  1.10s/it]100%|██████████| 10/10 [00:12<00:00,  1.07s/it]                                               100%|██████████| 10/10 [00:14<00:00,  1.07s/it]100%|██████████| 10/10 [00:14<00:00,  1.41s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 14.1033, 'train_samples_per_second': 22.69, 'train_steps_per_second': 0.709, 'train_loss': 0.5748507499694824, 'epoch': 1.0}
+>> ==================== Round 17 : [5, 7] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.17s/it] 20%|██        | 2/10 [00:04<00:18,  2.37s/it] 30%|███       | 3/10 [00:06<00:14,  2.12s/it] 40%|████      | 4/10 [00:08<00:12,  2.06s/it] 50%|█████     | 5/10 [00:10<00:10,  2.01s/it] 60%|██████    | 6/10 [00:12<00:07,  1.98s/it] 70%|███████   | 7/10 [00:13<00:05,  1.80s/it] 80%|████████  | 8/10 [00:15<00:03,  1.78s/it] 90%|█████████ | 9/10 [00:16<00:01,  1.62s/it]100%|██████████| 10/10 [00:19<00:00,  1.92s/it]                                               100%|██████████| 10/10 [00:23<00:00,  1.92s/it]100%|██████████| 10/10 [00:23<00:00,  2.35s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 23.5007, 'train_samples_per_second': 13.617, 'train_steps_per_second': 0.426, 'train_loss': 0.5947420120239257, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:21,  2.39s/it] 20%|██        | 2/10 [00:06<00:27,  3.42s/it] 30%|███       | 3/10 [00:08<00:19,  2.85s/it] 40%|████      | 4/10 [00:11<00:17,  2.97s/it] 50%|█████     | 5/10 [00:13<00:12,  2.43s/it] 60%|██████    | 6/10 [00:15<00:08,  2.19s/it] 70%|███████   | 7/10 [00:16<00:05,  1.89s/it] 80%|████████  | 8/10 [00:17<00:03,  1.77s/it] 90%|█████████ | 9/10 [00:19<00:01,  1.81s/it]100%|██████████| 10/10 [00:20<00:00,  1.61s/it]                                               100%|██████████| 10/10 [00:22<00:00,  1.61s/it]100%|██████████| 10/10 [00:22<00:00,  2.26s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 22.5682, 'train_samples_per_second': 14.179, 'train_steps_per_second': 0.443, 'train_loss': 0.6287251472473144, 'epoch': 1.0}
+>> ==================== Round 18 : [6, 8] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:22,  2.48s/it] 20%|██        | 2/10 [00:05<00:23,  2.94s/it] 30%|███       | 3/10 [00:07<00:17,  2.52s/it] 40%|████      | 4/10 [00:10<00:14,  2.47s/it] 50%|█████     | 5/10 [00:11<00:10,  2.03s/it] 60%|██████    | 6/10 [00:12<00:07,  1.86s/it] 70%|███████   | 7/10 [00:14<00:05,  1.85s/it] 80%|████████  | 8/10 [00:16<00:03,  1.86s/it] 90%|█████████ | 9/10 [00:18<00:01,  1.94s/it]100%|██████████| 10/10 [00:19<00:00,  1.68s/it]                                               100%|██████████| 10/10 [00:21<00:00,  1.68s/it]100%|██████████| 10/10 [00:21<00:00,  2.13s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 21.2559, 'train_samples_per_second': 15.055, 'train_steps_per_second': 0.47, 'train_loss': 0.5570930480957031, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:14,  1.58s/it] 20%|██        | 2/10 [00:03<00:15,  1.93s/it] 30%|███       | 3/10 [00:04<00:11,  1.60s/it] 40%|████      | 4/10 [00:06<00:08,  1.46s/it] 50%|█████     | 5/10 [00:09<00:09,  1.99s/it] 60%|██████    | 6/10 [00:11<00:08,  2.20s/it] 70%|███████   | 7/10 [00:13<00:05,  1.95s/it] 80%|████████  | 8/10 [00:14<00:03,  1.88s/it] 90%|█████████ | 9/10 [00:15<00:01,  1.62s/it]100%|██████████| 10/10 [00:17<00:00,  1.65s/it]                                               100%|██████████| 10/10 [00:19<00:00,  1.65s/it]100%|██████████| 10/10 [00:19<00:00,  1.93s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 19.3245, 'train_samples_per_second': 16.559, 'train_steps_per_second': 0.517, 'train_loss': 0.6115235328674317, 'epoch': 1.0}
+>> ==================== Round 19 : [1, 2] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:08,  1.06it/s] 20%|██        | 2/10 [00:02<00:08,  1.01s/it] 30%|███       | 3/10 [00:03<00:09,  1.42s/it] 40%|████      | 4/10 [00:05<00:08,  1.41s/it] 50%|█████     | 5/10 [00:06<00:06,  1.24s/it] 60%|██████    | 6/10 [00:07<00:04,  1.18s/it] 70%|███████   | 7/10 [00:08<00:03,  1.15s/it] 80%|████████  | 8/10 [00:09<00:02,  1.14s/it] 90%|█████████ | 9/10 [00:10<00:01,  1.08s/it]100%|██████████| 10/10 [00:11<00:00,  1.02s/it]                                               100%|██████████| 10/10 [00:12<00:00,  1.02s/it]100%|██████████| 10/10 [00:12<00:00,  1.28s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 12.8046, 'train_samples_per_second': 24.991, 'train_steps_per_second': 0.781, 'train_loss': 0.5864725112915039, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:22,  2.50s/it] 20%|██        | 2/10 [00:03<00:13,  1.65s/it] 30%|███       | 3/10 [00:05<00:11,  1.61s/it] 40%|████      | 4/10 [00:06<00:08,  1.42s/it] 50%|█████     | 5/10 [00:07<00:06,  1.28s/it] 60%|██████    | 6/10 [00:08<00:05,  1.40s/it] 70%|███████   | 7/10 [00:10<00:04,  1.39s/it] 80%|████████  | 8/10 [00:11<00:02,  1.43s/it] 90%|█████████ | 9/10 [00:13<00:01,  1.42s/it]100%|██████████| 10/10 [00:14<00:00,  1.30s/it]                                               100%|██████████| 10/10 [00:15<00:00,  1.30s/it]100%|██████████| 10/10 [00:15<00:00,  1.59s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 15.8869, 'train_samples_per_second': 20.142, 'train_steps_per_second': 0.629, 'train_loss': 0.6139598369598389, 'epoch': 1.0}
+>> ==================== Round 20 : [0, 8] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:09,  1.09s/it] 20%|██        | 2/10 [00:02<00:07,  1.00it/s] 30%|███       | 3/10 [00:03<00:06,  1.01it/s] 40%|████      | 4/10 [00:04<00:06,  1.07s/it] 50%|█████     | 5/10 [00:04<00:04,  1.05it/s] 60%|██████    | 6/10 [00:05<00:03,  1.10it/s] 70%|███████   | 7/10 [00:06<00:02,  1.15it/s] 80%|████████  | 8/10 [00:07<00:01,  1.12it/s] 90%|█████████ | 9/10 [00:08<00:00,  1.06it/s]100%|██████████| 10/10 [00:09<00:00,  1.03it/s]                                               100%|██████████| 10/10 [00:12<00:00,  1.03it/s]100%|██████████| 10/10 [00:12<00:00,  1.27s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 12.7284, 'train_samples_per_second': 25.141, 'train_steps_per_second': 0.786, 'train_loss': 0.5292741775512695, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:14,  1.62s/it] 20%|██        | 2/10 [00:04<00:16,  2.11s/it] 30%|███       | 3/10 [00:07<00:19,  2.76s/it] 40%|████      | 4/10 [00:09<00:14,  2.39s/it] 50%|█████     | 5/10 [00:10<00:09,  1.86s/it] 60%|██████    | 6/10 [00:12<00:08,  2.09s/it] 70%|███████   | 7/10 [00:14<00:05,  1.82s/it] 80%|████████  | 8/10 [00:16<00:03,  1.85s/it] 90%|█████████ | 9/10 [00:17<00:01,  1.61s/it]100%|██████████| 10/10 [00:19<00:00,  1.95s/it]                                               100%|██████████| 10/10 [00:24<00:00,  1.95s/it]100%|██████████| 10/10 [00:24<00:00,  2.49s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 24.9346, 'train_samples_per_second': 12.834, 'train_steps_per_second': 0.401, 'train_loss': 0.699581241607666, 'epoch': 1.0}
+>> ==================== Round 21 : [2, 4] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:09,  1.05s/it] 20%|██        | 2/10 [00:02<00:07,  1.01it/s] 30%|███       | 3/10 [00:03<00:07,  1.05s/it] 40%|████      | 4/10 [00:04<00:06,  1.15s/it] 50%|█████     | 5/10 [00:05<00:05,  1.09s/it] 60%|██████    | 6/10 [00:06<00:04,  1.04s/it] 70%|███████   | 7/10 [00:07<00:03,  1.03s/it] 80%|████████  | 8/10 [00:08<00:02,  1.22s/it] 90%|█████████ | 9/10 [00:10<00:01,  1.29s/it]100%|██████████| 10/10 [00:11<00:00,  1.25s/it]                                               100%|██████████| 10/10 [00:15<00:00,  1.25s/it]100%|██████████| 10/10 [00:15<00:00,  1.50s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 15.0347, 'train_samples_per_second': 21.284, 'train_steps_per_second': 0.665, 'train_loss': 0.5804601192474366, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:12,  1.38s/it] 20%|██        | 2/10 [00:02<00:10,  1.27s/it] 30%|███       | 3/10 [00:04<00:09,  1.37s/it] 40%|████      | 4/10 [00:05<00:07,  1.29s/it] 50%|█████     | 5/10 [00:07<00:08,  1.64s/it] 60%|██████    | 6/10 [00:09<00:06,  1.64s/it] 70%|███████   | 7/10 [00:12<00:06,  2.08s/it] 80%|████████  | 8/10 [00:14<00:04,  2.04s/it] 90%|█████████ | 9/10 [00:16<00:02,  2.24s/it]100%|██████████| 10/10 [00:18<00:00,  2.05s/it]                                               100%|██████████| 10/10 [00:20<00:00,  2.05s/it]100%|██████████| 10/10 [00:20<00:00,  2.00s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 20.0393, 'train_samples_per_second': 15.969, 'train_steps_per_second': 0.499, 'train_loss': 0.7129259586334229, 'epoch': 1.0}
+>> ==================== Round 22 : [2, 6] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:08,  1.05it/s] 20%|██        | 2/10 [00:02<00:08,  1.02s/it] 30%|███       | 3/10 [00:02<00:06,  1.07it/s] 40%|████      | 4/10 [00:04<00:07,  1.19s/it] 50%|█████     | 5/10 [00:05<00:06,  1.31s/it] 60%|██████    | 6/10 [00:07<00:04,  1.23s/it] 70%|███████   | 7/10 [00:08<00:03,  1.17s/it] 80%|████████  | 8/10 [00:09<00:02,  1.20s/it] 90%|█████████ | 9/10 [00:10<00:01,  1.17s/it]100%|██████████| 10/10 [00:11<00:00,  1.09s/it]                                               100%|██████████| 10/10 [00:15<00:00,  1.09s/it]100%|██████████| 10/10 [00:15<00:00,  1.55s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 15.5108, 'train_samples_per_second': 20.631, 'train_steps_per_second': 0.645, 'train_loss': 0.609414529800415, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:28,  3.19s/it] 20%|██        | 2/10 [00:05<00:19,  2.47s/it] 30%|███       | 3/10 [00:07<00:16,  2.33s/it] 40%|████      | 4/10 [00:08<00:11,  1.94s/it] 50%|█████     | 5/10 [00:10<00:09,  1.83s/it] 60%|██████    | 6/10 [00:12<00:07,  1.99s/it] 70%|███████   | 7/10 [00:13<00:05,  1.73s/it] 80%|████████  | 8/10 [00:14<00:02,  1.46s/it] 90%|█████████ | 9/10 [00:15<00:01,  1.40s/it]100%|██████████| 10/10 [00:17<00:00,  1.30s/it]                                               100%|██████████| 10/10 [00:18<00:00,  1.30s/it]100%|██████████| 10/10 [00:18<00:00,  1.86s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 18.6154, 'train_samples_per_second': 17.19, 'train_steps_per_second': 0.537, 'train_loss': 0.5408236026763916, 'epoch': 1.0}
+>> ==================== Round 23 : [2, 3] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:12,  1.39s/it] 20%|██        | 2/10 [00:02<00:08,  1.03s/it] 30%|███       | 3/10 [00:03<00:08,  1.21s/it] 40%|████      | 4/10 [00:05<00:08,  1.36s/it] 50%|█████     | 5/10 [00:06<00:05,  1.19s/it] 60%|██████    | 6/10 [00:07<00:05,  1.32s/it] 70%|███████   | 7/10 [00:08<00:03,  1.32s/it] 80%|████████  | 8/10 [00:09<00:02,  1.21s/it] 90%|█████████ | 9/10 [00:10<00:01,  1.15s/it]100%|██████████| 10/10 [00:11<00:00,  1.10s/it]                                               100%|██████████| 10/10 [00:16<00:00,  1.10s/it]100%|██████████| 10/10 [00:16<00:00,  1.63s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 16.3039, 'train_samples_per_second': 19.627, 'train_steps_per_second': 0.613, 'train_loss': 0.6691342353820801, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:11,  1.29s/it] 20%|██        | 2/10 [00:02<00:08,  1.10s/it] 30%|███       | 3/10 [00:03<00:07,  1.13s/it] 40%|████      | 4/10 [00:04<00:06,  1.10s/it] 50%|█████     | 5/10 [00:05<00:05,  1.08s/it] 60%|██████    | 6/10 [00:06<00:04,  1.03s/it] 70%|███████   | 7/10 [00:07<00:02,  1.04it/s] 80%|████████  | 8/10 [00:08<00:01,  1.03it/s] 90%|█████████ | 9/10 [00:09<00:00,  1.05it/s]100%|██████████| 10/10 [00:10<00:00,  1.06it/s]                                               100%|██████████| 10/10 [00:11<00:00,  1.06it/s]100%|██████████| 10/10 [00:11<00:00,  1.18s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 11.769, 'train_samples_per_second': 27.19, 'train_steps_per_second': 0.85, 'train_loss': 0.5874640941619873, 'epoch': 1.0}
+>> ==================== Round 24 : [1, 4] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:07,  1.20it/s] 20%|██        | 2/10 [00:02<00:08,  1.05s/it] 30%|███       | 3/10 [00:03<00:07,  1.07s/it] 40%|████      | 4/10 [00:04<00:06,  1.02s/it] 50%|█████     | 5/10 [00:05<00:05,  1.06s/it] 60%|██████    | 6/10 [00:06<00:04,  1.18s/it] 70%|███████   | 7/10 [00:07<00:03,  1.08s/it] 80%|████████  | 8/10 [00:09<00:02,  1.42s/it] 90%|█████████ | 9/10 [00:10<00:01,  1.39s/it]100%|██████████| 10/10 [00:12<00:00,  1.31s/it]                                               100%|██████████| 10/10 [00:13<00:00,  1.31s/it]100%|██████████| 10/10 [00:13<00:00,  1.35s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 13.4974, 'train_samples_per_second': 23.708, 'train_steps_per_second': 0.741, 'train_loss': 0.5795238018035889, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:13,  1.49s/it] 20%|██        | 2/10 [00:02<00:11,  1.40s/it] 30%|███       | 3/10 [00:04<00:10,  1.54s/it] 40%|████      | 4/10 [00:05<00:08,  1.42s/it] 50%|█████     | 5/10 [00:07<00:08,  1.68s/it] 60%|██████    | 6/10 [00:09<00:06,  1.67s/it] 70%|███████   | 7/10 [00:12<00:05,  1.93s/it] 80%|████████  | 8/10 [00:14<00:03,  1.99s/it] 90%|█████████ | 9/10 [00:16<00:02,  2.08s/it]100%|██████████| 10/10 [00:17<00:00,  1.87s/it]                                               100%|██████████| 10/10 [00:21<00:00,  1.87s/it]100%|██████████| 10/10 [00:21<00:00,  2.20s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 21.9564, 'train_samples_per_second': 14.574, 'train_steps_per_second': 0.455, 'train_loss': 0.6584148406982422, 'epoch': 1.0}
+>> ==================== Round 25 : [2, 6] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.16s/it] 20%|██        | 2/10 [00:02<00:10,  1.25s/it] 30%|███       | 3/10 [00:04<00:09,  1.39s/it] 40%|████      | 4/10 [00:05<00:08,  1.36s/it] 50%|█████     | 5/10 [00:06<00:06,  1.27s/it] 60%|██████    | 6/10 [00:08<00:05,  1.38s/it] 70%|███████   | 7/10 [00:09<00:03,  1.28s/it] 80%|████████  | 8/10 [00:10<00:02,  1.18s/it] 90%|█████████ | 9/10 [00:11<00:01,  1.16s/it]100%|██████████| 10/10 [00:12<00:00,  1.14s/it]                                               100%|██████████| 10/10 [00:14<00:00,  1.14s/it]100%|██████████| 10/10 [00:14<00:00,  1.41s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 14.0971, 'train_samples_per_second': 22.7, 'train_steps_per_second': 0.709, 'train_loss': 0.5231560230255127, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:15,  1.69s/it] 20%|██        | 2/10 [00:02<00:11,  1.46s/it] 30%|███       | 3/10 [00:04<00:09,  1.40s/it] 40%|████      | 4/10 [00:05<00:07,  1.24s/it] 50%|█████     | 5/10 [00:06<00:06,  1.25s/it] 60%|██████    | 6/10 [00:07<00:05,  1.27s/it] 70%|███████   | 7/10 [00:09<00:03,  1.23s/it] 80%|████████  | 8/10 [00:12<00:03,  1.79s/it] 90%|█████████ | 9/10 [00:14<00:01,  1.85s/it]100%|██████████| 10/10 [00:16<00:00,  2.13s/it]                                               100%|██████████| 10/10 [00:18<00:00,  2.13s/it]100%|██████████| 10/10 [00:18<00:00,  1.84s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 18.4298, 'train_samples_per_second': 17.363, 'train_steps_per_second': 0.543, 'train_loss': 0.5765921115875244, 'epoch': 1.0}
+>> ==================== Round 26 : [0, 6] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:00<00:08,  1.09it/s] 20%|██        | 2/10 [00:02<00:08,  1.06s/it] 30%|███       | 3/10 [00:02<00:06,  1.03it/s] 40%|████      | 4/10 [00:03<00:05,  1.04it/s] 50%|█████     | 5/10 [00:04<00:04,  1.08it/s] 60%|██████    | 6/10 [00:05<00:03,  1.00it/s] 70%|███████   | 7/10 [00:07<00:03,  1.10s/it] 80%|████████  | 8/10 [00:08<00:02,  1.05s/it] 90%|█████████ | 9/10 [00:08<00:00,  1.01it/s]100%|██████████| 10/10 [00:09<00:00,  1.03it/s]                                               100%|██████████| 10/10 [00:11<00:00,  1.03it/s]100%|██████████| 10/10 [00:11<00:00,  1.13s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 11.3506, 'train_samples_per_second': 28.192, 'train_steps_per_second': 0.881, 'train_loss': 0.50843186378479, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:19,  2.16s/it] 20%|██        | 2/10 [00:03<00:14,  1.86s/it] 30%|███       | 3/10 [00:06<00:16,  2.40s/it] 40%|████      | 4/10 [00:09<00:15,  2.57s/it] 50%|█████     | 5/10 [00:11<00:10,  2.12s/it] 60%|██████    | 6/10 [00:12<00:08,  2.04s/it] 70%|███████   | 7/10 [00:14<00:05,  1.83s/it] 80%|████████  | 8/10 [00:16<00:03,  1.99s/it] 90%|█████████ | 9/10 [00:18<00:01,  1.87s/it]100%|██████████| 10/10 [00:20<00:00,  1.94s/it]                                               100%|██████████| 10/10 [00:21<00:00,  1.94s/it]100%|██████████| 10/10 [00:21<00:00,  2.18s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 21.8378, 'train_samples_per_second': 14.653, 'train_steps_per_second': 0.458, 'train_loss': 0.5593940258026123, 'epoch': 1.0}
+>> ==================== Round 27 : [3, 9] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:09,  1.10s/it] 20%|██        | 2/10 [00:02<00:09,  1.18s/it] 30%|███       | 3/10 [00:03<00:08,  1.19s/it] 40%|████      | 4/10 [00:04<00:06,  1.13s/it] 50%|█████     | 5/10 [00:05<00:05,  1.01s/it] 60%|██████    | 6/10 [00:06<00:04,  1.13s/it] 70%|███████   | 7/10 [00:08<00:03,  1.18s/it] 80%|████████  | 8/10 [00:09<00:02,  1.13s/it] 90%|█████████ | 9/10 [00:09<00:01,  1.03s/it]100%|██████████| 10/10 [00:11<00:00,  1.17s/it]                                               100%|██████████| 10/10 [00:12<00:00,  1.17s/it]100%|██████████| 10/10 [00:12<00:00,  1.28s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 12.7835, 'train_samples_per_second': 25.032, 'train_steps_per_second': 0.782, 'train_loss': 0.5654277801513672, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.12s/it] 20%|██        | 2/10 [00:03<00:14,  1.79s/it] 30%|███       | 3/10 [00:05<00:13,  1.98s/it] 40%|████      | 4/10 [00:06<00:10,  1.70s/it] 50%|█████     | 5/10 [00:08<00:08,  1.64s/it] 60%|██████    | 6/10 [00:09<00:05,  1.42s/it] 70%|███████   | 7/10 [00:10<00:04,  1.43s/it] 80%|████████  | 8/10 [00:12<00:02,  1.42s/it] 90%|█████████ | 9/10 [00:13<00:01,  1.34s/it]100%|██████████| 10/10 [00:14<00:00,  1.30s/it]                                               100%|██████████| 10/10 [00:16<00:00,  1.30s/it]100%|██████████| 10/10 [00:16<00:00,  1.63s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 16.2823, 'train_samples_per_second': 19.653, 'train_steps_per_second': 0.614, 'train_loss': 0.6085364341735839, 'epoch': 1.0}
+>> ==================== Round 28 : [4, 7] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:15,  1.73s/it] 20%|██        | 2/10 [00:03<00:13,  1.71s/it] 30%|███       | 3/10 [00:04<00:11,  1.60s/it] 40%|████      | 4/10 [00:06<00:10,  1.67s/it] 50%|█████     | 5/10 [00:09<00:10,  2.03s/it] 60%|██████    | 6/10 [00:10<00:07,  1.87s/it] 70%|███████   | 7/10 [00:12<00:05,  1.91s/it] 80%|████████  | 8/10 [00:14<00:03,  1.78s/it] 90%|█████████ | 9/10 [00:15<00:01,  1.60s/it]100%|██████████| 10/10 [00:17<00:00,  1.81s/it]                                               100%|██████████| 10/10 [00:19<00:00,  1.81s/it]100%|██████████| 10/10 [00:19<00:00,  1.93s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 19.2703, 'train_samples_per_second': 16.606, 'train_steps_per_second': 0.519, 'train_loss': 0.6739261627197266, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:23,  2.61s/it] 20%|██        | 2/10 [00:03<00:13,  1.71s/it] 30%|███       | 3/10 [00:05<00:11,  1.65s/it] 40%|████      | 4/10 [00:08<00:14,  2.39s/it] 50%|█████     | 5/10 [00:10<00:10,  2.14s/it] 60%|██████    | 6/10 [00:12<00:07,  1.97s/it] 70%|███████   | 7/10 [00:16<00:08,  2.71s/it] 80%|████████  | 8/10 [00:17<00:04,  2.27s/it] 90%|█████████ | 9/10 [00:19<00:01,  1.98s/it]100%|██████████| 10/10 [00:20<00:00,  1.83s/it]                                               100%|██████████| 10/10 [00:23<00:00,  1.83s/it]100%|██████████| 10/10 [00:23<00:00,  2.35s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 23.5131, 'train_samples_per_second': 13.609, 'train_steps_per_second': 0.425, 'train_loss': 0.636937141418457, 'epoch': 1.0}
+>> ==================== Round 29 : [1, 2] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:12,  1.44s/it] 20%|██        | 2/10 [00:02<00:09,  1.22s/it] 30%|███       | 3/10 [00:03<00:09,  1.30s/it] 40%|████      | 4/10 [00:04<00:07,  1.21s/it] 50%|█████     | 5/10 [00:05<00:05,  1.13s/it] 60%|██████    | 6/10 [00:07<00:04,  1.23s/it] 70%|███████   | 7/10 [00:08<00:03,  1.18s/it] 80%|████████  | 8/10 [00:09<00:02,  1.27s/it] 90%|█████████ | 9/10 [00:12<00:01,  1.53s/it]100%|██████████| 10/10 [00:13<00:00,  1.40s/it]                                               100%|██████████| 10/10 [00:14<00:00,  1.40s/it]100%|██████████| 10/10 [00:14<00:00,  1.45s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 14.5513, 'train_samples_per_second': 21.991, 'train_steps_per_second': 0.687, 'train_loss': 0.5284263610839843, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.14s/it] 20%|██        | 2/10 [00:02<00:08,  1.03s/it] 30%|███       | 3/10 [00:03<00:08,  1.20s/it] 40%|████      | 4/10 [00:04<00:07,  1.17s/it] 50%|█████     | 5/10 [00:06<00:06,  1.34s/it] 60%|██████    | 6/10 [00:07<00:04,  1.17s/it] 70%|███████   | 7/10 [00:08<00:03,  1.14s/it] 80%|████████  | 8/10 [00:09<00:02,  1.11s/it] 90%|█████████ | 9/10 [00:10<00:01,  1.16s/it]100%|██████████| 10/10 [00:11<00:00,  1.09s/it]                                               100%|██████████| 10/10 [00:13<00:00,  1.09s/it]100%|██████████| 10/10 [00:13<00:00,  1.31s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 13.1293, 'train_samples_per_second': 24.373, 'train_steps_per_second': 0.762, 'train_loss': 0.5622969150543213, 'epoch': 1.0}
+>> ==================== Round 30 : [1, 8] ====================
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:13,  1.53s/it] 20%|██        | 2/10 [00:02<00:08,  1.12s/it] 30%|███       | 3/10 [00:03<00:07,  1.09s/it] 40%|████      | 4/10 [00:04<00:06,  1.08s/it] 50%|█████     | 5/10 [00:05<00:05,  1.02s/it] 60%|██████    | 6/10 [00:06<00:04,  1.02s/it] 70%|███████   | 7/10 [00:07<00:02,  1.01it/s] 80%|████████  | 8/10 [00:08<00:02,  1.08s/it] 90%|█████████ | 9/10 [00:09<00:01,  1.11s/it]100%|██████████| 10/10 [00:11<00:00,  1.21s/it]                                               100%|██████████| 10/10 [00:12<00:00,  1.21s/it]100%|██████████| 10/10 [00:12<00:00,  1.27s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 41,943,040
+{'train_runtime': 12.6752, 'train_samples_per_second': 25.246, 'train_steps_per_second': 0.789, 'train_loss': 0.5877127647399902, 'epoch': 1.0}
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:24,  2.72s/it] 20%|██        | 2/10 [00:03<00:14,  1.81s/it] 30%|███       | 3/10 [00:06<00:14,  2.08s/it] 40%|████      | 4/10 [00:07<00:10,  1.73s/it] 50%|█████     | 5/10 [00:09<00:08,  1.73s/it] 60%|██████    | 6/10 [00:10<00:06,  1.70s/it] 70%|███████   | 7/10 [00:11<00:04,  1.49s/it] 80%|████████  | 8/10 [00:13<00:03,  1.54s/it] 90%|█████████ | 9/10 [00:16<00:01,  1.84s/it]100%|██████████| 10/10 [00:17<00:00,  1.87s/it]                                               100%|██████████| 10/10 [00:20<00:00,  1.87s/it]100%|██████████| 10/10 [00:20<00:00,  2.06s/it]
+{'train_runtime': 20.581, 'train_samples_per_second': 15.548, 'train_steps_per_second': 0.486, 'train_loss': 0.6003060340881348, 'epoch': 1.0}

@@ -10,7 +10,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 def merge_lora(base_model_name, lora_path, target_path):
 
     base_model = AutoModelForCausalLM.from_pretrained(base_model_name)
-    peft_model = PeftModel.from_pretrained(base_model, lora_path)
+    peft_model: PeftModel = PeftModel.from_pretrained(base_model, lora_path)
     tokenizer = AutoTokenizer.from_pretrained(base_model_name, use_fast=False)
 
     model = peft_model.merge_and_unload()
