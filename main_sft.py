@@ -11,6 +11,7 @@ from federated_learning.split_dataset import get_dataset_this_round_fewshot
 from utils.utils import get_unsloth_model
 
 from utils import *
+# from utils.template import formatting_prompts_func
 from federated_learning import *
 from config import get_config, save_config, get_model_config, get_training_args
 from utils.dataset_utils import *
@@ -21,6 +22,7 @@ script_args, fed_args, peft_config = get_config()
 training_args = get_training_args(script_args, script_args.learning_rate)
 save_config(script_args, fed_args)
 print(script_args, fed_args)
+dataset_root = "/mnt/bn/data-tns-live-llm/leon/datasets/fed_data/"
 
 if script_args.online_dataset:
     # ===== Load the dataset =====
@@ -32,7 +34,7 @@ if script_args.online_dataset:
 else:
     local_datasets=[]
     for i in range(fed_args.num_clients):
-        local_datasets.append(load_from_disk(f"/mnt/bn/data-tns-live-llm/leon/datasets/fed_data/{script_args.dataset_name}_{i}.parquet"))
+        local_datasets.append(load_from_disk(f"{dataset_root}/{script_args.dataset_name}_{i}.parquet"))
 sample_num_list = [len(local_datasets[i]) for i in range(fed_args.num_clients)]
 
 # ===== Get model config =====
@@ -85,6 +87,7 @@ data_collator = DataCollatorForCompletionOnlyLM(response_template_ids, tokenizer
 if script_args.full_data:
     client_data_modules = [make_supervised_data_module(tokenizer=tokenizer, dataset=client_dataset) for client_dataset in local_datasets]
     print("client_data_modules ready!")
+
 # ===== Start federated training =====
 training_loss = [[] for i in range(fed_args.num_clients)]
 print(fed_args.num_rounds)
@@ -103,6 +106,7 @@ for round in (range(fed_args.num_rounds)):
         set_peft_model_state_dict(model, global_dict)   # sync the global model to the local model，更新本地模型的 lora 参数
 
         # sub_dataset = get_dataset_this_round(local_datasets[client], round, fed_args, script_args)      # get the required sub-dataset for this round， 随机采样，num2sample = script_args.batch_size * script_args.gradient_accumulation_steps * script_args.max_steps
+        data_module = None
         if not script_args.full_data:
             sub_dataset = get_dataset_this_round(local_datasets[client], round, fed_args, script_args) # few shot
             data_module = make_supervised_data_module(tokenizer=tokenizer, dataset=sub_dataset)
