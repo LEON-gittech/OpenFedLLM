@@ -1,0 +1,29 @@
+[2024-08-23 14:34:32,197] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/tiger/.local/lib/python3.9/site-packages/bytedmetrics/__init__.py:10: UserWarning: bytedmetrics is renamed to bytedance.metrics, please using `bytedance.metrics` instead of `bytedmetrics`
+  warnings.warn("bytedmetrics is renamed to bytedance.metrics, please using `bytedance.metrics` instead of `bytedmetrics`")
+Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Unsloth 2024.8 patched 32 layers with 32 QKV layers, 32 O layers and 32 MLP layers.
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 83,886,080
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+is bf16: 0
+is fp16: 1
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='iid2niid_math_filter', log_with='none', learning_rate=5e-05, batch_size=16, seq_length=2048, gradient_accumulation_steps=2, load_in_8bit=False, load_in_4bit=True, use_peft=True, trust_remote_code=False, output_dir='/mnt/bn/data-tns-live-llm/leon/datasets/fed/iid2niid_math_filter_20000_fedprox_c10s2_i10_b16a2_l2048_r32a64_f0', peft_lora_r=32, peft_lora_alpha=64, logging_steps=100, use_auth_token=False, num_train_epochs=5, max_steps=10, save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=2023, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=0, fp16=1, online_dataset=0, full_data=0) FedArguments(fed_alg='fedprox', num_rounds=30, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+using unsloth model
+==((====))==  Unsloth 2024.8: Fast Llama patching. Transformers = 4.44.0.
+   \\   /|    GPU: Tesla V100-SXM2-32GB. Max memory: 31.739 GB. Platform = Linux.
+O^O/ \_/ \    Pytorch: 2.1.0+cu121. CUDA = 7.0. CUDA Toolkit = 12.1.
+\        /    Bfloat16 = FALSE. FA [Xformers = 0.0.22.post7. FA2 = False]
+ "-____-"     Free Apache license: http://github.com/unslothai/unsloth
+30
+>> ==================== Round 1 : [6, 9] ====================
+is bf16: 0
+is fp16: 1
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:09<01:28,  9.84s/it] 20%|██        | 2/10 [00:16<01:05,  8.15s/it] 30%|███       | 3/10 [00:22<00:50,  7.17s/it] 40%|████      | 4/10 [00:29<00:41,  6.89s/it] 50%|█████     | 5/10 [00:35<00:33,  6.69s/it] 60%|██████    | 6/10 [00:42<00:27,  6.75s/it] 70%|███████   | 7/10 [00:50<00:21,  7.01s/it] 80%|████████  | 8/10 [00:58<00:14,  7.34s/it]

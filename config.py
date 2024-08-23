@@ -62,7 +62,8 @@ class ScriptArguments:
     dataset_sample: Optional[int] = field(default=20000, metadata={"help": "the number of samples to use from the dataset"})
     local_data_dir: Optional[str] = field(default=None, metadata={"help": "the local data directory if you want to use downloaded data"})
     unsloth: Optional[int] = field(default=1)
-    bf16: Optional[int] = field(default=1)
+    bf16: Optional[int] = field(default=0)
+    fp16: Optional[int] = field(default=0)
     online_dataset: Optional[int] = field(default=0)
     full_data: Optional[int] = field(default=0)
 
@@ -87,6 +88,8 @@ def get_config():
 
 # ===== Define the training arguments =====
 def get_training_args(script_args, new_lr):
+    print(f"is bf16: {script_args.bf16}")
+    print(f"is fp16: {script_args.fp16}")
     training_args = TrainingArguments(
         output_dir=script_args.output_dir,
         per_device_train_batch_size=script_args.batch_size,
@@ -102,7 +105,8 @@ def get_training_args(script_args, new_lr):
         hub_model_id=script_args.hub_model_id,
         gradient_checkpointing=script_args.gradient_checkpointing,
         lr_scheduler_type="constant",
-        bf16=script_args.bf16
+        bf16=script_args.bf16,
+        fp16=script_args.fp16
     )
     return training_args
 
