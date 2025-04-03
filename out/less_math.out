@@ -1,0 +1,828 @@
+[2024-09-01 22:59:01,426] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/tiger/.local/lib/python3.9/site-packages/bytedmetrics/__init__.py:10: UserWarning: bytedmetrics is renamed to bytedance.metrics, please using `bytedance.metrics` instead of `bytedmetrics`
+  warnings.warn("bytedmetrics is renamed to bytedance.metrics, please using `bytedance.metrics` instead of `bytedmetrics`")
+Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Not an error, but Unsloth cannot patch MLP layers with our manual autograd engine since either LoRA adapters
+are not enabled or a bias term (like in Qwen) is used.
+Unsloth 2024.8 patched 32 layers with 32 QKV layers, 32 O layers and 0 MLP layers.
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+is bf16: 1
+is fp16: 0
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='math', log_with='none', learning_rate=5e-05, batch_size=16, seq_length=2048, gradient_accumulation_steps=2, load_in_8bit=False, load_in_4bit=True, use_peft=True, trust_remote_code=False, output_dir='/mnt/bn/data-tns-live-llm/leon/datasets/fed/math_20000_fedavg_c10s2_i10_b16a2_l2048_r16a16_f0', peft_lora_r=16, peft_lora_alpha=16, logging_steps=100, use_auth_token=False, num_train_epochs=5, max_steps=10, save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=2023, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=1, fp16=0, online_dataset=0, full_data=0) FedArguments(fed_alg='fedavg', num_rounds=30, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+using unsloth model
+==((====))==  Unsloth 2024.8: Fast Llama patching. Transformers = 4.43.2.
+   \\   /|    GPU: NVIDIA A100-SXM4-80GB. Max memory: 79.347 GB. Platform = Linux.
+O^O/ \_/ \    Pytorch: 2.4.0+cu121. CUDA = 8.0. CUDA Toolkit = 12.1.
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.27.post2. FA2 = False]
+ "-____-"     Free Apache license: http://github.com/unslothai/unsloth
+30
+>> ==================== Round 1 : [6, 9] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:12<01:50, 12.27s/it] 20%|██        | 2/10 [00:18<01:11,  8.92s/it] 30%|███       | 3/10 [00:26<00:57,  8.28s/it] 40%|████      | 4/10 [00:33<00:47,  7.99s/it] 50%|█████     | 5/10 [00:41<00:38,  7.68s/it] 60%|██████    | 6/10 [00:47<00:28,  7.21s/it] 70%|███████   | 7/10 [00:52<00:19,  6.66s/it] 80%|████████  | 8/10 [00:59<00:13,  6.78s/it] 90%|█████████ | 9/10 [01:08<00:07,  7.30s/it]100%|██████████| 10/10 [01:14<00:00,  7.02s/it]                                               100%|██████████| 10/10 [01:15<00:00,  7.02s/it]100%|██████████| 10/10 [01:15<00:00,  7.53s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 75.2813, 'train_samples_per_second': 4.251, 'train_steps_per_second': 0.133, 'train_loss': 0.73121337890625, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:09,  7.75s/it] 20%|██        | 2/10 [00:13<00:52,  6.53s/it] 30%|███       | 3/10 [00:19<00:43,  6.25s/it] 40%|████      | 4/10 [00:26<00:38,  6.45s/it] 50%|█████     | 5/10 [00:35<00:37,  7.54s/it] 60%|██████    | 6/10 [00:42<00:29,  7.27s/it] 70%|███████   | 7/10 [00:49<00:22,  7.34s/it] 80%|████████  | 8/10 [00:56<00:14,  7.21s/it] 90%|█████████ | 9/10 [01:04<00:07,  7.49s/it]100%|██████████| 10/10 [01:11<00:00,  7.15s/it]                                               100%|██████████| 10/10 [01:11<00:00,  7.15s/it]100%|██████████| 10/10 [01:11<00:00,  7.17s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 71.7404, 'train_samples_per_second': 4.461, 'train_steps_per_second': 0.139, 'train_loss': 0.7663572311401368, 'epoch': 1.0}
+>> ==================== Round 2 : [1, 2] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:07,  7.55s/it] 20%|██        | 2/10 [00:15<01:03,  7.97s/it] 30%|███       | 3/10 [00:24<00:56,  8.09s/it] 40%|████      | 4/10 [00:33<00:50,  8.50s/it] 50%|█████     | 5/10 [00:41<00:41,  8.35s/it] 60%|██████    | 6/10 [00:49<00:33,  8.37s/it] 70%|███████   | 7/10 [00:57<00:24,  8.17s/it] 80%|████████  | 8/10 [01:06<00:17,  8.55s/it] 90%|█████████ | 9/10 [01:16<00:08,  8.98s/it]100%|██████████| 10/10 [01:25<00:00,  9.07s/it]                                               100%|██████████| 10/10 [01:26<00:00,  9.07s/it]100%|██████████| 10/10 [01:26<00:00,  8.65s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 86.5096, 'train_samples_per_second': 3.699, 'train_steps_per_second': 0.116, 'train_loss': 0.6223476886749267, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:54,  6.02s/it] 20%|██        | 2/10 [00:13<00:54,  6.83s/it] 30%|███       | 3/10 [00:20<00:50,  7.15s/it] 40%|████      | 4/10 [00:27<00:40,  6.73s/it] 50%|█████     | 5/10 [00:33<00:32,  6.58s/it] 60%|██████    | 6/10 [00:41<00:28,  7.03s/it] 70%|███████   | 7/10 [00:46<00:19,  6.40s/it] 80%|████████  | 8/10 [00:55<00:14,  7.36s/it] 90%|█████████ | 9/10 [01:03<00:07,  7.39s/it]100%|██████████| 10/10 [01:10<00:00,  7.22s/it]                                               100%|██████████| 10/10 [01:10<00:00,  7.22s/it]100%|██████████| 10/10 [01:10<00:00,  7.06s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 70.5956, 'train_samples_per_second': 4.533, 'train_steps_per_second': 0.142, 'train_loss': 0.7206563472747802, 'epoch': 1.0}
+>> ==================== Round 3 : [0, 1] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:08<01:18,  8.68s/it] 20%|██        | 2/10 [00:16<01:05,  8.16s/it] 30%|███       | 3/10 [00:23<00:53,  7.71s/it] 40%|████      | 4/10 [00:34<00:54,  9.03s/it] 50%|█████     | 5/10 [00:39<00:38,  7.61s/it] 60%|██████    | 6/10 [00:48<00:31,  7.86s/it] 70%|███████   | 7/10 [00:56<00:24,  8.08s/it] 80%|████████  | 8/10 [01:04<00:16,  8.12s/it] 90%|█████████ | 9/10 [01:10<00:07,  7.47s/it]100%|██████████| 10/10 [01:18<00:00,  7.39s/it]                                               100%|██████████| 10/10 [01:18<00:00,  7.39s/it]100%|██████████| 10/10 [01:18<00:00,  7.88s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 78.8247, 'train_samples_per_second': 4.06, 'train_steps_per_second': 0.127, 'train_loss': 0.6698633193969726, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:10,  7.83s/it] 20%|██        | 2/10 [00:18<01:15,  9.42s/it] 30%|███       | 3/10 [00:26<01:02,  8.96s/it] 40%|████      | 4/10 [00:37<00:58,  9.83s/it] 50%|█████     | 5/10 [00:44<00:43,  8.74s/it] 60%|██████    | 6/10 [00:52<00:33,  8.32s/it] 70%|███████   | 7/10 [00:59<00:23,  7.83s/it] 80%|████████  | 8/10 [01:06<00:15,  7.57s/it] 90%|█████████ | 9/10 [01:13<00:07,  7.48s/it]100%|██████████| 10/10 [01:21<00:00,  7.82s/it]                                               100%|██████████| 10/10 [01:22<00:00,  7.82s/it]100%|██████████| 10/10 [01:22<00:00,  8.25s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 82.504, 'train_samples_per_second': 3.879, 'train_steps_per_second': 0.121, 'train_loss': 0.6685842514038086, 'epoch': 1.0}
+>> ==================== Round 4 : [3, 8] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<01:01,  6.84s/it] 20%|██        | 2/10 [00:14<01:00,  7.53s/it] 30%|███       | 3/10 [00:20<00:48,  6.86s/it] 40%|████      | 4/10 [00:30<00:47,  7.85s/it] 50%|█████     | 5/10 [00:41<00:44,  8.91s/it] 60%|██████    | 6/10 [00:47<00:32,  8.10s/it] 70%|███████   | 7/10 [00:54<00:23,  7.67s/it] 80%|████████  | 8/10 [01:01<00:14,  7.49s/it] 90%|█████████ | 9/10 [01:09<00:07,  7.71s/it]100%|██████████| 10/10 [01:18<00:00,  7.90s/it]                                               100%|██████████| 10/10 [01:19<00:00,  7.90s/it]100%|██████████| 10/10 [01:19<00:00,  7.91s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 79.1384, 'train_samples_per_second': 4.044, 'train_steps_per_second': 0.126, 'train_loss': 0.6456471920013428, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:03,  7.06s/it] 20%|██        | 2/10 [00:16<01:05,  8.23s/it] 30%|███       | 3/10 [00:23<00:54,  7.83s/it] 40%|████      | 4/10 [00:31<00:48,  8.09s/it] 50%|█████     | 5/10 [00:39<00:40,  8.01s/it] 60%|██████    | 6/10 [00:47<00:31,  7.91s/it] 70%|███████   | 7/10 [00:54<00:23,  7.72s/it] 80%|████████  | 8/10 [01:02<00:15,  7.62s/it] 90%|█████████ | 9/10 [01:09<00:07,  7.41s/it]100%|██████████| 10/10 [01:15<00:00,  7.11s/it]                                               100%|██████████| 10/10 [01:16<00:00,  7.11s/it]100%|██████████| 10/10 [01:16<00:00,  7.63s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 76.2762, 'train_samples_per_second': 4.195, 'train_steps_per_second': 0.131, 'train_loss': 0.5830307960510254, 'epoch': 1.0}
+>> ==================== Round 5 : [3, 4] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:58,  6.47s/it] 20%|██        | 2/10 [00:13<00:54,  6.83s/it] 30%|███       | 3/10 [00:20<00:47,  6.78s/it] 40%|████      | 4/10 [00:26<00:39,  6.61s/it] 50%|█████     | 5/10 [00:35<00:37,  7.59s/it] 60%|██████    | 6/10 [00:43<00:30,  7.68s/it] 70%|███████   | 7/10 [00:52<00:23,  7.86s/it] 80%|████████  | 8/10 [00:59<00:15,  7.64s/it] 90%|█████████ | 9/10 [01:05<00:07,  7.14s/it]100%|██████████| 10/10 [01:11<00:00,  6.99s/it]                                               100%|██████████| 10/10 [01:13<00:00,  6.99s/it]100%|██████████| 10/10 [01:13<00:00,  7.35s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 73.521, 'train_samples_per_second': 4.352, 'train_steps_per_second': 0.136, 'train_loss': 0.6178231239318848, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:07,  7.45s/it] 20%|██        | 2/10 [00:15<01:03,  7.92s/it] 30%|███       | 3/10 [00:24<00:57,  8.18s/it] 40%|████      | 4/10 [00:30<00:45,  7.58s/it] 50%|█████     | 5/10 [00:37<00:36,  7.39s/it] 60%|██████    | 6/10 [00:45<00:30,  7.57s/it] 70%|███████   | 7/10 [00:52<00:22,  7.37s/it] 80%|████████  | 8/10 [00:59<00:14,  7.06s/it] 90%|█████████ | 9/10 [01:05<00:06,  6.97s/it]100%|██████████| 10/10 [01:11<00:00,  6.62s/it]                                               100%|██████████| 10/10 [01:13<00:00,  6.62s/it]100%|██████████| 10/10 [01:13<00:00,  7.37s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 73.752, 'train_samples_per_second': 4.339, 'train_steps_per_second': 0.136, 'train_loss': 0.6153310298919678, 'epoch': 1.0}
+>> ==================== Round 6 : [4, 9] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:06,  7.37s/it] 20%|██        | 2/10 [00:13<00:55,  6.91s/it] 30%|███       | 3/10 [00:22<00:54,  7.77s/it] 40%|████      | 4/10 [00:30<00:45,  7.61s/it] 50%|█████     | 5/10 [00:37<00:37,  7.40s/it] 60%|██████    | 6/10 [00:44<00:29,  7.48s/it] 70%|███████   | 7/10 [00:50<00:21,  7.04s/it] 80%|████████  | 8/10 [00:58<00:14,  7.10s/it] 90%|█████████ | 9/10 [01:04<00:06,  6.97s/it]100%|██████████| 10/10 [01:11<00:00,  6.91s/it]                                               100%|██████████| 10/10 [01:15<00:00,  6.91s/it]100%|██████████| 10/10 [01:15<00:00,  7.54s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 75.4275, 'train_samples_per_second': 4.242, 'train_steps_per_second': 0.133, 'train_loss': 0.5619592189788818, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:08<01:20,  8.91s/it] 20%|██        | 2/10 [00:17<01:09,  8.67s/it] 30%|███       | 3/10 [00:23<00:52,  7.52s/it] 40%|████      | 4/10 [00:31<00:46,  7.69s/it] 50%|█████     | 5/10 [00:39<00:39,  7.87s/it] 60%|██████    | 6/10 [00:47<00:31,  7.77s/it] 70%|███████   | 7/10 [00:52<00:20,  6.97s/it] 80%|████████  | 8/10 [01:00<00:14,  7.38s/it] 90%|█████████ | 9/10 [01:08<00:07,  7.35s/it]100%|██████████| 10/10 [01:15<00:00,  7.23s/it]                                               100%|██████████| 10/10 [01:15<00:00,  7.23s/it]100%|██████████| 10/10 [01:15<00:00,  7.57s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 75.6812, 'train_samples_per_second': 4.228, 'train_steps_per_second': 0.132, 'train_loss': 0.5716953754425049, 'epoch': 1.0}
+>> ==================== Round 7 : [1, 9] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:09<01:29, 10.00s/it] 20%|██        | 2/10 [00:17<01:09,  8.67s/it] 30%|███       | 3/10 [00:27<01:05,  9.29s/it] 40%|████      | 4/10 [00:37<00:56,  9.41s/it] 50%|█████     | 5/10 [00:43<00:41,  8.31s/it] 60%|██████    | 6/10 [00:51<00:32,  8.03s/it] 70%|███████   | 7/10 [00:59<00:24,  8.01s/it] 80%|████████  | 8/10 [01:06<00:15,  7.94s/it] 90%|█████████ | 9/10 [01:12<00:07,  7.23s/it]100%|██████████| 10/10 [01:20<00:00,  7.33s/it]                                               100%|██████████| 10/10 [01:23<00:00,  7.33s/it]100%|██████████| 10/10 [01:23<00:00,  8.38s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 83.8303, 'train_samples_per_second': 3.817, 'train_steps_per_second': 0.119, 'train_loss': 0.5645829677581787, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:10<01:30, 10.07s/it] 20%|██        | 2/10 [00:18<01:12,  9.11s/it] 30%|███       | 3/10 [00:26<00:58,  8.38s/it] 40%|████      | 4/10 [00:34<00:49,  8.27s/it] 50%|█████     | 5/10 [00:42<00:41,  8.24s/it] 60%|██████    | 6/10 [00:53<00:36,  9.22s/it] 70%|███████   | 7/10 [01:01<00:26,  8.69s/it] 80%|████████  | 8/10 [01:07<00:16,  8.10s/it] 90%|█████████ | 9/10 [01:15<00:07,  7.94s/it]100%|██████████| 10/10 [01:22<00:00,  7.64s/it]                                               100%|██████████| 10/10 [01:22<00:00,  7.64s/it]100%|██████████| 10/10 [01:22<00:00,  8.30s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 82.9867, 'train_samples_per_second': 3.856, 'train_steps_per_second': 0.121, 'train_loss': 0.5845313549041748, 'epoch': 1.0}
+>> ==================== Round 8 : [2, 5] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:05,  7.31s/it] 20%|██        | 2/10 [00:15<01:01,  7.67s/it] 30%|███       | 3/10 [00:23<00:56,  8.13s/it] 40%|████      | 4/10 [00:31<00:47,  7.97s/it] 50%|█████     | 5/10 [00:39<00:39,  7.93s/it] 60%|██████    | 6/10 [00:49<00:34,  8.62s/it] 70%|███████   | 7/10 [00:57<00:25,  8.54s/it] 80%|████████  | 8/10 [01:03<00:15,  7.51s/it] 90%|█████████ | 9/10 [01:09<00:07,  7.29s/it]100%|██████████| 10/10 [01:18<00:00,  7.65s/it]                                               100%|██████████| 10/10 [01:18<00:00,  7.65s/it]100%|██████████| 10/10 [01:18<00:00,  7.90s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 78.9551, 'train_samples_per_second': 4.053, 'train_steps_per_second': 0.127, 'train_loss': 0.5786086082458496, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:54,  6.03s/it] 20%|██        | 2/10 [00:13<00:55,  6.89s/it] 30%|███       | 3/10 [00:20<00:48,  6.92s/it] 40%|████      | 4/10 [00:29<00:46,  7.83s/it] 50%|█████     | 5/10 [00:37<00:38,  7.67s/it] 60%|██████    | 6/10 [00:46<00:33,  8.27s/it] 70%|███████   | 7/10 [00:54<00:24,  8.13s/it] 80%|████████  | 8/10 [01:01<00:15,  7.68s/it] 90%|█████████ | 9/10 [01:10<00:08,  8.24s/it]100%|██████████| 10/10 [01:19<00:00,  8.44s/it]                                               100%|██████████| 10/10 [01:19<00:00,  8.44s/it]100%|██████████| 10/10 [01:19<00:00,  8.00s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 80.0002, 'train_samples_per_second': 4.0, 'train_steps_per_second': 0.125, 'train_loss': 0.5260393142700195, 'epoch': 1.0}
+>> ==================== Round 9 : [3, 5] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:08<01:16,  8.54s/it] 20%|██        | 2/10 [00:17<01:08,  8.59s/it] 30%|███       | 3/10 [00:24<00:56,  8.01s/it] 40%|████      | 4/10 [00:34<00:52,  8.80s/it] 50%|█████     | 5/10 [00:41<00:40,  8.05s/it] 60%|██████    | 6/10 [00:49<00:32,  8.14s/it] 70%|███████   | 7/10 [00:56<00:23,  7.83s/it] 80%|████████  | 8/10 [01:04<00:15,  7.87s/it] 90%|█████████ | 9/10 [01:11<00:07,  7.52s/it]100%|██████████| 10/10 [01:17<00:00,  7.08s/it]                                               100%|██████████| 10/10 [01:18<00:00,  7.08s/it]100%|██████████| 10/10 [01:18<00:00,  7.81s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 78.1104, 'train_samples_per_second': 4.097, 'train_steps_per_second': 0.128, 'train_loss': 0.5625516414642334, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:43,  4.78s/it] 20%|██        | 2/10 [00:13<00:57,  7.20s/it] 30%|███       | 3/10 [00:23<00:59,  8.55s/it] 40%|████      | 4/10 [00:29<00:44,  7.41s/it] 50%|█████     | 5/10 [00:39<00:41,  8.22s/it] 60%|██████    | 6/10 [00:48<00:33,  8.48s/it] 70%|███████   | 7/10 [00:55<00:24,  8.08s/it] 80%|████████  | 8/10 [01:05<00:17,  8.73s/it] 90%|█████████ | 9/10 [01:13<00:08,  8.38s/it]100%|██████████| 10/10 [01:20<00:00,  8.09s/it]                                               100%|██████████| 10/10 [01:21<00:00,  8.09s/it]100%|██████████| 10/10 [01:21<00:00,  8.11s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 81.1221, 'train_samples_per_second': 3.945, 'train_steps_per_second': 0.123, 'train_loss': 0.578265905380249, 'epoch': 1.0}
+>> ==================== Round 10 : [5, 7] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:09,  7.71s/it] 20%|██        | 2/10 [00:14<00:55,  7.00s/it] 30%|███       | 3/10 [00:23<00:56,  8.13s/it] 40%|████      | 4/10 [00:33<00:53,  8.90s/it] 50%|█████     | 5/10 [00:43<00:45,  9.02s/it] 60%|██████    | 6/10 [00:51<00:34,  8.75s/it] 70%|███████   | 7/10 [00:57<00:23,  7.95s/it] 80%|████████  | 8/10 [01:03<00:14,  7.45s/it] 90%|█████████ | 9/10 [01:10<00:07,  7.14s/it]100%|██████████| 10/10 [01:18<00:00,  7.39s/it]                                               100%|██████████| 10/10 [01:18<00:00,  7.39s/it]100%|██████████| 10/10 [01:18<00:00,  7.89s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 78.8611, 'train_samples_per_second': 4.058, 'train_steps_per_second': 0.127, 'train_loss': 0.5650883674621582, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:09<01:27,  9.67s/it] 20%|██        | 2/10 [00:16<01:02,  7.81s/it] 30%|███       | 3/10 [00:25<00:58,  8.31s/it] 40%|████      | 4/10 [00:31<00:46,  7.74s/it] 50%|█████     | 5/10 [00:41<00:41,  8.25s/it] 60%|██████    | 6/10 [00:48<00:31,  7.84s/it] 70%|███████   | 7/10 [00:56<00:23,  7.89s/it] 80%|████████  | 8/10 [01:03<00:15,  7.84s/it] 90%|█████████ | 9/10 [01:12<00:07,  8.00s/it]100%|██████████| 10/10 [01:20<00:00,  8.11s/it]                                               100%|██████████| 10/10 [01:21<00:00,  8.11s/it]100%|██████████| 10/10 [01:21<00:00,  8.17s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 81.7008, 'train_samples_per_second': 3.917, 'train_steps_per_second': 0.122, 'train_loss': 0.5279037952423096, 'epoch': 1.0}
+>> ==================== Round 11 : [0, 9] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:59,  6.57s/it] 20%|██        | 2/10 [00:15<01:03,  7.98s/it] 30%|███       | 3/10 [00:24<00:58,  8.40s/it] 40%|████      | 4/10 [00:32<00:48,  8.16s/it] 50%|█████     | 5/10 [00:39<00:39,  7.84s/it] 60%|██████    | 6/10 [00:48<00:32,  8.16s/it] 70%|███████   | 7/10 [00:54<00:22,  7.53s/it] 80%|████████  | 8/10 [01:01<00:14,  7.22s/it] 90%|█████████ | 9/10 [01:07<00:07,  7.11s/it]100%|██████████| 10/10 [01:14<00:00,  6.92s/it]                                               100%|██████████| 10/10 [01:15<00:00,  6.92s/it]100%|██████████| 10/10 [01:15<00:00,  7.50s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 75.0326, 'train_samples_per_second': 4.265, 'train_steps_per_second': 0.133, 'train_loss': 0.558455228805542, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:03,  7.10s/it] 20%|██        | 2/10 [00:13<00:54,  6.87s/it] 30%|███       | 3/10 [00:20<00:47,  6.84s/it] 40%|████      | 4/10 [00:29<00:46,  7.78s/it] 50%|█████     | 5/10 [00:35<00:34,  6.96s/it] 60%|██████    | 6/10 [00:43<00:30,  7.50s/it] 70%|███████   | 7/10 [00:53<00:24,  8.17s/it] 80%|████████  | 8/10 [01:03<00:17,  8.68s/it] 90%|█████████ | 9/10 [01:12<00:08,  8.88s/it]100%|██████████| 10/10 [01:18<00:00,  8.08s/it]                                               100%|██████████| 10/10 [01:19<00:00,  8.08s/it]100%|██████████| 10/10 [01:19<00:00,  7.96s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 79.5707, 'train_samples_per_second': 4.022, 'train_steps_per_second': 0.126, 'train_loss': 0.5713395595550537, 'epoch': 1.0}
+>> ==================== Round 12 : [7, 8] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:07,  7.54s/it] 20%|██        | 2/10 [00:14<00:57,  7.23s/it] 30%|███       | 3/10 [00:23<00:57,  8.22s/it] 40%|████      | 4/10 [00:31<00:46,  7.81s/it] 50%|█████     | 5/10 [00:39<00:39,  8.00s/it] 60%|██████    | 6/10 [00:46<00:30,  7.70s/it] 70%|███████   | 7/10 [00:55<00:24,  8.14s/it] 80%|████████  | 8/10 [01:04<00:16,  8.38s/it] 90%|█████████ | 9/10 [01:11<00:07,  7.83s/it]100%|██████████| 10/10 [01:19<00:00,  8.04s/it]                                               100%|██████████| 10/10 [01:20<00:00,  8.04s/it]100%|██████████| 10/10 [01:20<00:00,  8.02s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 80.1975, 'train_samples_per_second': 3.99, 'train_steps_per_second': 0.125, 'train_loss': 0.5127831935882569, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<01:00,  6.72s/it] 20%|██        | 2/10 [00:16<01:09,  8.70s/it] 30%|███       | 3/10 [00:23<00:53,  7.67s/it] 40%|████      | 4/10 [00:30<00:45,  7.60s/it] 50%|█████     | 5/10 [00:39<00:39,  7.98s/it] 60%|██████    | 6/10 [00:46<00:30,  7.56s/it] 70%|███████   | 7/10 [00:51<00:20,  6.81s/it] 80%|████████  | 8/10 [00:58<00:13,  6.87s/it] 90%|█████████ | 9/10 [01:16<00:10, 10.32s/it]100%|██████████| 10/10 [01:23<00:00,  9.25s/it]                                               100%|██████████| 10/10 [01:32<00:00,  9.25s/it]100%|██████████| 10/10 [01:32<00:00,  9.27s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 92.7225, 'train_samples_per_second': 3.451, 'train_steps_per_second': 0.108, 'train_loss': 0.5767203330993652, 'epoch': 1.0}
+>> ==================== Round 13 : [4, 7] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:54,  6.01s/it] 20%|██        | 2/10 [00:12<00:49,  6.19s/it] 30%|███       | 3/10 [00:20<00:50,  7.15s/it] 40%|████      | 4/10 [00:28<00:45,  7.50s/it] 50%|█████     | 5/10 [00:34<00:35,  7.00s/it] 60%|██████    | 6/10 [00:41<00:27,  6.84s/it] 70%|███████   | 7/10 [00:47<00:20,  6.68s/it] 80%|████████  | 8/10 [00:54<00:13,  6.79s/it] 90%|█████████ | 9/10 [01:03<00:07,  7.28s/it]100%|██████████| 10/10 [01:11<00:00,  7.76s/it]                                               100%|██████████| 10/10 [01:12<00:00,  7.76s/it]100%|██████████| 10/10 [01:12<00:00,  7.25s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 72.4964, 'train_samples_per_second': 4.414, 'train_steps_per_second': 0.138, 'train_loss': 0.5460257530212402, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:09,  7.68s/it] 20%|██        | 2/10 [00:15<01:02,  7.87s/it] 30%|███       | 3/10 [00:22<00:52,  7.57s/it] 40%|████      | 4/10 [00:32<00:50,  8.43s/it] 50%|█████     | 5/10 [00:37<00:35,  7.19s/it] 60%|██████    | 6/10 [00:43<00:26,  6.62s/it] 70%|███████   | 7/10 [00:51<00:21,  7.18s/it] 80%|████████  | 8/10 [01:02<00:16,  8.34s/it] 90%|█████████ | 9/10 [01:10<00:08,  8.20s/it]100%|██████████| 10/10 [01:17<00:00,  8.03s/it]                                               100%|██████████| 10/10 [01:18<00:00,  8.03s/it]100%|██████████| 10/10 [01:18<00:00,  7.84s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 78.4473, 'train_samples_per_second': 4.079, 'train_steps_per_second': 0.127, 'train_loss': 0.5408336639404296, 'epoch': 1.0}
+>> ==================== Round 14 : [4, 9] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:56,  6.29s/it] 20%|██        | 2/10 [00:14<01:00,  7.56s/it] 30%|███       | 3/10 [00:23<00:57,  8.22s/it] 40%|████      | 4/10 [00:33<00:53,  8.92s/it] 50%|█████     | 5/10 [00:44<00:48,  9.66s/it] 60%|██████    | 6/10 [00:51<00:34,  8.60s/it] 70%|███████   | 7/10 [00:57<00:23,  7.84s/it] 80%|████████  | 8/10 [01:04<00:15,  7.57s/it] 90%|█████████ | 9/10 [01:11<00:07,  7.24s/it]100%|██████████| 10/10 [01:18<00:00,  7.20s/it]                                               100%|██████████| 10/10 [01:18<00:00,  7.20s/it]100%|██████████| 10/10 [01:18<00:00,  7.87s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 78.7111, 'train_samples_per_second': 4.065, 'train_steps_per_second': 0.127, 'train_loss': 0.5293756008148194, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:08,  7.66s/it] 20%|██        | 2/10 [00:15<01:02,  7.82s/it] 30%|███       | 3/10 [00:21<00:49,  7.12s/it] 40%|████      | 4/10 [00:31<00:48,  8.14s/it] 50%|█████     | 5/10 [00:39<00:40,  8.04s/it] 60%|██████    | 6/10 [00:46<00:31,  7.83s/it] 70%|███████   | 7/10 [00:58<00:26,  8.91s/it] 80%|████████  | 8/10 [01:05<00:16,  8.42s/it] 90%|█████████ | 9/10 [01:15<00:08,  8.84s/it]100%|██████████| 10/10 [01:22<00:00,  8.25s/it]                                               100%|██████████| 10/10 [01:22<00:00,  8.25s/it]100%|██████████| 10/10 [01:22<00:00,  8.26s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 82.6097, 'train_samples_per_second': 3.874, 'train_steps_per_second': 0.121, 'train_loss': 0.5047804832458496, 'epoch': 1.0}
+>> ==================== Round 15 : [1, 8] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<01:01,  6.78s/it] 20%|██        | 2/10 [00:13<00:52,  6.60s/it] 30%|███       | 3/10 [00:20<00:49,  7.08s/it] 40%|████      | 4/10 [00:29<00:47,  7.87s/it] 50%|█████     | 5/10 [00:37<00:39,  7.86s/it] 60%|██████    | 6/10 [00:43<00:28,  7.14s/it] 70%|███████   | 7/10 [00:51<00:22,  7.45s/it] 80%|████████  | 8/10 [00:58<00:14,  7.14s/it] 90%|█████████ | 9/10 [01:04<00:06,  6.90s/it]100%|██████████| 10/10 [01:12<00:00,  7.26s/it]                                               100%|██████████| 10/10 [01:15<00:00,  7.26s/it]100%|██████████| 10/10 [01:15<00:00,  7.59s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 75.8672, 'train_samples_per_second': 4.218, 'train_steps_per_second': 0.132, 'train_loss': 0.5388430118560791, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:58,  6.54s/it] 20%|██        | 2/10 [00:14<00:58,  7.33s/it] 30%|███       | 3/10 [00:22<00:53,  7.60s/it] 40%|████      | 4/10 [00:29<00:45,  7.51s/it] 50%|█████     | 5/10 [00:35<00:34,  6.85s/it] 60%|██████    | 6/10 [00:43<00:29,  7.38s/it] 70%|███████   | 7/10 [00:50<00:21,  7.12s/it] 80%|████████  | 8/10 [00:57<00:14,  7.27s/it] 90%|█████████ | 9/10 [01:06<00:07,  7.68s/it]100%|██████████| 10/10 [01:13<00:00,  7.54s/it]                                               100%|██████████| 10/10 [01:19<00:00,  7.54s/it]100%|██████████| 10/10 [01:19<00:00,  7.96s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 79.653, 'train_samples_per_second': 4.017, 'train_steps_per_second': 0.126, 'train_loss': 0.5256581783294678, 'epoch': 1.0}
+>> ==================== Round 16 : [0, 3] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:47,  5.25s/it] 20%|██        | 2/10 [00:13<00:55,  6.94s/it] 30%|███       | 3/10 [00:18<00:42,  6.00s/it] 40%|████      | 4/10 [00:25<00:38,  6.43s/it] 50%|█████     | 5/10 [00:31<00:31,  6.35s/it] 60%|██████    | 6/10 [00:37<00:25,  6.31s/it] 70%|███████   | 7/10 [00:45<00:20,  6.70s/it] 80%|████████  | 8/10 [00:52<00:13,  6.94s/it] 90%|█████████ | 9/10 [01:01<00:07,  7.36s/it]100%|██████████| 10/10 [01:14<00:00,  9.24s/it]                                               100%|██████████| 10/10 [01:15<00:00,  9.24s/it]100%|██████████| 10/10 [01:15<00:00,  7.50s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 75.0506, 'train_samples_per_second': 4.264, 'train_steps_per_second': 0.133, 'train_loss': 0.532444953918457, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:08<01:17,  8.56s/it] 20%|██        | 2/10 [00:16<01:04,  8.09s/it] 30%|███       | 3/10 [00:21<00:47,  6.79s/it] 40%|████      | 4/10 [00:28<00:40,  6.72s/it] 50%|█████     | 5/10 [00:35<00:34,  6.98s/it] 60%|██████    | 6/10 [00:43<00:28,  7.21s/it] 70%|███████   | 7/10 [00:50<00:21,  7.17s/it] 80%|████████  | 8/10 [00:55<00:12,  6.48s/it] 90%|█████████ | 9/10 [01:01<00:06,  6.34s/it]100%|██████████| 10/10 [01:08<00:00,  6.59s/it]                                               100%|██████████| 10/10 [01:11<00:00,  6.59s/it]100%|██████████| 10/10 [01:11<00:00,  7.12s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 71.1881, 'train_samples_per_second': 4.495, 'train_steps_per_second': 0.14, 'train_loss': 0.5446716785430908, 'epoch': 1.0}
+>> ==================== Round 17 : [5, 7] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:59,  6.62s/it] 20%|██        | 2/10 [00:14<01:00,  7.61s/it] 30%|███       | 3/10 [00:24<00:58,  8.40s/it] 40%|████      | 4/10 [00:31<00:47,  7.99s/it] 50%|█████     | 5/10 [00:39<00:39,  7.94s/it] 60%|██████    | 6/10 [00:49<00:34,  8.59s/it] 70%|███████   | 7/10 [00:57<00:25,  8.37s/it] 80%|████████  | 8/10 [01:04<00:16,  8.05s/it] 90%|█████████ | 9/10 [01:13<00:08,  8.46s/it]100%|██████████| 10/10 [01:24<00:00,  9.04s/it]                                               100%|██████████| 10/10 [01:24<00:00,  9.04s/it]100%|██████████| 10/10 [01:24<00:00,  8.49s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 84.8883, 'train_samples_per_second': 3.77, 'train_steps_per_second': 0.118, 'train_loss': 0.5329442977905273, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:08<01:12,  8.01s/it] 20%|██        | 2/10 [00:15<01:01,  7.64s/it] 30%|███       | 3/10 [00:20<00:45,  6.49s/it] 40%|████      | 4/10 [00:28<00:41,  6.93s/it] 50%|█████     | 5/10 [00:33<00:31,  6.30s/it] 60%|██████    | 6/10 [00:40<00:26,  6.75s/it] 70%|███████   | 7/10 [00:46<00:19,  6.47s/it] 80%|████████  | 8/10 [00:53<00:13,  6.63s/it] 90%|█████████ | 9/10 [01:02<00:07,  7.27s/it]100%|██████████| 10/10 [01:09<00:00,  7.15s/it]                                               100%|██████████| 10/10 [01:20<00:00,  7.15s/it]100%|██████████| 10/10 [01:20<00:00,  8.07s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 80.7109, 'train_samples_per_second': 3.965, 'train_steps_per_second': 0.124, 'train_loss': 0.5356558322906494, 'epoch': 1.0}
+>> ==================== Round 18 : [6, 8] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:03,  7.08s/it] 20%|██        | 2/10 [00:14<01:00,  7.54s/it] 30%|███       | 3/10 [00:21<00:48,  6.92s/it] 40%|████      | 4/10 [00:30<00:47,  7.95s/it] 50%|█████     | 5/10 [00:38<00:39,  7.82s/it] 60%|██████    | 6/10 [00:47<00:32,  8.17s/it] 70%|███████   | 7/10 [00:53<00:22,  7.48s/it] 80%|████████  | 8/10 [00:59<00:14,  7.20s/it] 90%|█████████ | 9/10 [01:07<00:07,  7.30s/it]100%|██████████| 10/10 [01:13<00:00,  7.05s/it]                                               100%|██████████| 10/10 [01:21<00:00,  7.05s/it]100%|██████████| 10/10 [01:21<00:00,  8.15s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 81.4778, 'train_samples_per_second': 3.927, 'train_steps_per_second': 0.123, 'train_loss': 0.5147737503051758, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:42,  4.77s/it] 20%|██        | 2/10 [00:11<00:48,  6.12s/it] 30%|███       | 3/10 [00:19<00:48,  6.87s/it] 40%|████      | 4/10 [00:27<00:42,  7.11s/it] 50%|█████     | 5/10 [00:35<00:37,  7.41s/it] 60%|██████    | 6/10 [00:43<00:30,  7.70s/it] 70%|███████   | 7/10 [00:53<00:25,  8.47s/it] 80%|████████  | 8/10 [01:04<00:18,  9.27s/it] 90%|█████████ | 9/10 [01:11<00:08,  8.66s/it]100%|██████████| 10/10 [01:18<00:00,  8.20s/it]                                               100%|██████████| 10/10 [01:22<00:00,  8.20s/it]100%|██████████| 10/10 [01:22<00:00,  8.25s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 82.4994, 'train_samples_per_second': 3.879, 'train_steps_per_second': 0.121, 'train_loss': 0.5136144638061524, 'epoch': 1.0}
+>> ==================== Round 19 : [1, 2] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:42,  4.75s/it] 20%|██        | 2/10 [00:11<00:49,  6.15s/it] 30%|███       | 3/10 [00:19<00:47,  6.80s/it] 40%|████      | 4/10 [00:24<00:36,  6.03s/it] 50%|█████     | 5/10 [00:31<00:32,  6.59s/it] 60%|██████    | 6/10 [00:39<00:27,  6.83s/it] 70%|███████   | 7/10 [00:48<00:23,  7.71s/it] 80%|████████  | 8/10 [00:56<00:15,  7.69s/it] 90%|█████████ | 9/10 [01:04<00:07,  7.84s/it]100%|██████████| 10/10 [01:11<00:00,  7.64s/it]                                               100%|██████████| 10/10 [01:15<00:00,  7.64s/it]100%|██████████| 10/10 [01:15<00:00,  7.56s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 75.6386, 'train_samples_per_second': 4.231, 'train_steps_per_second': 0.132, 'train_loss': 0.5369499206542969, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:10<01:33, 10.34s/it] 20%|██        | 2/10 [00:17<01:08,  8.54s/it] 30%|███       | 3/10 [00:27<01:05,  9.38s/it] 40%|████      | 4/10 [00:34<00:50,  8.35s/it] 50%|█████     | 5/10 [00:43<00:43,  8.65s/it] 60%|██████    | 6/10 [00:50<00:31,  7.85s/it] 70%|███████   | 7/10 [00:59<00:24,  8.26s/it] 80%|████████  | 8/10 [01:06<00:15,  7.77s/it] 90%|█████████ | 9/10 [01:12<00:07,  7.51s/it]100%|██████████| 10/10 [01:19<00:00,  7.05s/it]                                               100%|██████████| 10/10 [01:19<00:00,  7.05s/it]100%|██████████| 10/10 [01:19<00:00,  7.96s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 79.5938, 'train_samples_per_second': 4.02, 'train_steps_per_second': 0.126, 'train_loss': 0.5277944564819336, 'epoch': 1.0}
+>> ==================== Round 20 : [0, 8] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<01:00,  6.71s/it] 20%|██        | 2/10 [00:13<00:52,  6.54s/it] 30%|███       | 3/10 [00:20<00:48,  6.94s/it] 40%|████      | 4/10 [00:26<00:38,  6.43s/it] 50%|█████     | 5/10 [00:33<00:33,  6.60s/it] 60%|██████    | 6/10 [00:43<00:32,  8.05s/it] 70%|███████   | 7/10 [00:51<00:23,  7.78s/it] 80%|████████  | 8/10 [00:58<00:15,  7.77s/it] 90%|█████████ | 9/10 [01:06<00:07,  7.75s/it]100%|██████████| 10/10 [01:16<00:00,  8.32s/it]                                               100%|██████████| 10/10 [01:16<00:00,  8.32s/it]100%|██████████| 10/10 [01:16<00:00,  7.68s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 76.8351, 'train_samples_per_second': 4.165, 'train_steps_per_second': 0.13, 'train_loss': 0.5308608531951904, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:51,  5.74s/it] 20%|██        | 2/10 [00:16<01:09,  8.69s/it] 30%|███       | 3/10 [00:23<00:55,  7.89s/it] 40%|████      | 4/10 [00:31<00:47,  7.97s/it] 50%|█████     | 5/10 [00:40<00:40,  8.17s/it] 60%|██████    | 6/10 [00:47<00:31,  7.83s/it] 70%|███████   | 7/10 [00:54<00:22,  7.51s/it] 80%|████████  | 8/10 [01:01<00:14,  7.35s/it] 90%|█████████ | 9/10 [01:07<00:06,  6.98s/it]100%|██████████| 10/10 [01:14<00:00,  7.02s/it]                                               100%|██████████| 10/10 [01:16<00:00,  7.02s/it]100%|██████████| 10/10 [01:16<00:00,  7.62s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 76.1832, 'train_samples_per_second': 4.2, 'train_steps_per_second': 0.131, 'train_loss': 0.5439014434814453, 'epoch': 1.0}
+>> ==================== Round 21 : [2, 4] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:09<01:29,  9.96s/it] 20%|██        | 2/10 [00:16<01:05,  8.17s/it] 30%|███       | 3/10 [00:26<01:02,  8.92s/it] 40%|████      | 4/10 [00:33<00:49,  8.25s/it] 50%|█████     | 5/10 [00:41<00:39,  7.99s/it] 60%|██████    | 6/10 [00:49<00:32,  8.00s/it] 70%|███████   | 7/10 [00:58<00:24,  8.23s/it] 80%|████████  | 8/10 [01:08<00:17,  8.93s/it] 90%|█████████ | 9/10 [01:17<00:08,  8.87s/it]100%|██████████| 10/10 [01:26<00:00,  8.89s/it]                                               100%|██████████| 10/10 [01:26<00:00,  8.89s/it]100%|██████████| 10/10 [01:26<00:00,  8.69s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 86.8721, 'train_samples_per_second': 3.684, 'train_steps_per_second': 0.115, 'train_loss': 0.4899552345275879, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:51,  5.75s/it] 20%|██        | 2/10 [00:15<01:02,  7.84s/it] 30%|███       | 3/10 [00:23<00:55,  7.90s/it] 40%|████      | 4/10 [00:32<00:50,  8.48s/it] 50%|█████     | 5/10 [00:38<00:38,  7.72s/it] 60%|██████    | 6/10 [00:46<00:31,  7.77s/it] 70%|███████   | 7/10 [00:55<00:24,  8.15s/it] 80%|████████  | 8/10 [01:04<00:16,  8.25s/it] 90%|█████████ | 9/10 [01:11<00:07,  7.95s/it]100%|██████████| 10/10 [01:17<00:00,  7.33s/it]                                               100%|██████████| 10/10 [01:20<00:00,  7.33s/it]100%|██████████| 10/10 [01:20<00:00,  8.05s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 80.5145, 'train_samples_per_second': 3.974, 'train_steps_per_second': 0.124, 'train_loss': 0.5109102725982666, 'epoch': 1.0}
+>> ==================== Round 22 : [2, 6] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:04,  7.17s/it] 20%|██        | 2/10 [00:13<00:52,  6.58s/it] 30%|███       | 3/10 [00:20<00:49,  7.02s/it] 40%|████      | 4/10 [00:27<00:40,  6.72s/it] 50%|█████     | 5/10 [00:37<00:40,  8.00s/it] 60%|██████    | 6/10 [00:45<00:32,  8.04s/it] 70%|███████   | 7/10 [00:54<00:25,  8.49s/it] 80%|████████  | 8/10 [01:04<00:17,  8.90s/it] 90%|█████████ | 9/10 [01:12<00:08,  8.51s/it]100%|██████████| 10/10 [01:19<00:00,  8.14s/it]                                               100%|██████████| 10/10 [01:20<00:00,  8.14s/it]100%|██████████| 10/10 [01:20<00:00,  8.02s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 80.2542, 'train_samples_per_second': 3.987, 'train_steps_per_second': 0.125, 'train_loss': 0.4986271858215332, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:05,  7.29s/it] 20%|██        | 2/10 [00:15<01:04,  8.07s/it] 30%|███       | 3/10 [00:23<00:55,  7.93s/it] 40%|████      | 4/10 [00:32<00:50,  8.36s/it] 50%|█████     | 5/10 [00:42<00:43,  8.74s/it] 60%|██████    | 6/10 [00:50<00:34,  8.50s/it] 70%|███████   | 7/10 [00:56<00:23,  7.86s/it] 80%|████████  | 8/10 [01:03<00:15,  7.54s/it] 90%|█████████ | 9/10 [01:11<00:07,  7.53s/it]100%|██████████| 10/10 [01:19<00:00,  7.73s/it]                                               100%|██████████| 10/10 [01:19<00:00,  7.73s/it]100%|██████████| 10/10 [01:19<00:00,  7.99s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 79.9028, 'train_samples_per_second': 4.005, 'train_steps_per_second': 0.125, 'train_loss': 0.511075782775879, 'epoch': 1.0}
+>> ==================== Round 23 : [2, 3] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:08<01:17,  8.62s/it] 20%|██        | 2/10 [00:16<01:05,  8.18s/it] 30%|███       | 3/10 [00:23<00:52,  7.52s/it] 40%|████      | 4/10 [00:29<00:41,  6.86s/it] 50%|█████     | 5/10 [00:36<00:34,  7.00s/it] 60%|██████    | 6/10 [00:43<00:28,  7.13s/it] 70%|███████   | 7/10 [00:49<00:20,  6.78s/it] 80%|████████  | 8/10 [00:59<00:15,  7.58s/it] 90%|█████████ | 9/10 [01:08<00:08,  8.22s/it]100%|██████████| 10/10 [01:17<00:00,  8.29s/it]                                               100%|██████████| 10/10 [01:17<00:00,  8.29s/it]100%|██████████| 10/10 [01:17<00:00,  7.77s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 77.6977, 'train_samples_per_second': 4.119, 'train_steps_per_second': 0.129, 'train_loss': 0.5067856788635254, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:08<01:20,  8.99s/it] 20%|██        | 2/10 [00:16<01:03,  7.94s/it] 30%|███       | 3/10 [00:25<01:01,  8.73s/it] 40%|████      | 4/10 [00:33<00:49,  8.22s/it] 50%|█████     | 5/10 [00:42<00:41,  8.39s/it] 60%|██████    | 6/10 [00:51<00:34,  8.68s/it] 70%|███████   | 7/10 [00:57<00:23,  7.90s/it] 80%|████████  | 8/10 [01:06<00:16,  8.26s/it] 90%|█████████ | 9/10 [01:17<00:09,  9.25s/it]100%|██████████| 10/10 [01:24<00:00,  8.50s/it]                                               100%|██████████| 10/10 [01:25<00:00,  8.50s/it]100%|██████████| 10/10 [01:25<00:00,  8.54s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 85.4094, 'train_samples_per_second': 3.747, 'train_steps_per_second': 0.117, 'train_loss': 0.49762911796569825, 'epoch': 1.0}
+>> ==================== Round 24 : [1, 4] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:05,  7.30s/it] 20%|██        | 2/10 [00:13<00:51,  6.43s/it] 30%|███       | 3/10 [00:20<00:48,  6.89s/it] 40%|████      | 4/10 [00:28<00:42,  7.16s/it] 50%|█████     | 5/10 [00:36<00:38,  7.62s/it] 60%|██████    | 6/10 [00:44<00:30,  7.69s/it] 70%|███████   | 7/10 [00:50<00:21,  7.19s/it] 80%|████████  | 8/10 [00:56<00:13,  6.76s/it] 90%|█████████ | 9/10 [01:04<00:07,  7.18s/it]100%|██████████| 10/10 [01:12<00:00,  7.49s/it]                                               100%|██████████| 10/10 [01:13<00:00,  7.49s/it]100%|██████████| 10/10 [01:13<00:00,  7.33s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 73.3161, 'train_samples_per_second': 4.365, 'train_steps_per_second': 0.136, 'train_loss': 0.5401782035827637, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<01:00,  6.67s/it] 20%|██        | 2/10 [00:12<00:50,  6.26s/it] 30%|███       | 3/10 [00:19<00:45,  6.46s/it] 40%|████      | 4/10 [00:25<00:38,  6.47s/it] 50%|█████     | 5/10 [00:34<00:35,  7.12s/it] 60%|██████    | 6/10 [00:43<00:31,  7.84s/it] 70%|███████   | 7/10 [00:52<00:24,  8.15s/it] 80%|████████  | 8/10 [00:59<00:15,  7.98s/it] 90%|█████████ | 9/10 [01:03<00:06,  6.79s/it]100%|██████████| 10/10 [01:09<00:00,  6.42s/it]                                               100%|██████████| 10/10 [01:10<00:00,  6.42s/it]100%|██████████| 10/10 [01:10<00:00,  7.01s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 70.1042, 'train_samples_per_second': 4.565, 'train_steps_per_second': 0.143, 'train_loss': 0.5597076416015625, 'epoch': 1.0}
+>> ==================== Round 25 : [2, 6] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:11,  7.91s/it] 20%|██        | 2/10 [00:15<01:01,  7.72s/it] 30%|███       | 3/10 [00:23<00:54,  7.73s/it] 40%|████      | 4/10 [00:32<00:49,  8.22s/it] 50%|█████     | 5/10 [00:39<00:39,  7.84s/it] 60%|██████    | 6/10 [00:46<00:29,  7.50s/it] 70%|███████   | 7/10 [00:52<00:20,  6.96s/it] 80%|████████  | 8/10 [01:01<00:15,  7.74s/it] 90%|█████████ | 9/10 [01:10<00:08,  8.03s/it]100%|██████████| 10/10 [01:17<00:00,  7.68s/it]                                               100%|██████████| 10/10 [01:17<00:00,  7.68s/it]100%|██████████| 10/10 [01:17<00:00,  7.77s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 77.6604, 'train_samples_per_second': 4.121, 'train_steps_per_second': 0.129, 'train_loss': 0.491578197479248, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:08,  7.58s/it] 20%|██        | 2/10 [00:17<01:11,  8.92s/it] 30%|███       | 3/10 [00:23<00:53,  7.68s/it] 40%|████      | 4/10 [00:33<00:51,  8.55s/it] 50%|█████     | 5/10 [00:40<00:40,  8.01s/it] 60%|██████    | 6/10 [00:47<00:30,  7.71s/it] 70%|███████   | 7/10 [00:57<00:25,  8.46s/it] 80%|████████  | 8/10 [01:04<00:15,  7.96s/it] 90%|█████████ | 9/10 [01:12<00:07,  7.79s/it]100%|██████████| 10/10 [01:20<00:00,  8.11s/it]                                               100%|██████████| 10/10 [01:23<00:00,  8.11s/it]100%|██████████| 10/10 [01:23<00:00,  8.39s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 83.8882, 'train_samples_per_second': 3.815, 'train_steps_per_second': 0.119, 'train_loss': 0.48462796211242676, 'epoch': 1.0}
+>> ==================== Round 26 : [0, 6] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:09<01:25,  9.50s/it] 20%|██        | 2/10 [00:18<01:12,  9.00s/it] 30%|███       | 3/10 [00:28<01:06,  9.46s/it] 40%|████      | 4/10 [00:32<00:45,  7.58s/it] 50%|█████     | 5/10 [00:42<00:41,  8.26s/it] 60%|██████    | 6/10 [00:49<00:31,  7.80s/it] 70%|███████   | 7/10 [00:58<00:24,  8.22s/it] 80%|████████  | 8/10 [01:04<00:15,  7.68s/it] 90%|█████████ | 9/10 [01:10<00:07,  7.17s/it]100%|██████████| 10/10 [01:20<00:00,  7.86s/it]                                               100%|██████████| 10/10 [01:24<00:00,  7.86s/it]100%|██████████| 10/10 [01:24<00:00,  8.41s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 84.069, 'train_samples_per_second': 3.806, 'train_steps_per_second': 0.119, 'train_loss': 0.5093658924102783, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:56,  6.33s/it] 20%|██        | 2/10 [00:13<00:52,  6.58s/it] 30%|███       | 3/10 [00:21<00:53,  7.63s/it] 40%|████      | 4/10 [00:29<00:46,  7.73s/it] 50%|█████     | 5/10 [00:36<00:37,  7.50s/it] 60%|██████    | 6/10 [00:42<00:27,  6.99s/it] 70%|███████   | 7/10 [00:49<00:20,  6.93s/it] 80%|████████  | 8/10 [01:00<00:16,  8.13s/it] 90%|█████████ | 9/10 [01:10<00:08,  8.59s/it]100%|██████████| 10/10 [01:19<00:00,  8.76s/it]                                               100%|██████████| 10/10 [01:19<00:00,  8.76s/it]100%|██████████| 10/10 [01:19<00:00,  7.99s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 79.8681, 'train_samples_per_second': 4.007, 'train_steps_per_second': 0.125, 'train_loss': 0.5305399894714355, 'epoch': 1.0}
+>> ==================== Round 27 : [3, 9] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:06,  7.42s/it] 20%|██        | 2/10 [00:14<00:59,  7.44s/it] 30%|███       | 3/10 [00:21<00:50,  7.25s/it] 40%|████      | 4/10 [00:30<00:46,  7.77s/it] 50%|█████     | 5/10 [00:37<00:38,  7.67s/it] 60%|██████    | 6/10 [00:45<00:31,  7.79s/it] 70%|███████   | 7/10 [00:54<00:24,  8.11s/it] 80%|████████  | 8/10 [01:06<00:18,  9.18s/it] 90%|█████████ | 9/10 [01:13<00:08,  8.60s/it]100%|██████████| 10/10 [01:21<00:00,  8.25s/it]                                               100%|██████████| 10/10 [01:21<00:00,  8.25s/it]100%|██████████| 10/10 [01:21<00:00,  8.16s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 81.6369, 'train_samples_per_second': 3.92, 'train_steps_per_second': 0.122, 'train_loss': 0.49036593437194825, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:08<01:14,  8.30s/it] 20%|██        | 2/10 [00:15<01:00,  7.52s/it] 30%|███       | 3/10 [00:22<00:52,  7.49s/it] 40%|████      | 4/10 [00:31<00:48,  8.04s/it] 50%|█████     | 5/10 [00:39<00:39,  7.81s/it] 60%|██████    | 6/10 [00:46<00:31,  7.85s/it] 70%|███████   | 7/10 [00:55<00:23,  7.95s/it] 80%|████████  | 8/10 [01:01<00:14,  7.30s/it] 90%|█████████ | 9/10 [01:07<00:07,  7.05s/it]100%|██████████| 10/10 [01:15<00:00,  7.20s/it]                                               100%|██████████| 10/10 [01:15<00:00,  7.20s/it]100%|██████████| 10/10 [01:15<00:00,  7.56s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 75.631, 'train_samples_per_second': 4.231, 'train_steps_per_second': 0.132, 'train_loss': 0.531537389755249, 'epoch': 1.0}
+>> ==================== Round 28 : [4, 7] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:08<01:13,  8.17s/it] 20%|██        | 2/10 [00:17<01:08,  8.62s/it] 30%|███       | 3/10 [00:24<00:54,  7.85s/it] 40%|████      | 4/10 [00:30<00:43,  7.33s/it] 50%|█████     | 5/10 [00:40<00:40,  8.16s/it] 60%|██████    | 6/10 [00:48<00:32,  8.19s/it] 70%|███████   | 7/10 [00:53<00:21,  7.07s/it] 80%|████████  | 8/10 [00:59<00:13,  6.92s/it] 90%|█████████ | 9/10 [01:07<00:07,  7.03s/it]100%|██████████| 10/10 [01:12<00:00,  6.53s/it]                                               100%|██████████| 10/10 [01:13<00:00,  6.53s/it]100%|██████████| 10/10 [01:13<00:00,  7.36s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 73.6107, 'train_samples_per_second': 4.347, 'train_steps_per_second': 0.136, 'train_loss': 0.5227851390838623, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:11<01:46, 11.82s/it] 20%|██        | 2/10 [00:20<01:20, 10.04s/it] 30%|███       | 3/10 [00:26<00:55,  7.98s/it] 40%|████      | 4/10 [00:35<00:51,  8.59s/it] 50%|█████     | 5/10 [00:43<00:41,  8.22s/it] 60%|██████    | 6/10 [00:50<00:31,  7.94s/it] 70%|███████   | 7/10 [00:56<00:21,  7.10s/it] 80%|████████  | 8/10 [01:05<00:15,  7.91s/it] 90%|█████████ | 9/10 [01:12<00:07,  7.56s/it]100%|██████████| 10/10 [01:20<00:00,  7.60s/it]                                               100%|██████████| 10/10 [01:20<00:00,  7.60s/it]100%|██████████| 10/10 [01:20<00:00,  8.07s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 80.7234, 'train_samples_per_second': 3.964, 'train_steps_per_second': 0.124, 'train_loss': 0.5363400459289551, 'epoch': 1.0}
+>> ==================== Round 29 : [1, 2] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:03,  7.04s/it] 20%|██        | 2/10 [00:12<00:46,  5.87s/it] 30%|███       | 3/10 [00:20<00:48,  6.98s/it] 40%|████      | 4/10 [00:29<00:46,  7.71s/it] 50%|█████     | 5/10 [00:37<00:39,  7.89s/it] 60%|██████    | 6/10 [00:44<00:30,  7.52s/it] 70%|███████   | 7/10 [00:51<00:22,  7.50s/it] 80%|████████  | 8/10 [00:59<00:15,  7.71s/it] 90%|█████████ | 9/10 [01:05<00:07,  7.17s/it]100%|██████████| 10/10 [01:13<00:00,  7.33s/it]                                               100%|██████████| 10/10 [01:14<00:00,  7.33s/it]100%|██████████| 10/10 [01:14<00:00,  7.43s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 74.3081, 'train_samples_per_second': 4.306, 'train_steps_per_second': 0.135, 'train_loss': 0.5745160102844238, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:08<01:19,  8.83s/it] 20%|██        | 2/10 [00:16<01:04,  8.11s/it] 30%|███       | 3/10 [00:24<00:56,  8.11s/it] 40%|████      | 4/10 [00:31<00:45,  7.59s/it] 50%|█████     | 5/10 [00:38<00:37,  7.45s/it] 60%|██████    | 6/10 [00:44<00:27,  6.85s/it] 70%|███████   | 7/10 [00:53<00:22,  7.57s/it] 80%|████████  | 8/10 [01:02<00:15,  7.97s/it] 90%|█████████ | 9/10 [01:09<00:07,  7.64s/it]100%|██████████| 10/10 [01:14<00:00,  7.05s/it]                                               100%|██████████| 10/10 [01:30<00:00,  7.05s/it]100%|██████████| 10/10 [01:30<00:00,  9.08s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 90.776, 'train_samples_per_second': 3.525, 'train_steps_per_second': 0.11, 'train_loss': 0.4805948257446289, 'epoch': 1.0}
+>> ==================== Round 30 : [1, 8] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<01:00,  6.74s/it] 20%|██        | 2/10 [00:15<01:01,  7.68s/it] 30%|███       | 3/10 [00:20<00:45,  6.57s/it] 40%|████      | 4/10 [00:27<00:41,  6.94s/it] 50%|█████     | 5/10 [00:35<00:35,  7.08s/it] 60%|██████    | 6/10 [00:43<00:29,  7.36s/it] 70%|███████   | 7/10 [00:50<00:22,  7.52s/it] 80%|████████  | 8/10 [01:00<00:16,  8.30s/it] 90%|█████████ | 9/10 [01:09<00:08,  8.34s/it]100%|██████████| 10/10 [01:18<00:00,  8.69s/it]                                               100%|██████████| 10/10 [01:25<00:00,  8.69s/it]100%|██████████| 10/10 [01:25<00:00,  8.59s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+WARNING:accelerate.utils.other:Detected kernel version 5.4.143, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 16 | Gradient Accumulation steps = 2
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 13,631,488
+{'train_runtime': 85.8913, 'train_samples_per_second': 3.726, 'train_steps_per_second': 0.116, 'train_loss': 0.534420108795166, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:11,  7.90s/it] 20%|██        | 2/10 [00:15<00:59,  7.48s/it] 30%|███       | 3/10 [00:23<00:56,  8.05s/it] 40%|████      | 4/10 [00:31<00:46,  7.72s/it] 50%|█████     | 5/10 [00:37<00:36,  7.25s/it] 60%|██████    | 6/10 [00:44<00:28,  7.23s/it] 70%|███████   | 7/10 [00:52<00:22,  7.54s/it] 80%|████████  | 8/10 [00:59<00:14,  7.38s/it] 90%|█████████ | 9/10 [01:05<00:06,  6.77s/it]100%|██████████| 10/10 [01:11<00:00,  6.67s/it]                                               100%|██████████| 10/10 [01:12<00:00,  6.67s/it]100%|██████████| 10/10 [01:12<00:00,  7.24s/it]
+{'train_runtime': 72.3683, 'train_samples_per_second': 4.422, 'train_steps_per_second': 0.138, 'train_loss': 0.5218318939208985, 'epoch': 1.0}

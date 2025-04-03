@@ -1,0 +1,72 @@
+[2024-11-19 21:57:31,651] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+is bf16: 0
+is fp16: 0
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='lucasmccabe-lmi/CodeAlpaca-20k', log_with='none', learning_rate=5e-05, batch_size=16, seq_length=512, gradient_accumulation_steps=1, load_in_8bit=False, load_in_4bit=False, use_peft=False, trust_remote_code=False, output_dir='output/CodeAlpaca-20k_20000_fedavg_c10s2_i-1_b16a1_l512_r8a16_f0_base0', peft_lora_r=8, peft_lora_alpha=16, logging_steps=100, use_auth_token=False, num_train_epochs=5, max_steps=-1, save_strategy='epoch', save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=None, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=0, fp16=0, online_dataset=0, full_data=0, still_contain_base_data=0) FedArguments(fed_alg='fedavg', num_rounds=500, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+Traceback (most recent call last):
+  File "/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/main_sft.py", line 44, in <module>
+    local_datasets.append(load_from_disk(f"{dataset_root}/{script_args.dataset_name}_{i}.parquet"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tiger/miniconda3/envs/llm/lib/python3.11/site-packages/datasets/load.py", line 2689, in load_from_disk
+    raise FileNotFoundError(f"Directory {dataset_path} not found")
+FileNotFoundError: Directory /mnt/bn/merlin-datavolume-tsy/leon/datasets/fed_100//lucasmccabe-lmi/CodeAlpaca-20k_0.parquet not found
+[2024-11-19 21:57:38,160] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+is bf16: 0
+is fp16: 0
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='lucasmccabe-lmi/CodeAlpaca-20k', log_with='none', learning_rate=5e-05, batch_size=16, seq_length=512, gradient_accumulation_steps=1, load_in_8bit=False, load_in_4bit=False, use_peft=False, trust_remote_code=False, output_dir='output/CodeAlpaca-20k_20000_fedavg_c10s2_i-1_b16a1_l512_r8a16_f0_base0', peft_lora_r=8, peft_lora_alpha=16, logging_steps=100, use_auth_token=False, num_train_epochs=5, max_steps=-1, save_strategy='epoch', save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=None, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=0, fp16=0, online_dataset=0, full_data=0, still_contain_base_data=0) FedArguments(fed_alg='fedavg', num_rounds=500, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+Traceback (most recent call last):
+  File "/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/main_sft.py", line 44, in <module>
+    local_datasets.append(load_from_disk(f"{dataset_root}/{script_args.dataset_name}_{i}.parquet"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tiger/miniconda3/envs/llm/lib/python3.11/site-packages/datasets/load.py", line 2689, in load_from_disk
+    raise FileNotFoundError(f"Directory {dataset_path} not found")
+FileNotFoundError: Directory /mnt/bn/merlin-datavolume-tsy/leon/datasets/fed_100//lucasmccabe-lmi/CodeAlpaca-20k_0.parquet not found
+[2024-11-19 21:57:44,996] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+is bf16: 0
+is fp16: 0
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='lucasmccabe-lmi/CodeAlpaca-20k', log_with='none', learning_rate=5e-05, batch_size=16, seq_length=512, gradient_accumulation_steps=1, load_in_8bit=False, load_in_4bit=False, use_peft=False, trust_remote_code=False, output_dir='output/CodeAlpaca-20k_20000_fedavg_c10s2_i-1_b16a1_l512_r8a16_f0_base0', peft_lora_r=8, peft_lora_alpha=16, logging_steps=100, use_auth_token=False, num_train_epochs=5, max_steps=-1, save_strategy='epoch', save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=None, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=0, fp16=0, online_dataset=0, full_data=0, still_contain_base_data=0) FedArguments(fed_alg='fedavg', num_rounds=500, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+Traceback (most recent call last):
+  File "/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/main_sft.py", line 44, in <module>
+    local_datasets.append(load_from_disk(f"{dataset_root}/{script_args.dataset_name}_{i}.parquet"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tiger/miniconda3/envs/llm/lib/python3.11/site-packages/datasets/load.py", line 2689, in load_from_disk
+    raise FileNotFoundError(f"Directory {dataset_path} not found")
+FileNotFoundError: Directory /mnt/bn/merlin-datavolume-tsy/leon/datasets/fed_100//lucasmccabe-lmi/CodeAlpaca-20k_0.parquet not found
+[2024-11-19 21:57:51,532] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+is bf16: 0
+is fp16: 0
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='lucasmccabe-lmi/CodeAlpaca-20k', log_with='none', learning_rate=5e-05, batch_size=16, seq_length=512, gradient_accumulation_steps=1, load_in_8bit=False, load_in_4bit=False, use_peft=False, trust_remote_code=False, output_dir='output/CodeAlpaca-20k_20000_fedavg_c10s2_i-1_b16a1_l512_r8a16_f0_base0', peft_lora_r=8, peft_lora_alpha=16, logging_steps=100, use_auth_token=False, num_train_epochs=5, max_steps=-1, save_strategy='epoch', save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=None, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=0, fp16=0, online_dataset=0, full_data=0, still_contain_base_data=0) FedArguments(fed_alg='fedavg', num_rounds=500, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+Traceback (most recent call last):
+  File "/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/main_sft.py", line 44, in <module>
+    local_datasets.append(load_from_disk(f"{dataset_root}/{script_args.dataset_name}_{i}.parquet"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tiger/miniconda3/envs/llm/lib/python3.11/site-packages/datasets/load.py", line 2689, in load_from_disk
+    raise FileNotFoundError(f"Directory {dataset_path} not found")
+FileNotFoundError: Directory /mnt/bn/merlin-datavolume-tsy/leon/datasets/fed_100//lucasmccabe-lmi/CodeAlpaca-20k_0.parquet not found
+[2024-11-19 21:57:58,535] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+is bf16: 0
+is fp16: 0
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='lucasmccabe-lmi/CodeAlpaca-20k', log_with='none', learning_rate=5e-05, batch_size=16, seq_length=512, gradient_accumulation_steps=1, load_in_8bit=False, load_in_4bit=False, use_peft=False, trust_remote_code=False, output_dir='output/CodeAlpaca-20k_20000_fedavg_c10s2_i-1_b16a1_l512_r8a16_f0_base0', peft_lora_r=8, peft_lora_alpha=16, logging_steps=100, use_auth_token=False, num_train_epochs=5, max_steps=-1, save_strategy='epoch', save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=None, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=0, fp16=0, online_dataset=0, full_data=0, still_contain_base_data=0) FedArguments(fed_alg='fedavg', num_rounds=500, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+Traceback (most recent call last):
+  File "/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/main_sft.py", line 44, in <module>
+    local_datasets.append(load_from_disk(f"{dataset_root}/{script_args.dataset_name}_{i}.parquet"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tiger/miniconda3/envs/llm/lib/python3.11/site-packages/datasets/load.py", line 2689, in load_from_disk
+    raise FileNotFoundError(f"Directory {dataset_path} not found")
+FileNotFoundError: Directory /mnt/bn/merlin-datavolume-tsy/leon/datasets/fed_100//lucasmccabe-lmi/CodeAlpaca-20k_0.parquet not found
+[2024-11-19 21:58:05,106] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+is bf16: 0
+is fp16: 0
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='lucasmccabe-lmi/CodeAlpaca-20k', log_with='none', learning_rate=5e-05, batch_size=16, seq_length=512, gradient_accumulation_steps=1, load_in_8bit=False, load_in_4bit=False, use_peft=False, trust_remote_code=False, output_dir='output/CodeAlpaca-20k_20000_fedavg_c10s2_i-1_b16a1_l512_r8a16_f0_base0', peft_lora_r=8, peft_lora_alpha=16, logging_steps=100, use_auth_token=False, num_train_epochs=5, max_steps=-1, save_strategy='epoch', save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=None, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=0, fp16=0, online_dataset=0, full_data=0, still_contain_base_data=0) FedArguments(fed_alg='fedavg', num_rounds=500, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+Traceback (most recent call last):
+  File "/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/main_sft.py", line 44, in <module>
+    local_datasets.append(load_from_disk(f"{dataset_root}/{script_args.dataset_name}_{i}.parquet"))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tiger/miniconda3/envs/llm/lib/python3.11/site-packages/datasets/load.py", line 2689, in load_from_disk
+    raise FileNotFoundError(f"Directory {dataset_path} not found")
+FileNotFoundError: Directory /mnt/bn/merlin-datavolume-tsy/leon/datasets/fed_100//lucasmccabe-lmi/CodeAlpaca-20k_0.parquet not found

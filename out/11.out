@@ -1,0 +1,949 @@
+/home/tiger/miniconda3/envs/llm/lib/python3.11/site-packages/requests/__init__.py:86: RequestsDependencyWarning: Unable to find acceptable character detection dependency (chardet or charset_normalizer).
+  warnings.warn(
+Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+Not an error, but Unsloth cannot patch MLP layers with our manual autograd engine since either LoRA adapters
+are not enabled or a bias term (like in Qwen) is used.
+Unsloth 2024.11.7 patched 32 layers with 32 QKV layers, 32 O layers and 0 MLP layers.
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+is bf16: 1
+is fp16: 0
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='niid_math_1_100', log_with='none', learning_rate=5e-05, batch_size=8, seq_length=2048, gradient_accumulation_steps=4, load_in_8bit=False, load_in_4bit=True, use_peft=True, trust_remote_code=False, output_dir='/mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed/niid_math_1_100_20000_fedavg_c100s2_i10_b8a4_l2048_r32a64_f0_base0_seed44', peft_lora_r=32, peft_lora_alpha=64, logging_steps=100, use_auth_token=False, num_train_epochs=5, max_steps=10, save_strategy='epoch', save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=44, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=1, fp16=0, online_dataset=0, full_data=0, still_contain_base_data=0) FedArguments(fed_alg='fedavg', num_rounds=30, num_clients=100, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+using unsloth model
+==((====))==  Unsloth 2024.11.7: Fast Llama patching. Transformers = 4.46.2.
+   \\   /|    GPU: NVIDIA A100-SXM4-80GB. Max memory: 79.151 GB. Platform = Linux.
+O^O/ \_/ \    Pytorch: 2.5.1. CUDA = 8.0. CUDA Toolkit = 12.1.
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.28.post3. FA2 = False]
+ "-____-"     Free Apache license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+Loading Adapter...
+30
+>> ==================== Round 1 : [49, 97] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:39,  4.41s/it] 20%|██        | 2/10 [00:07<00:26,  3.36s/it] 30%|███       | 3/10 [00:09<00:22,  3.16s/it] 40%|████      | 4/10 [00:13<00:19,  3.27s/it] 50%|█████     | 5/10 [00:15<00:15,  3.00s/it] 60%|██████    | 6/10 [00:19<00:12,  3.18s/it] 70%|███████   | 7/10 [00:22<00:09,  3.00s/it] 80%|████████  | 8/10 [00:25<00:06,  3.01s/it] 90%|█████████ | 9/10 [00:27<00:02,  2.97s/it]100%|██████████| 10/10 [00:30<00:00,  2.75s/it]                                               100%|██████████| 10/10 [00:32<00:00,  2.75s/it]100%|██████████| 10/10 [00:32<00:00,  3.20s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 32.0118, 'train_samples_per_second': 9.996, 'train_steps_per_second': 0.312, 'train_loss': 0.8721198081970215, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:09,  7.68s/it] 20%|██        | 2/10 [00:12<00:49,  6.22s/it] 30%|███       | 3/10 [00:18<00:41,  5.88s/it] 40%|████      | 4/10 [00:23<00:33,  5.62s/it] 50%|█████     | 5/10 [00:29<00:28,  5.61s/it] 60%|██████    | 6/10 [00:33<00:20,  5.24s/it] 70%|███████   | 7/10 [00:38<00:15,  5.16s/it] 80%|████████  | 8/10 [00:45<00:11,  5.55s/it] 90%|█████████ | 9/10 [00:49<00:05,  5.33s/it]100%|██████████| 10/10 [00:54<00:00,  5.12s/it]                                               100%|██████████| 10/10 [00:56<00:00,  5.12s/it]100%|██████████| 10/10 [00:56<00:00,  5.63s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 56.3384, 'train_samples_per_second': 5.68, 'train_steps_per_second': 0.177, 'train_loss': 0.7122201919555664, 'epoch': 1.0}
+>> ==================== Round 2 : [17, 72] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:42,  4.68s/it] 20%|██        | 2/10 [00:08<00:34,  4.30s/it] 30%|███       | 3/10 [00:13<00:31,  4.47s/it] 40%|████      | 4/10 [00:18<00:27,  4.59s/it] 50%|█████     | 5/10 [00:24<00:26,  5.39s/it] 60%|██████    | 6/10 [00:28<00:18,  4.69s/it] 70%|███████   | 7/10 [00:33<00:14,  4.78s/it] 80%|████████  | 8/10 [00:38<00:09,  4.89s/it] 90%|█████████ | 9/10 [00:44<00:05,  5.16s/it]100%|██████████| 10/10 [00:48<00:00,  5.04s/it]                                               100%|██████████| 10/10 [00:50<00:00,  5.04s/it]100%|██████████| 10/10 [00:50<00:00,  5.07s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 50.7022, 'train_samples_per_second': 6.311, 'train_steps_per_second': 0.197, 'train_loss': 0.5993626117706299, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:46,  5.21s/it] 20%|██        | 2/10 [00:11<00:45,  5.67s/it] 30%|███       | 3/10 [00:15<00:36,  5.22s/it] 40%|████      | 4/10 [00:19<00:27,  4.56s/it] 50%|█████     | 5/10 [00:24<00:23,  4.68s/it] 60%|██████    | 6/10 [00:28<00:17,  4.40s/it] 70%|███████   | 7/10 [00:33<00:13,  4.63s/it] 80%|████████  | 8/10 [00:38<00:09,  4.76s/it] 90%|█████████ | 9/10 [00:45<00:05,  5.52s/it]100%|██████████| 10/10 [00:49<00:00,  5.14s/it]                                               100%|██████████| 10/10 [00:51<00:00,  5.14s/it]100%|██████████| 10/10 [00:51<00:00,  5.17s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 51.7324, 'train_samples_per_second': 6.186, 'train_steps_per_second': 0.193, 'train_loss': 0.6871871948242188, 'epoch': 1.0}
+>> ==================== Round 3 : [7, 11] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:58,  6.46s/it] 20%|██        | 2/10 [00:12<00:48,  6.06s/it] 30%|███       | 3/10 [00:17<00:40,  5.83s/it] 40%|████      | 4/10 [00:22<00:32,  5.38s/it] 50%|█████     | 5/10 [00:29<00:30,  6.14s/it] 60%|██████    | 6/10 [00:36<00:25,  6.31s/it] 70%|███████   | 7/10 [00:42<00:18,  6.16s/it] 80%|████████  | 8/10 [00:46<00:11,  5.64s/it] 90%|█████████ | 9/10 [00:51<00:05,  5.43s/it]100%|██████████| 10/10 [00:57<00:00,  5.33s/it]                                               100%|██████████| 10/10 [00:59<00:00,  5.33s/it]100%|██████████| 10/10 [00:59<00:00,  5.91s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 59.1498, 'train_samples_per_second': 5.41, 'train_steps_per_second': 0.169, 'train_loss': 0.4563118934631348, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:42,  4.67s/it] 20%|██        | 2/10 [00:10<00:41,  5.15s/it] 30%|███       | 3/10 [00:16<00:38,  5.53s/it] 40%|████      | 4/10 [00:22<00:34,  5.79s/it] 50%|█████     | 5/10 [00:26<00:26,  5.21s/it] 60%|██████    | 6/10 [00:31<00:20,  5.14s/it] 70%|███████   | 7/10 [00:35<00:14,  4.92s/it] 80%|████████  | 8/10 [00:42<00:10,  5.32s/it] 90%|█████████ | 9/10 [00:46<00:04,  4.96s/it]100%|██████████| 10/10 [00:50<00:00,  4.86s/it]                                               100%|██████████| 10/10 [00:52<00:00,  4.86s/it]100%|██████████| 10/10 [00:52<00:00,  5.29s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 52.914, 'train_samples_per_second': 6.048, 'train_steps_per_second': 0.189, 'train_loss': 0.6063833713531495, 'epoch': 1.0}
+>> ==================== Round 4 : [30, 75] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:36,  4.03s/it] 20%|██        | 2/10 [00:08<00:35,  4.49s/it] 30%|███       | 3/10 [00:12<00:28,  4.11s/it] 40%|████      | 4/10 [00:15<00:22,  3.71s/it] 50%|█████     | 5/10 [00:19<00:19,  3.82s/it] 60%|██████    | 6/10 [00:22<00:14,  3.62s/it] 70%|███████   | 7/10 [00:25<00:09,  3.19s/it] 80%|████████  | 8/10 [00:28<00:06,  3.09s/it] 90%|█████████ | 9/10 [00:31<00:03,  3.10s/it]100%|██████████| 10/10 [00:35<00:00,  3.39s/it]                                               100%|██████████| 10/10 [00:37<00:00,  3.39s/it]100%|██████████| 10/10 [00:37<00:00,  3.73s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 37.3395, 'train_samples_per_second': 8.57, 'train_steps_per_second': 0.268, 'train_loss': 0.5529630184173584, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:35,  3.89s/it] 20%|██        | 2/10 [00:08<00:33,  4.17s/it] 30%|███       | 3/10 [00:12<00:29,  4.20s/it] 40%|████      | 4/10 [00:19<00:31,  5.30s/it] 50%|█████     | 5/10 [00:25<00:27,  5.44s/it] 60%|██████    | 6/10 [00:30<00:21,  5.44s/it] 70%|███████   | 7/10 [00:35<00:15,  5.27s/it] 80%|████████  | 8/10 [00:39<00:09,  5.00s/it] 90%|█████████ | 9/10 [00:46<00:05,  5.55s/it]100%|██████████| 10/10 [00:51<00:00,  5.26s/it]                                               100%|██████████| 10/10 [00:53<00:00,  5.26s/it]100%|██████████| 10/10 [00:53<00:00,  5.33s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 53.2549, 'train_samples_per_second': 6.009, 'train_steps_per_second': 0.188, 'train_loss': 0.6057719230651856, 'epoch': 1.0}
+>> ==================== Round 5 : [30, 38] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:28,  3.17s/it] 20%|██        | 2/10 [00:06<00:27,  3.47s/it] 30%|███       | 3/10 [00:10<00:23,  3.37s/it] 40%|████      | 4/10 [00:12<00:18,  3.16s/it] 50%|█████     | 5/10 [00:15<00:15,  3.12s/it] 60%|██████    | 6/10 [00:19<00:12,  3.14s/it] 70%|███████   | 7/10 [00:22<00:09,  3.12s/it] 80%|████████  | 8/10 [00:24<00:05,  2.94s/it] 90%|█████████ | 9/10 [00:28<00:03,  3.18s/it]100%|██████████| 10/10 [00:32<00:00,  3.48s/it]                                               100%|██████████| 10/10 [00:34<00:00,  3.48s/it]100%|██████████| 10/10 [00:34<00:00,  3.46s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 34.6322, 'train_samples_per_second': 9.24, 'train_steps_per_second': 0.289, 'train_loss': 0.4821277618408203, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:30,  3.35s/it] 20%|██        | 2/10 [00:06<00:25,  3.15s/it] 30%|███       | 3/10 [00:10<00:25,  3.64s/it] 40%|████      | 4/10 [00:14<00:21,  3.62s/it] 50%|█████     | 5/10 [00:17<00:17,  3.58s/it] 60%|██████    | 6/10 [00:20<00:13,  3.33s/it] 70%|███████   | 7/10 [00:26<00:12,  4.05s/it] 80%|████████  | 8/10 [00:30<00:08,  4.26s/it] 90%|█████████ | 9/10 [00:34<00:04,  4.06s/it]100%|██████████| 10/10 [00:37<00:00,  3.89s/it]                                               100%|██████████| 10/10 [00:39<00:00,  3.89s/it]100%|██████████| 10/10 [00:39<00:00,  3.98s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 39.7563, 'train_samples_per_second': 8.049, 'train_steps_per_second': 0.252, 'train_loss': 0.8758122444152832, 'epoch': 1.0}
+>> ==================== Round 6 : [32, 79] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:30,  3.38s/it] 20%|██        | 2/10 [00:06<00:23,  2.99s/it] 30%|███       | 3/10 [00:09<00:21,  3.03s/it] 40%|████      | 4/10 [00:11<00:17,  2.93s/it] 50%|█████     | 5/10 [00:14<00:14,  2.93s/it] 60%|██████    | 6/10 [00:19<00:13,  3.49s/it] 70%|███████   | 7/10 [00:22<00:09,  3.30s/it] 80%|████████  | 8/10 [00:25<00:06,  3.12s/it] 90%|█████████ | 9/10 [00:28<00:03,  3.09s/it]100%|██████████| 10/10 [00:31<00:00,  3.32s/it]                                               100%|██████████| 10/10 [00:33<00:00,  3.32s/it]100%|██████████| 10/10 [00:33<00:00,  3.38s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 33.7677, 'train_samples_per_second': 9.477, 'train_steps_per_second': 0.296, 'train_loss': 0.6451127529144287, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:50,  5.56s/it] 20%|██        | 2/10 [00:10<00:43,  5.43s/it] 30%|███       | 3/10 [00:17<00:42,  6.01s/it] 40%|████      | 4/10 [00:23<00:35,  5.91s/it] 50%|█████     | 5/10 [00:29<00:29,  5.90s/it] 60%|██████    | 6/10 [00:33<00:21,  5.41s/it] 70%|███████   | 7/10 [00:39<00:16,  5.47s/it] 80%|████████  | 8/10 [00:43<00:10,  5.19s/it] 90%|█████████ | 9/10 [00:49<00:05,  5.43s/it]100%|██████████| 10/10 [00:55<00:00,  5.52s/it]                                               100%|██████████| 10/10 [00:57<00:00,  5.52s/it]100%|██████████| 10/10 [00:57<00:00,  5.76s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 57.5879, 'train_samples_per_second': 5.557, 'train_steps_per_second': 0.174, 'train_loss': 0.5125845909118653, 'epoch': 1.0}
+>> ==================== Round 7 : [10, 73] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:28,  3.18s/it] 20%|██        | 2/10 [00:05<00:22,  2.87s/it] 30%|███       | 3/10 [00:07<00:16,  2.41s/it] 40%|████      | 4/10 [00:10<00:14,  2.47s/it] 50%|█████     | 5/10 [00:13<00:13,  2.73s/it] 60%|██████    | 6/10 [00:15<00:10,  2.65s/it] 70%|███████   | 7/10 [00:18<00:08,  2.72s/it] 80%|████████  | 8/10 [00:22<00:05,  2.99s/it] 90%|█████████ | 9/10 [00:24<00:02,  2.84s/it]100%|██████████| 10/10 [00:27<00:00,  2.66s/it]                                               100%|██████████| 10/10 [00:29<00:00,  2.66s/it]100%|██████████| 10/10 [00:29<00:00,  2.92s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 29.1541, 'train_samples_per_second': 10.976, 'train_steps_per_second': 0.343, 'train_loss': 0.48778510093688965, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:34,  3.88s/it] 20%|██        | 2/10 [00:08<00:35,  4.47s/it] 30%|███       | 3/10 [00:14<00:34,  4.91s/it] 40%|████      | 4/10 [00:17<00:26,  4.44s/it] 50%|█████     | 5/10 [00:23<00:24,  4.86s/it] 60%|██████    | 6/10 [00:28<00:19,  4.87s/it] 70%|███████   | 7/10 [00:34<00:15,  5.19s/it] 80%|████████  | 8/10 [00:38<00:09,  4.82s/it] 90%|█████████ | 9/10 [00:41<00:04,  4.40s/it]100%|██████████| 10/10 [00:48<00:00,  5.08s/it]                                               100%|██████████| 10/10 [00:50<00:00,  5.08s/it]100%|██████████| 10/10 [00:50<00:00,  5.02s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 50.2192, 'train_samples_per_second': 6.372, 'train_steps_per_second': 0.199, 'train_loss': 0.5149050712585449, 'epoch': 1.0}
+>> ==================== Round 8 : [19, 41] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:48,  5.39s/it] 20%|██        | 2/10 [00:09<00:38,  4.81s/it] 30%|███       | 3/10 [00:15<00:36,  5.26s/it] 40%|████      | 4/10 [00:20<00:31,  5.18s/it] 50%|█████     | 5/10 [00:26<00:27,  5.49s/it] 60%|██████    | 6/10 [00:32<00:21,  5.47s/it] 70%|███████   | 7/10 [00:36<00:15,  5.13s/it] 80%|████████  | 8/10 [00:41<00:10,  5.00s/it] 90%|█████████ | 9/10 [00:46<00:04,  4.98s/it]100%|██████████| 10/10 [00:51<00:00,  5.06s/it]                                               100%|██████████| 10/10 [00:53<00:00,  5.06s/it]100%|██████████| 10/10 [00:53<00:00,  5.32s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 53.1631, 'train_samples_per_second': 6.019, 'train_steps_per_second': 0.188, 'train_loss': 0.4305864334106445, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:38,  4.29s/it] 20%|██        | 2/10 [00:07<00:30,  3.76s/it] 30%|███       | 3/10 [00:11<00:25,  3.68s/it] 40%|████      | 4/10 [00:14<00:21,  3.53s/it] 50%|█████     | 5/10 [00:19<00:20,  4.12s/it] 60%|██████    | 6/10 [00:22<00:14,  3.74s/it] 70%|███████   | 7/10 [00:25<00:10,  3.56s/it] 80%|████████  | 8/10 [00:28<00:06,  3.35s/it] 90%|█████████ | 9/10 [00:32<00:03,  3.30s/it]100%|██████████| 10/10 [00:34<00:00,  3.06s/it]                                               100%|██████████| 10/10 [00:36<00:00,  3.06s/it]100%|██████████| 10/10 [00:36<00:00,  3.65s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 36.5027, 'train_samples_per_second': 8.766, 'train_steps_per_second': 0.274, 'train_loss': 0.5991967678070068, 'epoch': 1.0}
+>> ==================== Round 9 : [29, 47] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:24,  2.68s/it] 20%|██        | 2/10 [00:05<00:21,  2.69s/it] 30%|███       | 3/10 [00:08<00:18,  2.66s/it] 40%|████      | 4/10 [00:11<00:17,  2.87s/it] 50%|█████     | 5/10 [00:14<00:14,  2.97s/it] 60%|██████    | 6/10 [00:17<00:11,  2.91s/it] 70%|███████   | 7/10 [00:19<00:08,  2.86s/it] 80%|████████  | 8/10 [00:22<00:05,  2.83s/it] 90%|█████████ | 9/10 [00:25<00:02,  2.74s/it]100%|██████████| 10/10 [00:28<00:00,  2.84s/it]                                               100%|██████████| 10/10 [00:29<00:00,  2.84s/it]100%|██████████| 10/10 [00:29<00:00,  3.00s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 29.9553, 'train_samples_per_second': 10.683, 'train_steps_per_second': 0.334, 'train_loss': 0.5808558464050293, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:24,  2.69s/it] 20%|██        | 2/10 [00:05<00:22,  2.78s/it] 30%|███       | 3/10 [00:08<00:19,  2.75s/it] 40%|████      | 4/10 [00:11<00:17,  2.91s/it] 50%|█████     | 5/10 [00:14<00:14,  2.81s/it] 60%|██████    | 6/10 [00:17<00:12,  3.03s/it] 70%|███████   | 7/10 [00:20<00:09,  3.04s/it] 80%|████████  | 8/10 [00:24<00:06,  3.39s/it] 90%|█████████ | 9/10 [00:27<00:03,  3.32s/it]100%|██████████| 10/10 [00:31<00:00,  3.28s/it]                                               100%|██████████| 10/10 [00:32<00:00,  3.28s/it]100%|██████████| 10/10 [00:32<00:00,  3.27s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 32.7407, 'train_samples_per_second': 9.774, 'train_steps_per_second': 0.305, 'train_loss': 0.7557737350463867, 'epoch': 1.0}
+>> ==================== Round 10 : [59, 78] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:33,  3.70s/it] 20%|██        | 2/10 [00:06<00:23,  2.96s/it] 30%|███       | 3/10 [00:08<00:18,  2.69s/it] 40%|████      | 4/10 [00:12<00:18,  3.14s/it] 50%|█████     | 5/10 [00:15<00:16,  3.25s/it] 60%|██████    | 6/10 [00:19<00:13,  3.32s/it] 70%|███████   | 7/10 [00:22<00:09,  3.21s/it] 80%|████████  | 8/10 [00:25<00:06,  3.29s/it] 90%|█████████ | 9/10 [00:28<00:03,  3.17s/it]100%|██████████| 10/10 [00:31<00:00,  3.07s/it]                                               100%|██████████| 10/10 [00:33<00:00,  3.07s/it]100%|██████████| 10/10 [00:33<00:00,  3.31s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 33.0934, 'train_samples_per_second': 9.67, 'train_steps_per_second': 0.302, 'train_loss': 0.569517993927002, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:44,  4.92s/it] 20%|██        | 2/10 [00:10<00:42,  5.34s/it] 30%|███       | 3/10 [00:14<00:33,  4.74s/it] 40%|████      | 4/10 [00:19<00:28,  4.72s/it] 50%|█████     | 5/10 [00:23<00:23,  4.65s/it] 60%|██████    | 6/10 [00:29<00:19,  4.91s/it] 70%|███████   | 7/10 [00:34<00:15,  5.03s/it] 80%|████████  | 8/10 [00:38<00:09,  4.80s/it] 90%|█████████ | 9/10 [00:44<00:04,  4.98s/it]100%|██████████| 10/10 [00:51<00:00,  5.73s/it]                                               100%|██████████| 10/10 [00:53<00:00,  5.73s/it]100%|██████████| 10/10 [00:53<00:00,  5.34s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 53.395, 'train_samples_per_second': 5.993, 'train_steps_per_second': 0.187, 'train_loss': 0.4832341194152832, 'epoch': 1.0}
+>> ==================== Round 11 : [4, 73] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:53,  5.89s/it] 20%|██        | 2/10 [00:09<00:35,  4.49s/it] 30%|███       | 3/10 [00:13<00:29,  4.21s/it] 40%|████      | 4/10 [00:17<00:25,  4.26s/it] 50%|█████     | 5/10 [00:22<00:23,  4.60s/it] 60%|██████    | 6/10 [00:25<00:16,  4.11s/it] 70%|███████   | 7/10 [00:30<00:13,  4.38s/it] 80%|████████  | 8/10 [00:34<00:08,  4.25s/it] 90%|█████████ | 9/10 [00:40<00:04,  4.64s/it]100%|██████████| 10/10 [00:44<00:00,  4.35s/it]                                               100%|██████████| 10/10 [00:45<00:00,  4.35s/it]100%|██████████| 10/10 [00:45<00:00,  4.60s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 45.9989, 'train_samples_per_second': 6.957, 'train_steps_per_second': 0.217, 'train_loss': 0.5286596298217774, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:02,  7.00s/it] 20%|██        | 2/10 [00:11<00:42,  5.33s/it] 30%|███       | 3/10 [00:14<00:31,  4.45s/it] 40%|████      | 4/10 [00:21<00:32,  5.44s/it] 50%|█████     | 5/10 [00:27<00:28,  5.64s/it] 60%|██████    | 6/10 [00:31<00:20,  5.19s/it] 70%|███████   | 7/10 [00:36<00:14,  4.97s/it] 80%|████████  | 8/10 [00:41<00:09,  4.96s/it] 90%|█████████ | 9/10 [00:45<00:04,  4.87s/it]100%|██████████| 10/10 [00:50<00:00,  4.71s/it]                                               100%|██████████| 10/10 [00:52<00:00,  4.71s/it]100%|██████████| 10/10 [00:52<00:00,  5.20s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 52.0317, 'train_samples_per_second': 6.15, 'train_steps_per_second': 0.192, 'train_loss': 0.5354715347290039, 'epoch': 1.0}
+>> ==================== Round 12 : [57, 71] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:55,  6.20s/it] 20%|██        | 2/10 [00:10<00:39,  4.99s/it] 30%|███       | 3/10 [00:15<00:35,  5.05s/it] 40%|████      | 4/10 [00:19<00:28,  4.74s/it] 50%|█████     | 5/10 [00:25<00:26,  5.26s/it] 60%|██████    | 6/10 [00:30<00:20,  5.06s/it] 70%|███████   | 7/10 [00:35<00:15,  5.15s/it] 80%|████████  | 8/10 [00:41<00:10,  5.25s/it] 90%|█████████ | 9/10 [00:46<00:05,  5.11s/it]100%|██████████| 10/10 [00:52<00:00,  5.49s/it]                                               100%|██████████| 10/10 [00:54<00:00,  5.49s/it]100%|██████████| 10/10 [00:54<00:00,  5.44s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 54.3622, 'train_samples_per_second': 5.886, 'train_steps_per_second': 0.184, 'train_loss': 0.5954460144042969, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:32,  3.58s/it] 20%|██        | 2/10 [00:07<00:31,  3.94s/it] 30%|███       | 3/10 [00:11<00:25,  3.71s/it] 40%|████      | 4/10 [00:17<00:28,  4.80s/it] 50%|█████     | 5/10 [00:23<00:26,  5.20s/it] 60%|██████    | 6/10 [00:27<00:18,  4.62s/it] 70%|███████   | 7/10 [00:31<00:13,  4.47s/it] 80%|████████  | 8/10 [00:34<00:08,  4.15s/it] 90%|█████████ | 9/10 [00:40<00:04,  4.80s/it]100%|██████████| 10/10 [00:46<00:00,  4.88s/it]                                               100%|██████████| 10/10 [00:48<00:00,  4.88s/it]100%|██████████| 10/10 [00:48<00:00,  4.82s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 48.1852, 'train_samples_per_second': 6.641, 'train_steps_per_second': 0.208, 'train_loss': 0.6493604183197021, 'epoch': 1.0}
+>> ==================== Round 13 : [34, 60] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:23,  2.63s/it] 20%|██        | 2/10 [00:06<00:26,  3.25s/it] 30%|███       | 3/10 [00:09<00:21,  3.01s/it] 40%|████      | 4/10 [00:12<00:18,  3.00s/it] 50%|█████     | 5/10 [00:14<00:14,  2.94s/it] 60%|██████    | 6/10 [00:17<00:11,  2.96s/it] 70%|███████   | 7/10 [00:20<00:08,  2.78s/it] 80%|████████  | 8/10 [00:22<00:05,  2.76s/it] 90%|█████████ | 9/10 [00:25<00:02,  2.82s/it]100%|██████████| 10/10 [00:28<00:00,  2.89s/it]                                               100%|██████████| 10/10 [00:30<00:00,  2.89s/it]100%|██████████| 10/10 [00:30<00:00,  3.09s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 30.9375, 'train_samples_per_second': 10.343, 'train_steps_per_second': 0.323, 'train_loss': 0.5592621803283692, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:39,  4.41s/it] 20%|██        | 2/10 [00:09<00:39,  4.98s/it] 30%|███       | 3/10 [00:14<00:33,  4.74s/it] 40%|████      | 4/10 [00:18<00:26,  4.36s/it] 50%|█████     | 5/10 [00:21<00:21,  4.21s/it] 60%|██████    | 6/10 [00:25<00:16,  4.13s/it] 70%|███████   | 7/10 [00:29<00:11,  3.84s/it] 80%|████████  | 8/10 [00:32<00:07,  3.62s/it] 90%|█████████ | 9/10 [00:37<00:04,  4.07s/it]100%|██████████| 10/10 [00:41<00:00,  4.21s/it]                                               100%|██████████| 10/10 [00:43<00:00,  4.21s/it]100%|██████████| 10/10 [00:43<00:00,  4.38s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 43.7629, 'train_samples_per_second': 7.312, 'train_steps_per_second': 0.229, 'train_loss': 0.49582786560058595, 'epoch': 1.0}
+>> ==================== Round 14 : [33, 37] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:59,  6.61s/it] 20%|██        | 2/10 [00:10<00:38,  4.83s/it] 30%|███       | 3/10 [00:15<00:35,  5.04s/it] 40%|████      | 4/10 [00:21<00:32,  5.37s/it] 50%|█████     | 5/10 [00:26<00:25,  5.14s/it] 60%|██████    | 6/10 [00:34<00:24,  6.09s/it] 70%|███████   | 7/10 [00:40<00:18,  6.15s/it] 80%|████████  | 8/10 [00:45<00:11,  5.90s/it] 90%|█████████ | 9/10 [00:50<00:05,  5.49s/it]100%|██████████| 10/10 [00:53<00:00,  4.85s/it]                                               100%|██████████| 10/10 [00:55<00:00,  4.85s/it]100%|██████████| 10/10 [00:55<00:00,  5.57s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 55.6637, 'train_samples_per_second': 5.749, 'train_steps_per_second': 0.18, 'train_loss': 0.47556395530700685, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:40,  4.45s/it] 20%|██        | 2/10 [00:07<00:31,  3.91s/it] 30%|███       | 3/10 [00:11<00:25,  3.67s/it] 40%|████      | 4/10 [00:15<00:22,  3.72s/it] 50%|█████     | 5/10 [00:19<00:20,  4.02s/it] 60%|██████    | 6/10 [00:23<00:15,  3.90s/it] 70%|███████   | 7/10 [00:26<00:11,  3.80s/it] 80%|████████  | 8/10 [00:31<00:08,  4.16s/it] 90%|█████████ | 9/10 [00:35<00:04,  4.06s/it]100%|██████████| 10/10 [00:39<00:00,  4.03s/it]                                               100%|██████████| 10/10 [00:41<00:00,  4.03s/it]100%|██████████| 10/10 [00:41<00:00,  4.14s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 41.4322, 'train_samples_per_second': 7.723, 'train_steps_per_second': 0.241, 'train_loss': 0.481261682510376, 'epoch': 1.0}
+>> ==================== Round 15 : [13, 78] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:57,  6.35s/it] 20%|██        | 2/10 [00:12<00:47,  5.98s/it] 30%|███       | 3/10 [00:17<00:39,  5.69s/it] 40%|████      | 4/10 [00:22<00:33,  5.56s/it] 50%|█████     | 5/10 [00:27<00:27,  5.43s/it] 60%|██████    | 6/10 [00:32<00:20,  5.22s/it] 70%|███████   | 7/10 [00:38<00:16,  5.34s/it] 80%|████████  | 8/10 [00:45<00:11,  5.90s/it] 90%|█████████ | 9/10 [00:50<00:05,  5.68s/it]100%|██████████| 10/10 [00:57<00:00,  5.90s/it]                                               100%|██████████| 10/10 [00:59<00:00,  5.90s/it]100%|██████████| 10/10 [00:59<00:00,  5.91s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 59.0559, 'train_samples_per_second': 5.419, 'train_steps_per_second': 0.169, 'train_loss': 0.5138494968414307, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:44,  4.97s/it] 20%|██        | 2/10 [00:09<00:39,  4.93s/it] 30%|███       | 3/10 [00:15<00:36,  5.26s/it] 40%|████      | 4/10 [00:20<00:29,  4.99s/it] 50%|█████     | 5/10 [00:25<00:25,  5.17s/it] 60%|██████    | 6/10 [00:30<00:20,  5.24s/it] 70%|███████   | 7/10 [00:36<00:15,  5.24s/it] 80%|████████  | 8/10 [00:41<00:10,  5.40s/it] 90%|█████████ | 9/10 [00:47<00:05,  5.42s/it]100%|██████████| 10/10 [00:52<00:00,  5.21s/it]                                               100%|██████████| 10/10 [00:54<00:00,  5.21s/it]100%|██████████| 10/10 [00:54<00:00,  5.40s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 54.0074, 'train_samples_per_second': 5.925, 'train_steps_per_second': 0.185, 'train_loss': 0.4854613780975342, 'epoch': 1.0}
+>> ==================== Round 16 : [1, 26] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:48,  5.39s/it] 20%|██        | 2/10 [00:08<00:32,  4.10s/it] 30%|███       | 3/10 [00:12<00:27,  3.87s/it] 40%|████      | 4/10 [00:16<00:23,  3.91s/it] 50%|█████     | 5/10 [00:20<00:20,  4.13s/it] 60%|██████    | 6/10 [00:25<00:17,  4.33s/it] 70%|███████   | 7/10 [00:30<00:13,  4.42s/it] 80%|████████  | 8/10 [00:35<00:09,  4.80s/it] 90%|█████████ | 9/10 [00:40<00:04,  4.95s/it]100%|██████████| 10/10 [00:44<00:00,  4.66s/it]                                               100%|██████████| 10/10 [00:46<00:00,  4.66s/it]100%|██████████| 10/10 [00:46<00:00,  4.67s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 46.7155, 'train_samples_per_second': 6.85, 'train_steps_per_second': 0.214, 'train_loss': 0.44913039207458494, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:43,  4.84s/it] 20%|██        | 2/10 [00:09<00:37,  4.72s/it] 30%|███       | 3/10 [00:14<00:32,  4.64s/it] 40%|████      | 4/10 [00:17<00:25,  4.22s/it] 50%|█████     | 5/10 [00:24<00:26,  5.20s/it] 60%|██████    | 6/10 [00:29<00:19,  4.98s/it] 70%|███████   | 7/10 [00:34<00:15,  5.05s/it] 80%|████████  | 8/10 [00:39<00:10,  5.10s/it] 90%|█████████ | 9/10 [00:42<00:04,  4.38s/it]100%|██████████| 10/10 [00:47<00:00,  4.69s/it]                                               100%|██████████| 10/10 [00:49<00:00,  4.69s/it]100%|██████████| 10/10 [00:49<00:00,  4.95s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 49.4644, 'train_samples_per_second': 6.469, 'train_steps_per_second': 0.202, 'train_loss': 0.569265604019165, 'epoch': 1.0}
+>> ==================== Round 17 : [46, 60] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:25,  2.81s/it] 20%|██        | 2/10 [00:05<00:21,  2.66s/it] 30%|███       | 3/10 [00:07<00:18,  2.65s/it] 40%|████      | 4/10 [00:11<00:17,  2.90s/it] 50%|█████     | 5/10 [00:14<00:15,  3.06s/it] 60%|██████    | 6/10 [00:17<00:12,  3.00s/it] 70%|███████   | 7/10 [00:19<00:08,  2.76s/it] 80%|████████  | 8/10 [00:22<00:05,  2.79s/it] 90%|█████████ | 9/10 [00:25<00:02,  2.66s/it]100%|██████████| 10/10 [00:27<00:00,  2.71s/it]                                               100%|██████████| 10/10 [00:30<00:00,  2.71s/it]100%|██████████| 10/10 [00:30<00:00,  3.01s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 30.1068, 'train_samples_per_second': 10.629, 'train_steps_per_second': 0.332, 'train_loss': 0.5268442630767822, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:26,  2.95s/it] 20%|██        | 2/10 [00:07<00:30,  3.82s/it] 30%|███       | 3/10 [00:11<00:28,  4.06s/it] 40%|████      | 4/10 [00:15<00:22,  3.76s/it] 50%|█████     | 5/10 [00:19<00:19,  3.99s/it] 60%|██████    | 6/10 [00:24<00:16,  4.22s/it] 70%|███████   | 7/10 [00:28<00:12,  4.20s/it] 80%|████████  | 8/10 [00:33<00:09,  4.67s/it] 90%|█████████ | 9/10 [00:37<00:04,  4.38s/it]100%|██████████| 10/10 [00:43<00:00,  4.71s/it]                                               100%|██████████| 10/10 [00:44<00:00,  4.71s/it]100%|██████████| 10/10 [00:44<00:00,  4.49s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 44.9069, 'train_samples_per_second': 7.126, 'train_steps_per_second': 0.223, 'train_loss': 0.48543319702148435, 'epoch': 1.0}
+>> ==================== Round 18 : [53, 66] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:29,  3.26s/it] 20%|██        | 2/10 [00:07<00:28,  3.61s/it] 30%|███       | 3/10 [00:10<00:25,  3.70s/it] 40%|████      | 4/10 [00:15<00:25,  4.18s/it] 50%|█████     | 5/10 [00:21<00:23,  4.62s/it] 60%|██████    | 6/10 [00:28<00:22,  5.52s/it] 70%|███████   | 7/10 [00:34<00:17,  5.80s/it] 80%|████████  | 8/10 [00:40<00:11,  5.65s/it] 90%|█████████ | 9/10 [00:44<00:05,  5.19s/it]100%|██████████| 10/10 [00:47<00:00,  4.56s/it]                                               100%|██████████| 10/10 [00:49<00:00,  4.56s/it]100%|██████████| 10/10 [00:49<00:00,  4.94s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 49.3698, 'train_samples_per_second': 6.482, 'train_steps_per_second': 0.203, 'train_loss': 0.5275762557983399, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:25,  2.83s/it] 20%|██        | 2/10 [00:07<00:30,  3.76s/it] 30%|███       | 3/10 [00:11<00:26,  3.84s/it] 40%|████      | 4/10 [00:14<00:22,  3.82s/it] 50%|█████     | 5/10 [00:18<00:19,  3.83s/it] 60%|██████    | 6/10 [00:23<00:16,  4.17s/it] 70%|███████   | 7/10 [00:27<00:11,  3.92s/it] 80%|████████  | 8/10 [00:31<00:08,  4.00s/it] 90%|█████████ | 9/10 [00:34<00:03,  3.72s/it]100%|██████████| 10/10 [00:38<00:00,  3.81s/it]                                               100%|██████████| 10/10 [00:40<00:00,  3.81s/it]100%|██████████| 10/10 [00:40<00:00,  4.02s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 40.2128, 'train_samples_per_second': 7.958, 'train_steps_per_second': 0.249, 'train_loss': 0.588793420791626, 'epoch': 1.0}
+>> ==================== Round 19 : [15, 23] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:45,  5.09s/it] 20%|██        | 2/10 [00:09<00:36,  4.59s/it] 30%|███       | 3/10 [00:13<00:29,  4.21s/it] 40%|████      | 4/10 [00:16<00:23,  3.98s/it] 50%|█████     | 5/10 [00:20<00:19,  3.80s/it] 60%|██████    | 6/10 [00:24<00:15,  3.82s/it] 70%|███████   | 7/10 [00:27<00:11,  3.72s/it] 80%|████████  | 8/10 [00:31<00:07,  3.68s/it] 90%|█████████ | 9/10 [00:36<00:04,  4.08s/it]100%|██████████| 10/10 [00:41<00:00,  4.33s/it]                                               100%|██████████| 10/10 [00:42<00:00,  4.33s/it]100%|██████████| 10/10 [00:42<00:00,  4.30s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 42.9638, 'train_samples_per_second': 7.448, 'train_steps_per_second': 0.233, 'train_loss': 0.599777364730835, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:54,  6.03s/it] 20%|██        | 2/10 [00:10<00:39,  4.93s/it] 30%|███       | 3/10 [00:15<00:34,  4.92s/it] 40%|████      | 4/10 [00:20<00:30,  5.02s/it] 50%|█████     | 5/10 [00:23<00:22,  4.50s/it] 60%|██████    | 6/10 [00:27<00:16,  4.23s/it] 70%|███████   | 7/10 [00:31<00:12,  4.15s/it] 80%|████████  | 8/10 [00:35<00:08,  4.11s/it] 90%|█████████ | 9/10 [00:38<00:03,  3.86s/it]100%|██████████| 10/10 [00:43<00:00,  4.17s/it]                                               100%|██████████| 10/10 [00:45<00:00,  4.17s/it]100%|██████████| 10/10 [00:45<00:00,  4.56s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 45.6067, 'train_samples_per_second': 7.017, 'train_steps_per_second': 0.219, 'train_loss': 0.6403132438659668, 'epoch': 1.0}
+>> ==================== Round 20 : [5, 86] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:46,  5.18s/it] 20%|██        | 2/10 [00:08<00:33,  4.17s/it] 30%|███       | 3/10 [00:12<00:27,  3.95s/it] 40%|████      | 4/10 [00:16<00:23,  3.91s/it] 50%|█████     | 5/10 [00:18<00:17,  3.51s/it] 60%|██████    | 6/10 [00:22<00:13,  3.46s/it] 70%|███████   | 7/10 [00:26<00:11,  3.67s/it] 80%|████████  | 8/10 [00:29<00:07,  3.62s/it] 90%|█████████ | 9/10 [00:34<00:03,  3.94s/it]100%|██████████| 10/10 [00:37<00:00,  3.72s/it]                                               100%|██████████| 10/10 [00:39<00:00,  3.72s/it]100%|██████████| 10/10 [00:39<00:00,  3.97s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 39.6951, 'train_samples_per_second': 8.061, 'train_steps_per_second': 0.252, 'train_loss': 0.6244635581970215, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:42,  4.71s/it] 20%|██        | 2/10 [00:08<00:34,  4.36s/it] 30%|███       | 3/10 [00:14<00:35,  5.11s/it] 40%|████      | 4/10 [00:19<00:29,  4.99s/it] 50%|█████     | 5/10 [00:24<00:25,  5.03s/it] 60%|██████    | 6/10 [00:29<00:20,  5.08s/it] 70%|███████   | 7/10 [00:34<00:14,  4.99s/it] 80%|████████  | 8/10 [00:38<00:09,  4.57s/it] 90%|█████████ | 9/10 [00:43<00:04,  4.63s/it]100%|██████████| 10/10 [00:48<00:00,  4.74s/it]                                               100%|██████████| 10/10 [00:50<00:00,  4.74s/it]100%|██████████| 10/10 [00:50<00:00,  5.00s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 50.0517, 'train_samples_per_second': 6.393, 'train_steps_per_second': 0.2, 'train_loss': 0.5718148708343506, 'epoch': 1.0}
+>> ==================== Round 21 : [87, 92] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:59,  6.64s/it] 20%|██        | 2/10 [00:10<00:38,  4.78s/it] 30%|███       | 3/10 [00:15<00:35,  5.06s/it] 40%|████      | 4/10 [00:23<00:37,  6.29s/it] 50%|█████     | 5/10 [00:29<00:29,  5.96s/it] 60%|██████    | 6/10 [00:34<00:23,  5.86s/it] 70%|███████   | 7/10 [00:39<00:16,  5.61s/it] 80%|████████  | 8/10 [00:43<00:10,  5.09s/it] 90%|█████████ | 9/10 [00:48<00:05,  5.03s/it]100%|██████████| 10/10 [00:52<00:00,  4.61s/it]                                               100%|██████████| 10/10 [00:54<00:00,  4.61s/it]100%|██████████| 10/10 [00:54<00:00,  5.42s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 54.1899, 'train_samples_per_second': 5.905, 'train_steps_per_second': 0.185, 'train_loss': 0.4967038154602051, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:47,  5.28s/it] 20%|██        | 2/10 [00:12<00:49,  6.13s/it] 30%|███       | 3/10 [00:18<00:43,  6.28s/it] 40%|████      | 4/10 [00:23<00:35,  5.85s/it] 50%|█████     | 5/10 [00:28<00:27,  5.43s/it] 60%|██████    | 6/10 [00:33<00:21,  5.30s/it] 70%|███████   | 7/10 [00:39<00:16,  5.54s/it] 80%|████████  | 8/10 [00:43<00:10,  5.13s/it] 90%|█████████ | 9/10 [00:48<00:04,  4.96s/it]100%|██████████| 10/10 [00:53<00:00,  4.94s/it]                                               100%|██████████| 10/10 [00:54<00:00,  4.94s/it]100%|██████████| 10/10 [00:54<00:00,  5.50s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 54.9835, 'train_samples_per_second': 5.82, 'train_steps_per_second': 0.182, 'train_loss': 0.511601734161377, 'epoch': 1.0}
+>> ==================== Round 22 : [21, 53] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:37,  4.11s/it] 20%|██        | 2/10 [00:09<00:38,  4.80s/it] 30%|███       | 3/10 [00:14<00:34,  4.87s/it] 40%|████      | 4/10 [00:18<00:27,  4.59s/it] 50%|█████     | 5/10 [00:24<00:24,  4.97s/it] 60%|██████    | 6/10 [00:30<00:21,  5.44s/it] 70%|███████   | 7/10 [00:37<00:18,  6.03s/it] 80%|████████  | 8/10 [00:42<00:11,  5.72s/it] 90%|█████████ | 9/10 [00:48<00:05,  5.59s/it]100%|██████████| 10/10 [00:52<00:00,  5.16s/it]                                               100%|██████████| 10/10 [00:54<00:00,  5.16s/it]100%|██████████| 10/10 [00:54<00:00,  5.43s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 54.2815, 'train_samples_per_second': 5.895, 'train_steps_per_second': 0.184, 'train_loss': 0.5619487762451172, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:32,  3.59s/it] 20%|██        | 2/10 [00:08<00:35,  4.48s/it] 30%|███       | 3/10 [00:14<00:35,  5.11s/it] 40%|████      | 4/10 [00:19<00:30,  5.09s/it] 50%|█████     | 5/10 [00:24<00:24,  4.95s/it] 60%|██████    | 6/10 [00:28<00:18,  4.71s/it] 70%|███████   | 7/10 [00:33<00:14,  4.79s/it] 80%|████████  | 8/10 [00:37<00:09,  4.63s/it] 90%|█████████ | 9/10 [00:41<00:04,  4.42s/it]100%|██████████| 10/10 [00:46<00:00,  4.50s/it]                                               100%|██████████| 10/10 [00:48<00:00,  4.50s/it]100%|██████████| 10/10 [00:48<00:00,  4.84s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 48.3705, 'train_samples_per_second': 6.616, 'train_steps_per_second': 0.207, 'train_loss': 0.4867837905883789, 'epoch': 1.0}
+>> ==================== Round 23 : [17, 31] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:35,  3.92s/it] 20%|██        | 2/10 [00:08<00:34,  4.37s/it] 30%|███       | 3/10 [00:12<00:30,  4.30s/it] 40%|████      | 4/10 [00:17<00:27,  4.63s/it] 50%|█████     | 5/10 [00:23<00:24,  4.84s/it] 60%|██████    | 6/10 [00:28<00:19,  4.89s/it] 70%|███████   | 7/10 [00:34<00:15,  5.26s/it] 80%|████████  | 8/10 [00:39<00:10,  5.21s/it] 90%|█████████ | 9/10 [00:45<00:05,  5.43s/it]100%|██████████| 10/10 [00:50<00:00,  5.36s/it]                                               100%|██████████| 10/10 [00:52<00:00,  5.36s/it]100%|██████████| 10/10 [00:52<00:00,  5.22s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 52.1779, 'train_samples_per_second': 6.133, 'train_steps_per_second': 0.192, 'train_loss': 0.5128838062286377, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:30,  3.38s/it] 20%|██        | 2/10 [00:06<00:24,  3.06s/it] 30%|███       | 3/10 [00:09<00:21,  3.08s/it] 40%|████      | 4/10 [00:11<00:17,  2.91s/it] 50%|█████     | 5/10 [00:14<00:14,  2.83s/it] 60%|██████    | 6/10 [00:18<00:12,  3.05s/it] 70%|███████   | 7/10 [00:21<00:09,  3.09s/it] 80%|████████  | 8/10 [00:24<00:06,  3.02s/it] 90%|█████████ | 9/10 [00:26<00:02,  2.91s/it]100%|██████████| 10/10 [00:29<00:00,  2.98s/it]                                               100%|██████████| 10/10 [00:31<00:00,  2.98s/it]100%|██████████| 10/10 [00:31<00:00,  3.19s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 31.8537, 'train_samples_per_second': 10.046, 'train_steps_per_second': 0.314, 'train_loss': 0.5162190437316895, 'epoch': 1.0}
+>> ==================== Round 24 : [37, 99] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:22,  2.47s/it] 20%|██        | 2/10 [00:06<00:24,  3.11s/it] 30%|███       | 3/10 [00:10<00:25,  3.61s/it] 40%|████      | 4/10 [00:12<00:19,  3.21s/it] 50%|█████     | 5/10 [00:16<00:16,  3.37s/it] 60%|██████    | 6/10 [00:20<00:14,  3.72s/it] 70%|███████   | 7/10 [00:23<00:10,  3.38s/it] 80%|████████  | 8/10 [00:25<00:06,  3.03s/it] 90%|█████████ | 9/10 [00:29<00:03,  3.24s/it]100%|██████████| 10/10 [00:32<00:00,  3.14s/it]                                               100%|██████████| 10/10 [00:34<00:00,  3.14s/it]100%|██████████| 10/10 [00:34<00:00,  3.44s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 34.4052, 'train_samples_per_second': 9.301, 'train_steps_per_second': 0.291, 'train_loss': 0.48844270706176757, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:05<00:52,  5.83s/it] 20%|██        | 2/10 [00:12<00:49,  6.21s/it] 30%|███       | 3/10 [00:17<00:41,  5.97s/it] 40%|████      | 4/10 [00:25<00:39,  6.57s/it] 50%|█████     | 5/10 [00:31<00:31,  6.27s/it] 60%|██████    | 6/10 [00:39<00:27,  6.95s/it] 70%|███████   | 7/10 [00:45<00:20,  6.72s/it] 80%|████████  | 8/10 [00:51<00:12,  6.32s/it] 90%|█████████ | 9/10 [00:57<00:06,  6.43s/it]100%|██████████| 10/10 [01:03<00:00,  6.10s/it]                                               100%|██████████| 10/10 [01:05<00:00,  6.10s/it]100%|██████████| 10/10 [01:05<00:00,  6.51s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 65.1311, 'train_samples_per_second': 4.913, 'train_steps_per_second': 0.154, 'train_loss': 0.4760448932647705, 'epoch': 1.0}
+>> ==================== Round 25 : [49, 91] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:25,  2.84s/it] 20%|██        | 2/10 [00:05<00:20,  2.59s/it] 30%|███       | 3/10 [00:07<00:18,  2.62s/it] 40%|████      | 4/10 [00:10<00:16,  2.68s/it] 50%|█████     | 5/10 [00:13<00:13,  2.63s/it] 60%|██████    | 6/10 [00:17<00:13,  3.27s/it] 70%|███████   | 7/10 [00:20<00:09,  3.02s/it] 80%|████████  | 8/10 [00:23<00:06,  3.02s/it] 90%|█████████ | 9/10 [00:26<00:03,  3.15s/it]100%|██████████| 10/10 [00:29<00:00,  2.95s/it]                                               100%|██████████| 10/10 [00:31<00:00,  2.95s/it]100%|██████████| 10/10 [00:31<00:00,  3.11s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 31.0641, 'train_samples_per_second': 10.301, 'train_steps_per_second': 0.322, 'train_loss': 0.41622366905212405, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:57,  6.39s/it] 20%|██        | 2/10 [00:11<00:43,  5.48s/it] 30%|███       | 3/10 [00:16<00:38,  5.49s/it] 40%|████      | 4/10 [00:21<00:32,  5.37s/it] 50%|█████     | 5/10 [00:29<00:29,  5.99s/it] 60%|██████    | 6/10 [00:33<00:21,  5.38s/it] 70%|███████   | 7/10 [00:39<00:16,  5.63s/it] 80%|████████  | 8/10 [00:45<00:11,  5.70s/it] 90%|█████████ | 9/10 [00:52<00:06,  6.30s/it]100%|██████████| 10/10 [00:58<00:00,  6.17s/it]                                               100%|██████████| 10/10 [01:00<00:00,  6.17s/it]100%|██████████| 10/10 [01:00<00:00,  6.04s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 60.4475, 'train_samples_per_second': 5.294, 'train_steps_per_second': 0.165, 'train_loss': 0.4812784671783447, 'epoch': 1.0}
+>> ==================== Round 26 : [48, 98] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:40,  4.55s/it] 20%|██        | 2/10 [00:08<00:35,  4.45s/it] 30%|███       | 3/10 [00:12<00:29,  4.16s/it] 40%|████      | 4/10 [00:19<00:31,  5.24s/it] 50%|█████     | 5/10 [00:22<00:22,  4.53s/it] 60%|██████    | 6/10 [00:30<00:21,  5.44s/it] 70%|███████   | 7/10 [00:34<00:15,  5.10s/it] 80%|████████  | 8/10 [00:39<00:10,  5.15s/it] 90%|█████████ | 9/10 [00:48<00:06,  6.20s/it]100%|██████████| 10/10 [00:52<00:00,  5.61s/it]                                               100%|██████████| 10/10 [00:54<00:00,  5.61s/it]100%|██████████| 10/10 [00:54<00:00,  5.42s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 54.2401, 'train_samples_per_second': 5.9, 'train_steps_per_second': 0.184, 'train_loss': 0.5184620380401611, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:09,  7.72s/it] 20%|██        | 2/10 [00:13<00:51,  6.38s/it] 30%|███       | 3/10 [00:18<00:41,  5.89s/it] 40%|████      | 4/10 [00:23<00:34,  5.70s/it] 50%|█████     | 5/10 [00:30<00:29,  6.00s/it] 60%|██████    | 6/10 [00:37<00:25,  6.33s/it] 70%|███████   | 7/10 [00:44<00:19,  6.62s/it] 80%|████████  | 8/10 [00:50<00:13,  6.55s/it] 90%|█████████ | 9/10 [00:55<00:05,  5.95s/it]100%|██████████| 10/10 [01:00<00:00,  5.58s/it]                                               100%|██████████| 10/10 [01:02<00:00,  5.58s/it]100%|██████████| 10/10 [01:02<00:00,  6.23s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 62.2529, 'train_samples_per_second': 5.14, 'train_steps_per_second': 0.161, 'train_loss': 0.46524815559387206, 'epoch': 1.0}
+>> ==================== Round 27 : [25, 95] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:33,  3.68s/it] 20%|██        | 2/10 [00:06<00:25,  3.23s/it] 30%|███       | 3/10 [00:09<00:20,  2.87s/it] 40%|████      | 4/10 [00:12<00:18,  3.17s/it] 50%|█████     | 5/10 [00:14<00:14,  2.85s/it] 60%|██████    | 6/10 [00:19<00:13,  3.36s/it] 70%|███████   | 7/10 [00:22<00:09,  3.32s/it] 80%|████████  | 8/10 [00:25<00:06,  3.30s/it] 90%|█████████ | 9/10 [00:28<00:03,  3.07s/it]100%|██████████| 10/10 [00:31<00:00,  2.95s/it]                                               100%|██████████| 10/10 [00:32<00:00,  2.95s/it]100%|██████████| 10/10 [00:32<00:00,  3.28s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 32.8066, 'train_samples_per_second': 9.754, 'train_steps_per_second': 0.305, 'train_loss': 0.563900089263916, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:35,  3.89s/it] 20%|██        | 2/10 [00:08<00:35,  4.48s/it] 30%|███       | 3/10 [00:12<00:28,  4.02s/it] 40%|████      | 4/10 [00:16<00:25,  4.28s/it] 50%|█████     | 5/10 [00:22<00:23,  4.63s/it] 60%|██████    | 6/10 [00:26<00:18,  4.58s/it] 70%|███████   | 7/10 [00:31<00:13,  4.55s/it] 80%|████████  | 8/10 [00:36<00:09,  4.93s/it] 90%|█████████ | 9/10 [00:43<00:05,  5.58s/it]100%|██████████| 10/10 [00:49<00:00,  5.50s/it]                                               100%|██████████| 10/10 [00:50<00:00,  5.50s/it]100%|██████████| 10/10 [00:50<00:00,  5.10s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 50.9981, 'train_samples_per_second': 6.275, 'train_steps_per_second': 0.196, 'train_loss': 0.4663968086242676, 'epoch': 1.0}
+>> ==================== Round 28 : [61, 83] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:33,  3.69s/it] 20%|██        | 2/10 [00:06<00:25,  3.22s/it] 30%|███       | 3/10 [00:09<00:21,  3.05s/it] 40%|████      | 4/10 [00:11<00:16,  2.80s/it] 50%|█████     | 5/10 [00:15<00:14,  2.97s/it] 60%|██████    | 6/10 [00:18<00:13,  3.25s/it] 70%|███████   | 7/10 [00:21<00:08,  2.96s/it] 80%|████████  | 8/10 [00:23<00:05,  2.78s/it] 90%|█████████ | 9/10 [00:26<00:02,  2.89s/it]100%|██████████| 10/10 [00:29<00:00,  2.90s/it]                                               100%|██████████| 10/10 [00:31<00:00,  2.90s/it]100%|██████████| 10/10 [00:31<00:00,  3.17s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 31.6839, 'train_samples_per_second': 10.1, 'train_steps_per_second': 0.316, 'train_loss': 0.4482396125793457, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:03<00:34,  3.88s/it] 20%|██        | 2/10 [00:09<00:39,  4.92s/it] 30%|███       | 3/10 [00:13<00:32,  4.70s/it] 40%|████      | 4/10 [00:18<00:26,  4.47s/it] 50%|█████     | 5/10 [00:23<00:23,  4.72s/it] 60%|██████    | 6/10 [00:28<00:19,  4.77s/it] 70%|███████   | 7/10 [00:32<00:13,  4.54s/it] 80%|████████  | 8/10 [00:36<00:08,  4.45s/it] 90%|█████████ | 9/10 [00:41<00:04,  4.76s/it]100%|██████████| 10/10 [00:46<00:00,  4.83s/it]                                               100%|██████████| 10/10 [00:48<00:00,  4.83s/it]100%|██████████| 10/10 [00:48<00:00,  4.89s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 48.916, 'train_samples_per_second': 6.542, 'train_steps_per_second': 0.204, 'train_loss': 0.48593735694885254, 'epoch': 1.0}
+>> ==================== Round 29 : [14, 95] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:07<01:06,  7.42s/it] 20%|██        | 2/10 [00:13<00:53,  6.63s/it] 30%|███       | 3/10 [00:19<00:43,  6.18s/it] 40%|████      | 4/10 [00:26<00:39,  6.66s/it] 50%|█████     | 5/10 [00:32<00:32,  6.47s/it] 60%|██████    | 6/10 [00:39<00:25,  6.50s/it] 70%|███████   | 7/10 [00:45<00:19,  6.51s/it] 80%|████████  | 8/10 [00:52<00:12,  6.48s/it] 90%|█████████ | 9/10 [00:58<00:06,  6.56s/it]100%|██████████| 10/10 [01:03<00:00,  5.90s/it]                                               100%|██████████| 10/10 [01:05<00:00,  5.90s/it]100%|██████████| 10/10 [01:05<00:00,  6.52s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 65.1991, 'train_samples_per_second': 4.908, 'train_steps_per_second': 0.153, 'train_loss': 0.47753348350524905, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:42,  4.70s/it] 20%|██        | 2/10 [00:08<00:33,  4.23s/it] 30%|███       | 3/10 [00:11<00:25,  3.66s/it] 40%|████      | 4/10 [00:16<00:24,  4.01s/it] 50%|█████     | 5/10 [00:19<00:19,  3.94s/it] 60%|██████    | 6/10 [00:26<00:19,  4.97s/it] 70%|███████   | 7/10 [00:31<00:14,  4.93s/it] 80%|████████  | 8/10 [00:36<00:09,  4.87s/it] 90%|█████████ | 9/10 [00:40<00:04,  4.48s/it]100%|██████████| 10/10 [00:45<00:00,  4.77s/it]                                               100%|██████████| 10/10 [00:47<00:00,  4.77s/it]100%|██████████| 10/10 [00:47<00:00,  4.77s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 47.7118, 'train_samples_per_second': 6.707, 'train_steps_per_second': 0.21, 'train_loss': 0.5181862354278565, 'epoch': 1.0}
+>> ==================== Round 30 : [9, 70] ====================
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:06<00:57,  6.34s/it] 20%|██        | 2/10 [00:13<00:54,  6.79s/it] 30%|███       | 3/10 [00:20<00:47,  6.79s/it] 40%|████      | 4/10 [00:27<00:42,  7.06s/it] 50%|█████     | 5/10 [00:33<00:33,  6.70s/it] 60%|██████    | 6/10 [00:40<00:26,  6.68s/it] 70%|███████   | 7/10 [00:46<00:19,  6.51s/it] 80%|████████  | 8/10 [00:52<00:12,  6.47s/it] 90%|█████████ | 9/10 [00:59<00:06,  6.62s/it]100%|██████████| 10/10 [01:06<00:00,  6.74s/it]                                               100%|██████████| 10/10 [01:08<00:00,  6.74s/it]100%|██████████| 10/10 [01:08<00:00,  6.89s/it]
+WARNING:root:Formatting inputs...
+WARNING:root:Tokenizing inputs... This may take some time...
+/mnt/bn/data-tns-live-llm/leon/OpenFedLLM/federated_learning/fed_local_sft.py:53: FutureWarning: `tokenizer` is deprecated and will be removed in version 5.0.0 for `Trainer.__init__`. Use `processing_class` instead.
+  trainer = Trainer(
+WARNING:accelerate.utils.other:Detected kernel version 5.4.210, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+max_steps is given, it will override any value given in num_train_epochs
+==((====))==  Unsloth - 2x faster free finetuning | Num GPUs = 1
+   \\   /|    Num examples = 320 | Num Epochs = 1
+O^O/ \_/ \    Batch size per device = 8 | Gradient Accumulation steps = 4
+\        /    Total batch size = 32 | Total steps = 10
+ "-____-"     Number of trainable parameters = 27,262,976
+{'train_runtime': 68.896, 'train_samples_per_second': 4.645, 'train_steps_per_second': 0.145, 'train_loss': 0.4438479900360107, 'epoch': 1.0}
+is bf16: 1
+is fp16: 0
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:04<00:43,  4.87s/it] 20%|██        | 2/10 [00:10<00:42,  5.28s/it] 30%|███       | 3/10 [00:14<00:32,  4.64s/it] 40%|████      | 4/10 [00:18<00:27,  4.59s/it] 50%|█████     | 5/10 [00:23<00:23,  4.77s/it] 60%|██████    | 6/10 [00:28<00:18,  4.55s/it] 70%|███████   | 7/10 [00:32<00:13,  4.63s/it] 80%|████████  | 8/10 [00:38<00:09,  4.80s/it] 90%|█████████ | 9/10 [00:43<00:04,  4.96s/it]100%|██████████| 10/10 [00:47<00:00,  4.79s/it]                                               100%|██████████| 10/10 [00:49<00:00,  4.79s/it]100%|██████████| 10/10 [00:49<00:00,  4.96s/it]
+{'train_runtime': 49.5548, 'train_samples_per_second': 6.457, 'train_steps_per_second': 0.202, 'train_loss': 0.45505523681640625, 'epoch': 1.0}

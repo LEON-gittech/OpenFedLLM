@@ -2,6 +2,7 @@ from dataclasses import dataclass, field, asdict
 from genericpath import exists
 from typing import Optional
 from transformers import HfArgumentParser, TrainingArguments, BitsAndBytesConfig
+from trl import SFTConfig, DPOConfig
 from peft import LoraConfig
 import os
 import json
@@ -49,6 +50,7 @@ class ScriptArguments:
     use_auth_token: Optional[bool] = field(default=False, metadata={"help": "Use HF auth token to access the model"})   # token and use_auth_token cannot be used together
     num_train_epochs: Optional[int] = field(default=5, metadata={"help": "the number of training epochs"}) # 这个会被 max_steps 重写，如果有 max_steps,那么每轮的训练 epoch=1，且采样的 num_examples=max_steps*batch_size*gradient_accumulation_steps
     max_steps: Optional[int] = field(default=-1, metadata={"help": "the number of training steps"})
+    save_strategy: Optional[str] = field(default="epoch")
     save_steps: Optional[int] = field(
         default=1000, metadata={"help": "Number of updates steps before two checkpoint saves"}
     )
@@ -66,6 +68,17 @@ class ScriptArguments:
     fp16: Optional[int] = field(default=0)
     online_dataset: Optional[int] = field(default=0)
     full_data: Optional[int] = field(default=0)
+    still_contain_base_data: Optional[int] = field(default=0)
+    seed: Optional[int] = field(default=None)
+
+
+    prompt_num: Optional[int] = field(default=2)
+    response_num: Optional[int] = field(default=4)
+    generate_data_path: Optional[str] = field(default="/mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding/")
+    use_vllm: Optional[int] = 0
+    rank_net: Optional[int] = 0
+    self_reward_epochs: Optional[int] = 1
+    unsloth_vllm: Optional[int] = 0
 
 parser = HfArgumentParser((ScriptArguments, FedArguments))
 script_args, fed_args = parser.parse_args_into_dataclasses()
@@ -90,7 +103,7 @@ def get_config():
 def get_training_args(script_args, new_lr):
     print(f"is bf16: {script_args.bf16}")
     print(f"is fp16: {script_args.fp16}")
-    training_args = TrainingArguments(
+    training_args = DPOConfig(
         output_dir=script_args.output_dir,
         per_device_train_batch_size=script_args.batch_size,
         gradient_accumulation_steps=script_args.gradient_accumulation_steps,
@@ -99,6 +112,7 @@ def get_training_args(script_args, new_lr):
         num_train_epochs=script_args.num_train_epochs,
         max_steps=script_args.max_steps,
         report_to=script_args.log_with,
+        save_strategy=script_args.save_strategy,
         save_steps=script_args.save_steps,
         save_total_limit=script_args.save_total_limit,
         push_to_hub=script_args.push_to_hub,
@@ -107,7 +121,26 @@ def get_training_args(script_args, new_lr):
         lr_scheduler_type="constant",
         bf16=script_args.bf16,
         fp16=script_args.fp16
-    )
+        )
+    # training_args = TrainingArguments(
+    #     output_dir=script_args.output_dir,
+    #     per_device_train_batch_size=script_args.batch_size,
+    #     gradient_accumulation_steps=script_args.gradient_accumulation_steps,
+    #     learning_rate=new_lr,
+    #     logging_steps=script_args.logging_steps,
+    #     num_train_epochs=script_args.num_train_epochs,
+    #     max_steps=script_args.max_steps,
+    #     report_to=script_args.log_with,
+    #     save_strategy=script_args.save_strategy,
+    #     save_steps=script_args.save_steps,
+    #     save_total_limit=script_args.save_total_limit,
+    #     push_to_hub=script_args.push_to_hub,
+    #     hub_model_id=script_args.hub_model_id,
+    #     gradient_checkpointing=script_args.gradient_checkpointing,
+    #     lr_scheduler_type="constant",
+    #     bf16=script_args.bf16,
+    #     fp16=script_args.fp16
+    # )
     return training_args
 
 def get_model_config(script_args):
@@ -140,7 +173,8 @@ def save_config(script_args, fed_args):
     now_time = (datetime.now()).strftime("%Y%m%d%H%M%S")
     dataset_name_split = os.path.basename(script_args.dataset_name)
 
-    output_dir = f"{script_args.output_dir}/{dataset_name_split}_{script_args.dataset_sample}_{fed_args.fed_alg}_c{fed_args.num_clients}s{fed_args.sample_clients}_i{script_args.max_steps}_b{script_args.batch_size}a{script_args.gradient_accumulation_steps}_l{script_args.seq_length}_r{script_args.peft_lora_r}a{script_args.peft_lora_alpha}_f{script_args.full_data}"
+    output_dir = f"{script_args.output_dir}/{dataset_name_split}_{fed_args.fed_alg}_c{fed_args.num_clients}s{fed_args.sample_clients}_i{script_args.max_steps}_b{script_args.batch_size}a{script_args.gradient_accumulation_steps}_l{script_args.seq_length}_r{script_args.peft_lora_r}a{script_args.peft_lora_alpha}_ranknet{script_args.rank_net}_unslothvllm{script_args.unsloth_vllm}"
+
     os.makedirs(output_dir, exist_ok=True)
     # while True:
     #     if not os.path.exists(output_dir):

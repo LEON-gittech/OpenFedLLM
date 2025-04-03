@@ -1,0 +1,15 @@
+[2025-02-11 11:02:25,573] [INFO] [real_accelerator.py:222:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+/home/tiger/.pyenv/versions/3.11.2/lib/python3.11/site-packages/bytedmetrics/__init__.py:10: UserWarning: bytedmetrics is renamed to bytedance.metrics, please using `bytedance.metrics` instead of `bytedmetrics`
+  warnings.warn("bytedmetrics is renamed to bytedance.metrics, please using `bytedance.metrics` instead of `bytedmetrics`")
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+🦥 Unsloth Zoo will now patch everything to make training faster!
+INFO 02-11 11:02:29 __init__.py:190] Automatically detected platform cuda.
+Traceback (most recent call last):
+  File "/mnt/bn/merlin-datavolume-tsy/leon/FedSPA/main_self_reward_param_copy.py", line 16, in <module>
+    from config import get_config, save_config, get_model_config, get_training_args
+  File "/mnt/bn/merlin-datavolume-tsy/leon/FedSPA/config.py", line 84, in <module>
+    script_args, fed_args = parser.parse_args_into_dataclasses()
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/tiger/.local/lib/python3.11/site-packages/transformers/hf_argparser.py", line 361, in parse_args_into_dataclasses
+    raise ValueError(f"Some specified arguments are not used by the HfArgumentParser: {remaining_args}")
+ValueError: Some specified arguments are not used by the HfArgumentParser: ['-']

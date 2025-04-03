@@ -1,0 +1,222 @@
+[2024-09-03 04:14:45,995] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+is bf16: 1
+is fp16: 0
+ScriptArguments(model_name_or_path='/mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/', dataset_name='base_fin', log_with='none', learning_rate=5e-05, batch_size=16, seq_length=2048, gradient_accumulation_steps=2, load_in_8bit=False, load_in_4bit=True, use_peft=True, trust_remote_code=False, output_dir='/mnt/bn/data-tns-live-llm/leon/datasets/fed/base_fin_20000_scaffold_c10s2_i10_b16a2_l2048_r16a16_f0', peft_lora_r=16, peft_lora_alpha=16, logging_steps=100, use_auth_token=False, num_train_epochs=5, max_steps=10, save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=2023, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=1, fp16=0, online_dataset=0, full_data=0) FedArguments(fed_alg='scaffold', num_rounds=30, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+using unsloth model
+==((====))==  Unsloth 2024.8: Fast Llama patching. Transformers = 4.43.2.
+   \\   /|    GPU: NVIDIA A100-SXM4-80GB. Max memory: 79.151 GB. Platform = Linux.
+O^O/ \_/ \    Pytorch: 2.4.0+cu121. CUDA = 8.0. CUDA Toolkit = 12.1.
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.27.post2. FA2 = False]
+ "-____-"     Free Apache license: http://github.com/unslothai/unsloth
+30
+>> ==================== Round 1 : [6, 9] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 14.9736, 'train_samples_per_second': 21.371, 'train_steps_per_second': 0.668, 'train_loss': 2.319985580444336, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 20.0911, 'train_samples_per_second': 15.927, 'train_steps_per_second': 0.498, 'train_loss': 2.3854959487915037, 'epoch': 2.86}
+>> ==================== Round 2 : [1, 2] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 19.1437, 'train_samples_per_second': 16.716, 'train_steps_per_second': 0.522, 'train_loss': 0.3281287908554077, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 20.7608, 'train_samples_per_second': 15.414, 'train_steps_per_second': 0.482, 'train_loss': 0.3111895561218262, 'epoch': 2.86}
+>> ==================== Round 3 : [0, 1] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 12.5582, 'train_samples_per_second': 25.481, 'train_steps_per_second': 0.796, 'train_loss': 0.26026804447174073, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 14.5587, 'train_samples_per_second': 21.98, 'train_steps_per_second': 0.687, 'train_loss': 0.28861188888549805, 'epoch': 2.86}
+>> ==================== Round 4 : [3, 8] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 12.6121, 'train_samples_per_second': 25.372, 'train_steps_per_second': 0.793, 'train_loss': 0.14531878232955933, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 21.9577, 'train_samples_per_second': 14.573, 'train_steps_per_second': 0.455, 'train_loss': 0.1796779751777649, 'epoch': 2.86}
+>> ==================== Round 5 : [3, 4] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 12.6834, 'train_samples_per_second': 25.23, 'train_steps_per_second': 0.788, 'train_loss': 0.10136632919311524, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.4703, 'train_samples_per_second': 23.756, 'train_steps_per_second': 0.742, 'train_loss': 0.12401289939880371, 'epoch': 2.86}
+>> ==================== Round 6 : [4, 9] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.1777, 'train_samples_per_second': 24.283, 'train_steps_per_second': 0.759, 'train_loss': 0.11748316287994384, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 17.5331, 'train_samples_per_second': 18.251, 'train_steps_per_second': 0.57, 'train_loss': 0.20348610877990722, 'epoch': 2.86}
+>> ==================== Round 7 : [1, 9] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 14.8842, 'train_samples_per_second': 21.499, 'train_steps_per_second': 0.672, 'train_loss': 0.15369304418563842, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 16.4038, 'train_samples_per_second': 19.508, 'train_steps_per_second': 0.61, 'train_loss': 0.15969281196594237, 'epoch': 2.86}
+>> ==================== Round 8 : [2, 5] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 17.4342, 'train_samples_per_second': 18.355, 'train_steps_per_second': 0.574, 'train_loss': 0.12154080867767333, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 12.5498, 'train_samples_per_second': 25.498, 'train_steps_per_second': 0.797, 'train_loss': 0.21439902782440184, 'epoch': 2.86}
+>> ==================== Round 9 : [3, 5] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 18.7303, 'train_samples_per_second': 17.085, 'train_steps_per_second': 0.534, 'train_loss': 0.08260715603828431, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 12.603, 'train_samples_per_second': 25.391, 'train_steps_per_second': 0.793, 'train_loss': 0.13518620729446412, 'epoch': 2.86}
+>> ==================== Round 10 : [5, 7] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 12.6268, 'train_samples_per_second': 25.343, 'train_steps_per_second': 0.792, 'train_loss': 0.1481832504272461, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 18.4372, 'train_samples_per_second': 17.356, 'train_steps_per_second': 0.542, 'train_loss': 0.12218955755233765, 'epoch': 2.86}
+>> ==================== Round 11 : [0, 9] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 12.4681, 'train_samples_per_second': 25.666, 'train_steps_per_second': 0.802, 'train_loss': 0.15892479419708253, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 16.0514, 'train_samples_per_second': 19.936, 'train_steps_per_second': 0.623, 'train_loss': 0.0989733338356018, 'epoch': 2.86}
+>> ==================== Round 12 : [7, 8] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 12.9874, 'train_samples_per_second': 24.639, 'train_steps_per_second': 0.77, 'train_loss': 0.0773129403591156, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.136, 'train_samples_per_second': 24.36, 'train_steps_per_second': 0.761, 'train_loss': 0.06605576276779175, 'epoch': 2.86}
+>> ==================== Round 13 : [4, 7] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 14.5684, 'train_samples_per_second': 21.965, 'train_steps_per_second': 0.686, 'train_loss': 0.061656486988067624, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 15.0871, 'train_samples_per_second': 21.21, 'train_steps_per_second': 0.663, 'train_loss': 0.07298359274864197, 'epoch': 2.86}
+>> ==================== Round 14 : [4, 9] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 12.9961, 'train_samples_per_second': 24.623, 'train_steps_per_second': 0.769, 'train_loss': 0.02481408566236496, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 16.3829, 'train_samples_per_second': 19.533, 'train_steps_per_second': 0.61, 'train_loss': 0.11082459688186645, 'epoch': 2.86}
+>> ==================== Round 15 : [1, 8] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 21.9531, 'train_samples_per_second': 14.577, 'train_steps_per_second': 0.456, 'train_loss': 0.1183125615119934, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.1119, 'train_samples_per_second': 24.405, 'train_steps_per_second': 0.763, 'train_loss': 0.05720605850219727, 'epoch': 2.86}
+>> ==================== Round 16 : [0, 3] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 14.6924, 'train_samples_per_second': 21.78, 'train_steps_per_second': 0.681, 'train_loss': 0.09633892178535461, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 16.4778, 'train_samples_per_second': 19.42, 'train_steps_per_second': 0.607, 'train_loss': 0.03789865672588348, 'epoch': 2.86}
+>> ==================== Round 17 : [5, 7] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 18.6591, 'train_samples_per_second': 17.15, 'train_steps_per_second': 0.536, 'train_loss': 0.0588321328163147, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 15.8016, 'train_samples_per_second': 20.251, 'train_steps_per_second': 0.633, 'train_loss': 0.03753703832626343, 'epoch': 2.86}
+>> ==================== Round 18 : [6, 8] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.0483, 'train_samples_per_second': 24.524, 'train_steps_per_second': 0.766, 'train_loss': 0.12862600088119508, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 15.5402, 'train_samples_per_second': 20.592, 'train_steps_per_second': 0.643, 'train_loss': 0.04227907359600067, 'epoch': 2.86}
+>> ==================== Round 19 : [1, 2] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 17.0674, 'train_samples_per_second': 18.749, 'train_steps_per_second': 0.586, 'train_loss': 0.09444202184677124, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.8649, 'train_samples_per_second': 23.08, 'train_steps_per_second': 0.721, 'train_loss': 0.07437595129013061, 'epoch': 2.86}
+>> ==================== Round 20 : [0, 8] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 12.6431, 'train_samples_per_second': 25.31, 'train_steps_per_second': 0.791, 'train_loss': 0.05868173241615295, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 21.4499, 'train_samples_per_second': 14.918, 'train_steps_per_second': 0.466, 'train_loss': 0.02938084304332733, 'epoch': 2.86}
+>> ==================== Round 21 : [2, 4] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.0206, 'train_samples_per_second': 24.577, 'train_steps_per_second': 0.768, 'train_loss': 0.03763736188411713, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.4056, 'train_samples_per_second': 23.871, 'train_steps_per_second': 0.746, 'train_loss': 0.013576701283454895, 'epoch': 2.86}
+>> ==================== Round 22 : [2, 6] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 22.8457, 'train_samples_per_second': 14.007, 'train_steps_per_second': 0.438, 'train_loss': 0.04657914936542511, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 15.5846, 'train_samples_per_second': 20.533, 'train_steps_per_second': 0.642, 'train_loss': 0.09768787026405334, 'epoch': 2.86}
+>> ==================== Round 23 : [2, 3] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 18.054, 'train_samples_per_second': 17.725, 'train_steps_per_second': 0.554, 'train_loss': 0.04211507439613342, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 17.7531, 'train_samples_per_second': 18.025, 'train_steps_per_second': 0.563, 'train_loss': 0.017698219418525694, 'epoch': 2.86}
+>> ==================== Round 24 : [1, 4] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 14.9595, 'train_samples_per_second': 21.391, 'train_steps_per_second': 0.668, 'train_loss': 0.0587290108203888, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 16.363, 'train_samples_per_second': 19.556, 'train_steps_per_second': 0.611, 'train_loss': 0.007664825022220612, 'epoch': 2.86}
+>> ==================== Round 25 : [2, 6] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 14.3949, 'train_samples_per_second': 22.23, 'train_steps_per_second': 0.695, 'train_loss': 0.059673428535461426, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.1328, 'train_samples_per_second': 24.366, 'train_steps_per_second': 0.761, 'train_loss': 0.07994136214256287, 'epoch': 2.86}
+>> ==================== Round 26 : [0, 6] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 20.3005, 'train_samples_per_second': 15.763, 'train_steps_per_second': 0.493, 'train_loss': 0.02363828867673874, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.5097, 'train_samples_per_second': 23.687, 'train_steps_per_second': 0.74, 'train_loss': 0.07761587500572205, 'epoch': 2.86}
+>> ==================== Round 27 : [3, 9] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 16.1962, 'train_samples_per_second': 19.758, 'train_steps_per_second': 0.617, 'train_loss': 0.006677408516407013, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.8808, 'train_samples_per_second': 23.053, 'train_steps_per_second': 0.72, 'train_loss': 0.033611837029457095, 'epoch': 2.86}
+>> ==================== Round 28 : [4, 7] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 23.0964, 'train_samples_per_second': 13.855, 'train_steps_per_second': 0.433, 'train_loss': 0.002785409428179264, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.1342, 'train_samples_per_second': 24.364, 'train_steps_per_second': 0.761, 'train_loss': 0.004893337190151214, 'epoch': 2.86}
+>> ==================== Round 29 : [1, 2] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 15.9304, 'train_samples_per_second': 20.087, 'train_steps_per_second': 0.628, 'train_loss': 0.07242082953453063, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 12.8693, 'train_samples_per_second': 24.865, 'train_steps_per_second': 0.777, 'train_loss': 0.043621009588241576, 'epoch': 2.86}
+>> ==================== Round 30 : [1, 8] ====================
+is bf16: 1
+is fp16: 0
+{'train_runtime': 16.6966, 'train_samples_per_second': 19.166, 'train_steps_per_second': 0.599, 'train_loss': 0.05127978920936584, 'epoch': 2.86}
+is bf16: 1
+is fp16: 0
+{'train_runtime': 13.1732, 'train_samples_per_second': 24.292, 'train_steps_per_second': 0.759, 'train_loss': 0.014035597443580627, 'epoch': 2.86}

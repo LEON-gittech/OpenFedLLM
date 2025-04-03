@@ -1,0 +1,218 @@
+[2024-12-10 19:33:57,356] [INFO] [real_accelerator.py:219:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+🦥 Unsloth: Will patch your computer to enable 2x faster free finetuning.
+🦥 Unsloth Zoo will now patch everything to make training faster!
+is bf16: 1
+is fp16: 0
+ScriptArguments(model_name_or_path='/mnt/bn/merlin-datavolume-tsy/leon/checkpoints/self-rewarding/M0', dataset_name='lucasmccabe-lmi/CodeAlpaca-20k', log_with='none', learning_rate=5e-05, batch_size=8, seq_length=2048, gradient_accumulation_steps=1, load_in_8bit=False, load_in_4bit=True, use_peft=False, trust_remote_code=False, output_dir='/mnt/bn/merlin-datavolume-tsy/leon/checkpoints/self-rewarding//fedavg_c10s2_i-1_b8a1_l2048_r8a16', peft_lora_r=8, peft_lora_alpha=16, logging_steps=100, use_auth_token=False, num_train_epochs=1, max_steps=-1, save_strategy='epoch', save_steps=1000, save_total_limit=3, push_to_hub=False, hub_model_id=None, gradient_checkpointing=True, template='alpaca', seed=None, dpo_beta=0.1, dataset_sample=20000, local_data_dir=None, unsloth=1, bf16=1, fp16=0, online_dataset=0, full_data=0, still_contain_base_data=0, prompt_num=16, response_num=4, generate_data_path='/mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding/', use_vllm=0) FedArguments(fed_alg='fedavg', num_rounds=30, num_clients=10, sample_clients=2, split_strategy='iid', prox_mu=0.01, fedopt_tau=0.001, fedopt_eta=0.001, fedopt_beta1=0.9, fedopt_beta2=0.99, save_model_freq=10)
+using unsloth model
+==((====))==  Unsloth 2024.12.4: Fast Llama patching. Transformers:4.46.3.
+   \\   /|    GPU: NVIDIA A100-SXM4-80GB. Max memory: 79.151 GB. Platform: Linux.
+O^O/ \_/ \    Torch: 2.5.1. CUDA: 8.0. CUDA Toolkit: 12.1. Triton: 3.1.0
+\        /    Bfloat16 = TRUE. FA [Xformers = 0.0.28.post3. FA2 = False]
+ "-____-"     Free Apache license: http://github.com/unslothai/unsloth
+Unsloth: Fast downloading is enabled - ignore downloading bars which are red colored!
+30
+>> ==================== Round 1 : [6, 9] ====================
+2024-12-10 19:44:58,581 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//6_0_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 4774.39 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2679.96 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3808.89 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3848.65 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 830.07 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:02<00:02,  2.83s/it]100%|██████████| 2/2 [00:04<00:00,  2.17s/it]                                             {'train_runtime': 6.4459, 'train_samples_per_second': 2.482, 'train_steps_per_second': 0.31, 'train_loss': 0.6417961120605469, 'epoch': 1.0}
+100%|██████████| 2/2 [00:06<00:00,  2.17s/it]100%|██████████| 2/2 [00:06<00:00,  3.22s/it]
+2024-12-10 19:56:20,802 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//9_0_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 6483.95 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 3208.19 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 4029.84 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3911.00 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 780.10 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:02<00:02,  2.02s/it]100%|██████████| 2/2 [00:03<00:00,  1.92s/it]                                             {'train_runtime': 5.7848, 'train_samples_per_second': 2.766, 'train_steps_per_second': 0.346, 'train_loss': 0.7090344429016113, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.92s/it]100%|██████████| 2/2 [00:05<00:00,  2.89s/it]
+>> ==================== Round 2 : [1, 2] ====================
+2024-12-10 20:08:24,126 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//1_1_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 5384.22 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2727.12 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3688.31 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3429.17 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 737.62 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:01<00:01,  1.98s/it]100%|██████████| 2/2 [00:03<00:00,  1.79s/it]                                             {'train_runtime': 5.3403, 'train_samples_per_second': 2.996, 'train_steps_per_second': 0.375, 'train_loss': 0.6724300384521484, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.79s/it]100%|██████████| 2/2 [00:05<00:00,  2.67s/it]
+2024-12-10 20:19:59,652 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//2_1_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 6393.15 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 3038.53 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3462.97 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3634.97 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 777.19 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:02<00:02,  2.17s/it]100%|██████████| 2/2 [00:03<00:00,  1.88s/it]                                             {'train_runtime': 5.5575, 'train_samples_per_second': 2.879, 'train_steps_per_second': 0.36, 'train_loss': 0.7913815379142761, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.88s/it]100%|██████████| 2/2 [00:05<00:00,  2.78s/it]
+>> ==================== Round 3 : [0, 1] ====================
+2024-12-10 20:31:43,748 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//0_2_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 6021.43 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2922.73 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3784.62 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3655.37 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 750.64 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:02<00:02,  2.16s/it]100%|██████████| 2/2 [00:03<00:00,  1.89s/it]                                             {'train_runtime': 5.5686, 'train_samples_per_second': 2.873, 'train_steps_per_second': 0.359, 'train_loss': 0.7361682653427124, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.89s/it]100%|██████████| 2/2 [00:05<00:00,  2.78s/it]
+2024-12-10 20:43:01,119 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//1_2_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 6284.19 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2937.32 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3427.59 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3594.48 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 738.97 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:02<00:02,  2.19s/it]100%|██████████| 2/2 [00:03<00:00,  1.90s/it]                                             {'train_runtime': 5.5836, 'train_samples_per_second': 2.866, 'train_steps_per_second': 0.358, 'train_loss': 0.7316821813583374, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.90s/it]100%|██████████| 2/2 [00:05<00:00,  2.79s/it]
+>> ==================== Round 4 : [3, 8] ====================
+2024-12-10 20:52:54,418 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//3_3_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 6481.44 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2993.13 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3832.38 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3636.15 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 896.91 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:01<00:01,  1.93s/it]100%|██████████| 2/2 [00:03<00:00,  1.81s/it]                                             {'train_runtime': 5.2681, 'train_samples_per_second': 3.037, 'train_steps_per_second': 0.38, 'train_loss': 0.7110905051231384, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.81s/it]100%|██████████| 2/2 [00:05<00:00,  2.63s/it]
+2024-12-10 21:02:47,898 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//8_3_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 5919.98 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2832.20 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3426.37 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3350.42 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 850.63 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:02<00:02,  2.17s/it]100%|██████████| 2/2 [00:03<00:00,  1.89s/it]                                             {'train_runtime': 5.484, 'train_samples_per_second': 2.918, 'train_steps_per_second': 0.365, 'train_loss': 0.7116419076919556, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.89s/it]100%|██████████| 2/2 [00:05<00:00,  2.74s/it]
+>> ==================== Round 5 : [3, 4] ====================
+2024-12-10 21:12:51,224 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//3_4_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 6021.97 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2888.89 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3459.40 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3298.54 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 710.09 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:01<00:01,  1.76s/it]100%|██████████| 2/2 [00:03<00:00,  1.79s/it]                                             {'train_runtime': 5.2534, 'train_samples_per_second': 3.046, 'train_steps_per_second': 0.381, 'train_loss': 0.513049840927124, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.79s/it]100%|██████████| 2/2 [00:05<00:00,  2.63s/it]
+2024-12-10 21:23:06,935 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//4_4_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 5433.92 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2940.15 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 1984.00 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3656.16 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 778.51 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:02<00:02,  2.04s/it]100%|██████████| 2/2 [00:03<00:00,  1.91s/it]                                             {'train_runtime': 5.4668, 'train_samples_per_second': 2.927, 'train_steps_per_second': 0.366, 'train_loss': 0.5087175369262695, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.91s/it]100%|██████████| 2/2 [00:05<00:00,  2.73s/it]
+>> ==================== Round 6 : [4, 9] ====================
+2024-12-10 21:33:49,612 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//4_5_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 7265.22 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 3060.84 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3650.99 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3923.12 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 779.08 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:01<00:01,  1.77s/it]100%|██████████| 2/2 [00:03<00:00,  1.74s/it]                                             {'train_runtime': 5.1685, 'train_samples_per_second': 3.096, 'train_steps_per_second': 0.387, 'train_loss': 0.5077812671661377, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.74s/it]100%|██████████| 2/2 [00:05<00:00,  2.58s/it]
+2024-12-10 21:44:13,704 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//9_5_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 6360.43 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2956.73 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3482.38 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3611.69 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 752.28 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:01<00:01,  1.81s/it]100%|██████████| 2/2 [00:03<00:00,  1.85s/it]                                             {'train_runtime': 5.3387, 'train_samples_per_second': 2.997, 'train_steps_per_second': 0.375, 'train_loss': 0.510050892829895, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.85s/it]100%|██████████| 2/2 [00:05<00:00,  2.67s/it]
+>> ==================== Round 7 : [1, 9] ====================
+2024-12-10 21:54:21,569 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//1_6_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 5845.21 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 3172.25 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3733.87 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3928.17 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 783.36 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:01<00:01,  1.93s/it]100%|██████████| 2/2 [00:03<00:00,  1.82s/it]                                             {'train_runtime': 5.3479, 'train_samples_per_second': 2.992, 'train_steps_per_second': 0.374, 'train_loss': 0.5886845588684082, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.82s/it]100%|██████████| 2/2 [00:05<00:00,  2.67s/it]
+2024-12-10 22:04:36,795 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//9_6_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 5654.13 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2901.38 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3805.44 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3557.89 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 748.77 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:01<00:01,  1.79s/it]100%|██████████| 2/2 [00:03<00:00,  1.79s/it]                                             {'train_runtime': 5.5738, 'train_samples_per_second': 2.871, 'train_steps_per_second': 0.359, 'train_loss': 0.5808502435684204, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.79s/it]100%|██████████| 2/2 [00:05<00:00,  2.79s/it]
+>> ==================== Round 8 : [2, 5] ====================
+2024-12-10 22:15:57,270 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//2_7_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 7127.11 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2952.44 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3914.19 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3671.77 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 774.19 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:02<00:02,  2.05s/it]100%|██████████| 2/2 [00:03<00:00,  1.84s/it]                                             {'train_runtime': 5.356, 'train_samples_per_second': 2.987, 'train_steps_per_second': 0.373, 'train_loss': 0.5584455728530884, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.84s/it]100%|██████████| 2/2 [00:05<00:00,  2.68s/it]
+2024-12-10 22:27:05,424 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//5_7_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 759.55 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2968.50 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3505.29 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3548.11 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 776.65 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:02<00:02,  2.07s/it]100%|██████████| 2/2 [00:03<00:00,  1.85s/it]                                             {'train_runtime': 5.428, 'train_samples_per_second': 2.948, 'train_steps_per_second': 0.368, 'train_loss': 0.5589076280593872, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.85s/it]100%|██████████| 2/2 [00:05<00:00,  2.71s/it]
+>> ==================== Round 9 : [3, 5] ====================
+2024-12-10 22:37:33,930 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//3_8_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 6304.26 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 3189.89 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 4025.49 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 4003.63 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 829.94 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:02<00:02,  2.22s/it]100%|██████████| 2/2 [00:03<00:00,  1.92s/it]                                             {'train_runtime': 5.5188, 'train_samples_per_second': 2.899, 'train_steps_per_second': 0.362, 'train_loss': 0.6435340642929077, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.92s/it]100%|██████████| 2/2 [00:05<00:00,  2.76s/it]
+2024-12-10 22:48:12,223 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//5_8_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 5829.47 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 2768.06 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3419.04 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3407.93 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 712.02 examples/s]
+  0%|          | 0/2 [00:00<?, ?it/s] 50%|█████     | 1/2 [00:02<00:02,  2.09s/it]100%|██████████| 2/2 [00:03<00:00,  1.91s/it]                                             {'train_runtime': 5.5252, 'train_samples_per_second': 2.896, 'train_steps_per_second': 0.362, 'train_loss': 0.6430583000183105, 'epoch': 1.0}
+100%|██████████| 2/2 [00:05<00:00,  1.91s/it]100%|██████████| 2/2 [00:05<00:00,  2.76s/it]
+>> ==================== Round 10 : [5, 7] ====================
+2024-12-10 22:58:40,009 - root - INFO - Generating DPO dataset from preferences: /mnt/bn/merlin-datavolume-tsy/leon/datasets/self-rewarding//5_9_preferences.json
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 16 examples [00:00, 6506.58 examples/s]
+Map:   0%|          | 0/16 [00:00<?, ? examples/s]Map: 100%|██████████| 16/16 [00:00<00:00, 3044.18 examples/s]
+is bf16: 1
+is fp16: 0
+Extracting prompt from train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Extracting prompt from train dataset: 100%|██████████| 16/16 [00:00<00:00, 3763.40 examples/s]
+Applying chat template to train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Applying chat template to train dataset: 100%|██████████| 16/16 [00:00<00:00, 3684.06 examples/s]
+Tokenizing train dataset:   0%|          | 0/16 [00:00<?, ? examples/s]Tokenizing train dataset: 100%|██████████| 16/16 [00:00<00:00, 874.63 examples/s]
+Traceback (most recent call last):
+  File "/mnt/bn/data-tns-live-llm/leon/FedSPA/main_self_reward.py", line 170, in <module>
+    results = trainer.train()
+              ^^^^^^^^^^^^^^^
+  File "<string>", line 35, in train
+RuntimeError: Unsloth currently does not support multi GPU setups - but we are working on it!

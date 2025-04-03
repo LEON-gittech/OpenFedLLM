@@ -1,0 +1,33 @@
+# CUDA_VISIBLE_DEVICES=0 nohup python3 main_sft.py --learning_rate 5e-5 --model_name_or_path /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ --dataset_sample 20000 --fed_alg fedavg --num_clients 100 --sample_clients 2 --max_steps 10 --num_rounds 30 --batch_size 8 --gradient_accumulation_steps 4 --seq_length 2048 --peft_lora_r 32 --peft_lora_alpha 64 --use_peft --load_in_4bit --output_dir /mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed --template alpaca --unsloth 1 --bf16 1 --seq_length 2048 --dataset_name iid2niid_code_5000 > 1.out &
+
+# CUDA_VISIBLE_DEVICES=1 nohup python3 main_sft.py --learning_rate 5e-5 --model_name_or_path /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ --dataset_sample 20000 --fed_alg fedavg --num_clients 100 --sample_clients 2 --max_steps 10 --num_rounds 30 --batch_size 8 --gradient_accumulation_steps 4 --seq_length 2048 --peft_lora_r 32 --peft_lora_alpha 64 --use_peft --load_in_4bit --output_dir /mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed --template alpaca --unsloth 1 --bf16 1 --seq_length 2048 --dataset_name iid2niid_med_5000 > 2.out &
+
+# wait 
+
+# CUDA_VISIBLE_DEVICES=0 nohup python3 main_sft.py --learning_rate 5e-5 --model_name_or_path /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ --dataset_sample 20000 --fed_alg fedavg --num_clients 100 --sample_clients 2 --max_steps 10 --num_rounds 30 --batch_size 8 --gradient_accumulation_steps 4 --seq_length 2048 --peft_lora_r 32 --peft_lora_alpha 64 --use_peft --load_in_4bit --output_dir /mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed --template alpaca --unsloth 1 --bf16 1 --seq_length 2048 --dataset_name iid2niid_fin_5000 > 3.out &
+
+# CUDA_VISIBLE_DEVICES=1 nohup python3 main_sft.py --learning_rate 5e-5 --model_name_or_path /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ --dataset_sample 20000 --fed_alg fedavg --num_clients 100 --sample_clients 2 --max_steps 10 --num_rounds 30 --batch_size 8 --gradient_accumulation_steps 4 --seq_length 2048 --peft_lora_r 32 --peft_lora_alpha 64 --use_peft --load_in_4bit --output_dir /mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed --template alpaca --unsloth 1 --bf16 1 --seq_length 2048 --dataset_name iid2niid_math_5000 > 4.out &
+
+# wait
+
+# CUDA_VISIBLE_DEVICES=0 nohup python3 main_sft.py --learning_rate 5e-5 --model_name_or_path /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ --dataset_sample 20000 --fed_alg fedavg --num_clients 100 --sample_clients 2 --max_steps 10 --num_rounds 30 --batch_size 8 --gradient_accumulation_steps 4 --seq_length 2048 --peft_lora_r 32 --peft_lora_alpha 64 --use_peft --load_in_4bit --output_dir /mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed --template alpaca --unsloth 1 --bf16 1 --seq_length 2048 --dataset_name random_code > 1.out &
+
+# CUDA_VISIBLE_DEVICES=1 nohup python3 main_sft.py --learning_rate 5e-5 --model_name_or_path /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ --dataset_sample 20000 --fed_alg fedavg --num_clients 100 --sample_clients 2 --max_steps 10 --num_rounds 30 --batch_size 8 --gradient_accumulation_steps 4 --seq_length 2048 --peft_lora_r 32 --peft_lora_alpha 64 --use_peft --load_in_4bit --output_dir /mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed --template alpaca --unsloth 1 --bf16 1 --seq_length 2048 --dataset_name random_med > 2.out &
+
+wait
+
+CUDA_VISIBLE_DEVICES=0 nohup python3 main_sft.py --learning_rate 5e-5 --model_name_or_path /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ --dataset_sample 20000 --fed_alg fedavg --num_clients 100 --sample_clients 2 --max_steps 10 --num_rounds 30 --batch_size 8 --gradient_accumulation_steps 4 --seq_length 2048 --peft_lora_r 32 --peft_lora_alpha 64 --use_peft --load_in_4bit --output_dir /mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed --template alpaca --unsloth 1 --bf16 1 --seq_length 2048 --dataset_name random_fin > 3.out &
+
+CUDA_VISIBLE_DEVICES=1 nohup python3 main_sft.py --learning_rate 5e-5 --model_name_or_path /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ --dataset_sample 20000 --fed_alg fedavg --num_clients 100 --sample_clients 2 --max_steps 10 --num_rounds 30 --batch_size 8 --gradient_accumulation_steps 4 --seq_length 2048 --peft_lora_r 32 --peft_lora_alpha 64 --use_peft --load_in_4bit --output_dir /mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed --template alpaca --unsloth 1 --bf16 1 --seq_length 2048 --dataset_name random_math > 4.out &
+
+wait
+
+CUDA_VISIBLE_DEVICES=0 nohup python3 main_sft.py --learning_rate 5e-5 --model_name_or_path /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ --dataset_sample 20000 --fed_alg fedavg --num_clients 100 --sample_clients 2 --max_steps 10 --num_rounds 30 --batch_size 8 --gradient_accumulation_steps 4 --seq_length 2048 --peft_lora_r 32 --peft_lora_alpha 64 --use_peft --load_in_4bit --output_dir /mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed --template alpaca --unsloth 1 --bf16 1 --seq_length 2048 --dataset_name base_code > 1.out &
+
+CUDA_VISIBLE_DEVICES=1 nohup python3 main_sft.py --learning_rate 5e-5 --model_name_or_path /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ --dataset_sample 20000 --fed_alg fedavg --num_clients 100 --sample_clients 2 --max_steps 10 --num_rounds 30 --batch_size 8 --gradient_accumulation_steps 4 --seq_length 2048 --peft_lora_r 32 --peft_lora_alpha 64 --use_peft --load_in_4bit --output_dir /mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed --template alpaca --unsloth 1 --bf16 1 --seq_length 2048 --dataset_name base_med > 2.out &
+
+wait
+
+CUDA_VISIBLE_DEVICES=0 nohup python3 main_sft.py --learning_rate 5e-5 --model_name_or_path /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ --dataset_sample 20000 --fed_alg fedavg --num_clients 100 --sample_clients 2 --max_steps 10 --num_rounds 30 --batch_size 8 --gradient_accumulation_steps 4 --seq_length 2048 --peft_lora_r 32 --peft_lora_alpha 64 --use_peft --load_in_4bit --output_dir /mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed --template alpaca --unsloth 1 --bf16 1 --seq_length 2048 --dataset_name base_fin > 3.out &
+
+CUDA_VISIBLE_DEVICES=1 nohup python3 main_sft.py --learning_rate 5e-5 --model_name_or_path /mnt/bn/data-tns-live-llm/leon/datasets/llama-3-8b-bnb-4bit/ --dataset_sample 20000 --fed_alg fedavg --num_clients 100 --sample_clients 2 --max_steps 10 --num_rounds 30 --batch_size 8 --gradient_accumulation_steps 4 --seq_length 2048 --peft_lora_r 32 --peft_lora_alpha 64 --use_peft --load_in_4bit --output_dir /mnt/bn/merlin-datavolume-tsy/leon/checkpoints/fed --template alpaca --unsloth 1 --bf16 1 --seq_length 2048 --dataset_name base_math > 4.out &

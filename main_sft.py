@@ -7,7 +7,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from trl import DataCollatorForCompletionOnlyLM
 from peft import get_peft_model, get_peft_model_state_dict, set_peft_model_state_dict, prepare_model_for_kbit_training
 from datasets import load_from_disk
-from federated_learning.split_dataset import get_dataset_this_round_fewshot
+from federated_learning.split_dataset import get_dataset_this_round_fewshot, get_dataset_this_round_QA
 from utils.utils import get_unsloth_model
 
 from utils import *
@@ -15,6 +15,8 @@ from utils import *
 from federated_learning import *
 from config import get_config, save_config, get_model_config, get_training_args
 from utils.dataset_utils import *
+# from utils.utils import prepare_model_for_kbit_training
+import random
 os.environ["TOKENIZERS_PARALLELISM"]="false"
 
 # ===== Define the arguments =====
@@ -22,7 +24,10 @@ script_args, fed_args, peft_config = get_config()
 training_args = get_training_args(script_args, script_args.learning_rate)
 save_config(script_args, fed_args)
 print(script_args, fed_args)
-dataset_root = "/mnt/bn/data-tns-live-llm/leon/datasets/fed_data/"
+# dataset_root = "/mnt/bn/data-tns-live-llm/leon/datasets/fed_data/"
+# dataset_root = "/mnt/bn/merlin-datavolume-tsy/leon/datasets/fed_100/"
+dataset_root = "/mnt/bn/merlin-datavolume-tsy/leon/datasets/fed_data/"
+# dataset_root = "/mnt/bn/merlin-datavolume-tsy/leon/datasets/fed_100_public_data"
 
 if script_args.online_dataset:
     # ===== Load the dataset =====
@@ -33,8 +38,15 @@ if script_args.online_dataset:
     local_datasets = split_dataset(fed_args, script_args, dataset) #分给不同的客户端，目前只实现了 iid 分布
 else:
     local_datasets=[]
-    for i in range(fed_args.num_clients):
-        local_datasets.append(load_from_disk(f"{dataset_root}/{script_args.dataset_name}_{i}.parquet"))
+    if script_args.seed:
+        for i in range(fed_args.num_clients):
+            local_datasets.append(load_from_disk(f"{dataset_root}/{script_args.dataset_name}_{i}_{script_args.seed}.parquet"))
+    else:
+        for i in range(fed_args.num_clients):
+            local_datasets.append(load_from_disk(f"{dataset_root}/{script_args.dataset_name}_{i}.parquet"))
+
+# 尝试打乱数据集顺序看看
+# random.shuffle(local_datasets)
 sample_num_list = [len(local_datasets[i]) for i in range(fed_args.num_clients)]
 
 # ===== Get model config =====
@@ -108,7 +120,10 @@ for round in (range(fed_args.num_rounds)):
         # sub_dataset = get_dataset_this_round(local_datasets[client], round, fed_args, script_args)      # get the required sub-dataset for this round， 随机采样，num2sample = script_args.batch_size * script_args.gradient_accumulation_steps * script_args.max_steps
         data_module = None
         if not script_args.full_data:
-            sub_dataset = get_dataset_this_round(local_datasets[client], round, fed_args, script_args) # few shot
+            if script_args.still_contain_base_data:
+                sub_dataset = get_dataset_this_round_QA(local_datasets[client], round, fed_args, script_args) # few shot
+            else:
+                sub_dataset = get_dataset_this_round(local_datasets[client], round, fed_args, script_args)
             data_module = make_supervised_data_module(tokenizer=tokenizer, dataset=sub_dataset)
         else:
             sub_dataset = local_datasets[client]
@@ -135,6 +150,10 @@ for round in (range(fed_args.num_rounds)):
         results = trainer.train()
         training_loss[client].append(results.training_loss)
 
+        # 保存client 0 的每轮的模型
+        # if client==0:
+        #     model.save_pretrained(training_args.output_dir+f"_client0/{round}")
+        #     tokenizer.save_pretrained(training_args.output_dir+f"_client0/{round}")
         # ===== Client transmits local information to server =====
         if fed_args.fed_alg == 'scaffold':
             auxiliary_model_list[client], auxiliary_delta_dict[client] = trainer.get_auxiliary_param()
